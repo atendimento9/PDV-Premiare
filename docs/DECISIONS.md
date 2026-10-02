@@ -15,6 +15,11 @@ final não foi fornecido.
 `https://dominio-a-definir.invalid`. `.invalid` é o TLD reservado pela RFC 2606:
 é inequivocamente um marcador, não um domínio adivinhado.
 
+**Atualização de 02/10/2026:** o deployment de produção usa
+`https://catalogo-premiare-criativa.vercel.app`; sitemap e rota do catálogo
+foram conferidos após o push. Um domínio próprio pode substituir esse alias
+quando estiver configurado no projeto Vercel.
+
 **Por quê:** inventar um domínio plausível seria pior — poderia passar
 despercebido e ir ao ar. Um host `.invalid` é impossível de confundir com o real
 e é fácil de encontrar. O build definitivo sai com uma variável:

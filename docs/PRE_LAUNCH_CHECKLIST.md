@@ -1,17 +1,19 @@
-# Checklist de publicação na Vercel
+# Checklist de operação na Vercel
 
 O site está hospedado na Vercel. As instruções de build e deploy ficam em
 `VERCEL_DEPLOYMENT.md`.
 
-## Bloqueia a publicação
+O catálogo atualizado já foi publicado no deployment de produção da Vercel. A
+origem canônica verificada é `https://catalogo-premiare-criativa.vercel.app`.
+
+## Acompanhamento
 
 - [x] **Testados os três links de WhatsApp.** Números completados com o DDI 55
       (ver DECISIONS 26) — Weliton, Rafael e Caio confirmados abrindo a
       conversa certa.
-- [ ] **Domínio definitivo** no build:
-      `SITE_URL=https://www.seudominio.com.br npm run build`.
-      Sem isso, canonical, Open Graph e sitemap saem com
-      `dominio-a-definir.invalid`.
+- [ ] **Domínio próprio da Premiare**, se definido: associe-o ao projeto Vercel,
+      configure `SITE_URL` com esse endereço e confira sitemap e metadados. Até
+      lá, o endereço canônico é o domínio `vercel.app` registrado acima.
 - [x] **Nenhum bloco `PENDENTE-CLIENTE` restante.** Canais de atendimento, dados
       cadastrais e a página de privacidade estão completos.
 - [ ] **Conferir a privacidade depois de publicar na Vercel.** A página afirma que
@@ -49,7 +51,7 @@ O site está hospedado na Vercel. As instruções de build e deploy ficam em
 - [ ] **Redes sociais** (`instagram`, `linkedin` em `site.ts`): vazias, e por
       isso não há links sociais no rodapé.
 
-## Antes de subir
+## Antes de cada alteração na branch de produção
 
 - [ ] `npm run lint`
 - [ ] `npm run typecheck`
@@ -59,7 +61,7 @@ O site está hospedado na Vercel. As instruções de build e deploy ficam em
 - [ ] `node scripts/serve-dist.mjs` e conferir home, um produto e o catálogo
 - [ ] Conferir o tamanho de `dist/` com `npm run check-budget`
 
-## Depois de subir
+## Conferência do deployment atual e dos próximos
 
 - [ ] `/` abre; uma página de produto abre direto pela URL
 - [ ] `sitemap.xml` e `robots.txt` respondem, com o domínio certo

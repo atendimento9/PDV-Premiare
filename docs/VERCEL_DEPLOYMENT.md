@@ -28,12 +28,15 @@ este site entrega HTML, CSS, JavaScript e mídia estáticos.
 
 ## Domínio e metadados
 
-O domínio canônico ainda precisa estar definido no projeto. Sem `SITE_URL`, o
-build usa `https://dominio-a-definir.invalid` em canonical, Open Graph e sitemap.
-Configure `SITE_URL` nas variáveis de ambiente do projeto Vercel, usando o
-domínio de produção com `https://`, e faça um novo deployment. Antes de
-considerar a publicação concluída, abra `sitemap.xml` e confira os metadados de
-uma página de produto.
+O deployment atual usa `https://catalogo-premiare-criativa.vercel.app` como
+origem canônica. Após o push da curadoria, conferi que `sitemap.xml` responde
+com esse domínio. Se a Premiare configurar um domínio próprio na Vercel, atualize
+`SITE_URL` para ele nas variáveis de ambiente do projeto e gere outro deployment.
+
+Sem `SITE_URL`, o build local usa `https://dominio-a-definir.invalid` em
+canonical, Open Graph e sitemap. Configure a variável local antes de gerar um
+build destinado a publicação manual. Depois do deployment, abra `sitemap.xml` e
+confira os metadados de uma página de produto.
 
 Build local com domínio definido:
 
