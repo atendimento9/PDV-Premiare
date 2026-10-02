@@ -1,0 +1,15 @@
+{
+  "BD-BLCAPNOTSBL": { "source": "bd-blcapnotsbl.webp", "origin": "foto oficial da planilha, editada para remover marcas de aplicativos" },
+  "BD-BLCAPNOTISO": { "source": "bd-blcapnotiso.webp", "origin": "foto oficial da planilha, editada para remover marcas de terceiros" },
+  "KIT-FRA3047": { "source": "kit-fra3047.webp", "origin": "foto oficial da planilha, editada para remover marcas de terceiros" },
+  "KIT-BOAS0008": { "source": "kit-boas0008.webp", "origin": "foto oficial da planilha, editada para remover marca do cliente" },
+  "KIT-BOAS0058": { "source": "kit-boas0058.webp", "origin": "foto oficial da planilha, editada para remover marca do cliente" },
+  "KIT-BOAS0056": { "source": "kit-boas0056.webp", "origin": "foto oficial da planilha, editada para remover marca do cliente" },
+  "BD-ROUPAO": { "source": "bd-roupao.webp", "origin": "foto oficial da planilha, editada para remover bordado do cliente" },
+  "KIT-VBE002": { "source": "kit-vbe002.webp", "origin": "foto oficial da planilha, editada para remover marcas do cliente" },
+  "BD-CHAVEIROESMALTADO": { "source": "bd-chaveiroesmaltado.webp", "origin": "foto oficial da planilha, editada para remover arte do cliente" },
+  "BD-DRIPCOFFEE10G": { "source": "bd-dripcoffee10g.webp", "origin": "foto oficial da planilha, editada para remover texto de mockup" },
+  "KIT-COA0032": { "source": "kit-coa0032.webp", "origin": "imagem pesquisada no site do fornecedor, editada para remover marcas", "reference": "https://astorbrindes.com.br/brinde/kit-coador-personalizado-18" },
+  "BD-STANLEYPILSNER444ML": { "source": "bd-stanleypilsner444ml.webp", "origin": "imagem pesquisada no site do fornecedor, editada para remover logotipo", "reference": "https://astorbrindes.com.br/brinde/copo-stanley-pilsner-glass-happy-hour-stanley-azure-444ml" },
+  "BD-COPOCOMTIRANTE": { "source": "bd-copocomtirante.webp", "origin": "imagem pesquisada no site do fornecedor, editada para remover marcas e legenda", "reference": "https://astorbrindes.com.br/brinde/eco-copo-personalizado-550ml-in-mold-label" }
+}

@@ -1,0 +1,103 @@
+---
+import Base from "../layouts/Base.astro";
+import { categories } from "../lib/catalog";
+---
+
+<Base
+  title="Página não encontrada"
+  description="A página que você procurou não existe neste site. Veja o catálogo, as categorias ou fale com a equipe."
+  path="/404"
+  noindex
+>
+  <section class="section notfound">
+    <div class="container">
+      <div class="notfound__inner">
+        <span class="rule-band"></span>
+        <p class="utility">Erro 404</p>
+        <h1>Esta página não existe</h1>
+        <p class="lede">
+          O endereço pode ter mudado ou o produto pode ter saído da curadoria.
+          Abaixo estão os caminhos que funcionam.
+        </p>
+
+        <div class="notfound__actions">
+          <a class="btn btn--primary" href="/catalogo">Ir para o catálogo</a>
+          <a class="btn btn--ghost" href="/">Voltar ao início</a>
+        </div>
+
+        <nav class="notfound__cats" aria-label="Categorias">
+          <h2 class="utility">Categorias</h2>
+          <ul>
+            {
+              categories.map((c) => (
+                <li>
+                  <a href={`/categoria/${c.slug}`}>{c.name}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .notfound {
+    padding-block: var(--space-4xl);
+  }
+
+  .notfound__inner {
+    display: grid;
+    gap: var(--space-m);
+    justify-items: start;
+    max-width: var(--container-narrow);
+  }
+
+  .notfound__inner p {
+    margin: 0;
+  }
+
+  .notfound__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+  }
+
+  .notfound__cats {
+    margin-block-start: var(--space-xl);
+    padding-block-start: var(--space-l);
+    border-block-start: 1px solid var(--line);
+    width: 100%;
+  }
+
+  .notfound__cats h2 {
+    margin-block-end: var(--space-s);
+  }
+
+  .notfound__cats ul {
+    display: grid;
+    gap: var(--space-2xs);
+    list-style: none;
+  }
+
+  @media (min-width: 640px) {
+    .notfound__cats ul {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .notfound__cats a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+    text-decoration: none;
+  }
+
+  .notfound__cats a:hover {
+    color: var(--brand-blue);
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,421 @@
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* O `[hidden]` do navegador vale `display: none`, mas com a especificidade mais
+   fraca que existe — qualquer `display: grid` numa classe o derruba, e o
+   elemento reaparece com o atributo ainda posto. Aconteceu duas vezes neste
+   projeto (estado vazio do catálogo e botão de limpar filtros, visíveis em 10
+   páginas). Uma regra forte aqui encerra a categoria inteira de bug. */
+[hidden] {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  /* `clip` em vez de `hidden`: corta o transbordo sem criar um contexto de
+     rolagem, que quebraria o cabecalho sticky em parte dos navegadores. */
+  overflow-x: clip;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: var(--brand-blue);
+  font-weight: var(--weight-strong);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+/* Título, no kit da marca, é Roboto Bold. É a troca de família que dá voz ao
+   display — h3 e h4 são "Cabeçalho" e ficam no Lato Bold, junto com o corpo. */
+h1,
+h2 {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: var(--step-5);
+}
+
+h2 {
+  font-size: var(--step-4);
+}
+
+h3 {
+  font-size: var(--step-2);
+}
+
+p {
+  margin: 0;
+  max-width: 68ch;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--brand-blue);
+  text-underline-offset: 3px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Fundo azul precisa de foco claro; o azul do outline sumiria nele. */
+.is-deep :focus-visible,
+.is-deep :focus-visible * {
+  outline-color: var(--brand-yellow);
+}
+
+/* ------------------------------------------------------------- estrutura */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-l);
+}
+
+.section {
+  padding-block: var(--space-3xl);
+}
+
+.section--muted {
+  background: var(--surface-muted);
+}
+
+.section--deep {
+  background: var(--surface-deep);
+  color: var(--text-on-deep);
+}
+
+.section--deep h2,
+.section--deep h3,
+.is-deep h2,
+.is-deep h3 {
+  color: var(--text-on-deep);
+}
+
+.stack > * + * {
+  margin-block-start: var(--space-m);
+}
+
+/* Abertura de pagina interna: faixa amarela, registro utilitario, titulo e
+   linha de apoio. Estava repetida, identica, em oito paginas — uma definicao
+   so garante que todas as paginas abram no mesmo ritmo. */
+.page-head {
+  display: grid;
+  gap: var(--space-s);
+  padding-block: var(--space-l) var(--space-2xl);
+}
+
+.page-head p {
+  margin: 0;
+}
+
+
+.skip-link {
+  position: absolute;
+  left: var(--space-m);
+  top: var(--space-m);
+  z-index: 100;
+  padding: var(--space-s) var(--space-m);
+  background: var(--brand-blue);
+  color: var(--brand-white);
+  border-radius: var(--radius);
+  font-weight: var(--weight-strong);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------ tipografia */
+
+/* A faixa amarela da assinatura da marca, virada dispositivo de estrutura:
+   ela abre cada secao e fecha cada card. E o unico ornamento da pagina. */
+.rule-band {
+  display: block;
+  width: 44px;
+  height: 4px;
+  background: var(--brand-yellow);
+  border-radius: 1px;
+}
+
+.utility {
+  font-size: var(--utility-size);
+  font-weight: var(--utility-weight);
+  letter-spacing: var(--utility-tracking);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Sobre azul, o cinza de texto secundario cai para 1,7:1. Todo contexto
+   escuro — secao ou rodape — troca o registro utilitario para o amarelo. */
+.section--deep .utility,
+.is-deep .utility {
+  color: var(--brand-yellow);
+}
+
+/* "Subtítulo" no kit da marca: Roboto Regular. É a linha que acompanha o título,
+   então acompanha também a família dele — em peso normal, para não competir. */
+.lede {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: var(--weight-body);
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+.section--deep .lede,
+.is-deep .lede {
+  color: var(--text-on-deep-muted);
+}
+
+/* --------------------------------------------------------------- botoes */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: 48px;
+  padding: 0 var(--space-l);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font-weight: var(--weight-strong);
+  font-size: var(--step-0);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+
+/* Amarelo sobre branco nunca vira texto: vira superficie, com texto azul. */
+.btn--primary {
+  background: var(--brand-yellow);
+  color: var(--brand-blue);
+  border-color: var(--brand-yellow);
+}
+.btn--primary:hover {
+  background: var(--yellow-600);
+  border-color: var(--yellow-600);
+}
+
+.btn--solid {
+  background: var(--brand-blue);
+  color: var(--brand-white);
+  border-color: var(--brand-blue);
+}
+.btn--solid:hover {
+  background: var(--blue-700);
+  border-color: var(--blue-700);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--brand-blue);
+  border-color: var(--line-strong);
+}
+.btn--ghost:hover {
+  border-color: var(--brand-blue);
+  background: var(--blue-100);
+}
+
+.section--deep .btn--ghost,
+.is-deep .btn--ghost {
+  color: var(--brand-white);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+.section--deep .btn--ghost:hover,
+.is-deep .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--brand-white);
+}
+
+.btn--sm {
+  min-height: 44px;
+  font-size: var(--step--1);
+  padding: 0 var(--space-m);
+}
+
+/* ----------------------------------------------------------------- grade */
+
+.grid {
+  display: grid;
+  gap: var(--space-l);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .grid--products,
+  .grid--cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .grid--products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid--cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* A quarta coluna so entra quando a coluna ainda respira: abaixo disso o card
+   fica estreito demais e a foto do produto deixa de ser legivel. */
+@media (min-width: 1180px) {
+  .grid--products {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ------------------------------------------------------------- animacao */
+
+/* Entrada unica, curta e curta de deslocamento. Sem parallax, sem loop. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 520ms var(--ease), transform 520ms var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.no-js [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* No mobile o deslocamento e ainda menor: menos movimento durante a leitura. */
+@media (max-width: 640px) {
+  [data-reveal] {
+    transform: translateY(10px);
+  }
+}
+
+/* ------------------------------------------------------------- impressao */
+
+/* Sem esta folha, imprimir ou salvar em PDF sai quase em branco: a entrada de
+   secao deixa o conteudo em `opacity: 0` ate a rolagem chegar nele, e a
+   impressao nao rola. Num catalogo B2B a ficha impressa circula para
+   aprovacao interna — ela precisa sair inteira. */
+@media print {
+  [data-reveal],
+  [data-reveal].is-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .site-header,
+  .floating-contact,
+  .browser__more,
+  .filters,
+  .browser__search,
+  .browser__toolbar,
+  .breadcrumbs,
+  .quote,
+  dialog {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  /* O endereco de um link nao viaja no papel: sai ao lado do texto. */
+  main a[href^="/"]::after {
+    content: " (premiarecriativa.com.br" attr(href) ")";
+    font-size: 0.8em;
+    color: var(--text-muted);
+  }
+
+  .card,
+  .panel,
+  .specs__row,
+  .solution {
+    break-inside: avoid;
+  }
+
+  .section {
+    padding-block: 1rem;
+  }
+}

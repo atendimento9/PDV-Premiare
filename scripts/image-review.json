@@ -1,0 +1,28 @@
+{
+  "descricao": "Registro historico da revisao visual de 31/08/2026. Em 02/10/2026, 13 imagens editadas foram aprovadas para substituir dez fotos com marcas e tres imagens bloqueadas; o pipeline prioriza scripts/catalog-image-overrides.json.",
+  "revisadoEm": "2026-08-31",
+  "totalRevisado": 40,
+  "bloqueadas": {
+    "KIT-COA0032": "A propria imagem traz a legenda 'IMAGEM GERADA POR INTELIGENCIA ARTIFICIAL PARA MELHOR VISUALIZACAO DOS PRODUTOS' e exibe marcas de terceiros (Grupo Fleury, Orfeu). O briefing proibe imagem gerada por IA no site. Publicar uma composicao sintetica como foto de produto seria apresentar como real algo que nao e.",
+    "BD-STANLEYPILSNER444ML": "Nao e foto de produto: e ficha tecnica do fornecedor com texto e uma tabela de nomes de cor seguidos de numeros de quatro digitos, que um visitante le como tabela de precos. Traz ainda especificacoes que nao passaram pelo pipeline de texto e portanto nao tem procedencia verificada.",
+    "BD-COPOCOMTIRANTE": "Foto de mockup com texto queimado na imagem ('Copo 550ml / Cordao 20x85 / Com Click no copo') e marca de terceiro aplicada ao produto. Nao ha versao limpa entre as origens permitidas."
+  },
+  "marcaDeTerceiroVisivel": {
+    "descricao": "Fotos originais publicadas em 31/08/2026 com marca de terceiros. Todas foram substituidas em 02/10/2026 por versoes genericas editadas, registradas em scripts/catalog-image-overrides.json.",
+    "skus": {
+      "BD-BLCAPNOTSBL": "estampa com logotipos de aplicativos de terceiros",
+      "BD-BLCAPNOTISO": "notebook com marcas de terceiros visiveis",
+      "KIT-FRA3047": "embalagem e itens com marca de terceiro",
+      "KIT-BOAS0008": "kit personalizado com marca de cliente do fornecedor",
+      "KIT-BOAS0058": "kit personalizado com marca de cliente do fornecedor",
+      "KIT-BOAS0056": "kit personalizado com marca de cliente do fornecedor",
+      "BD-ROUPAO": "roupao bordado com marca de cliente do fornecedor",
+      "KIT-VBE002": "organizadores com marca de cliente do fornecedor",
+      "BD-CHAVEIROESMALTADO": "arte de cliente do fornecedor aplicada a peca",
+      "BD-DRIPCOFFEE10G": "mockup com marcacao de area de personalizacao"
+    }
+  },
+  "observacoesDeConteudo": {
+    "BD-ROUPAO": "A foto mostra pantufas. A planilha registra que a pantufa nao acompanha o produto. A pagina publica precisa exibir esse fato ao lado da imagem, sob pena de induzir o visitante a erro."
+  }
+}

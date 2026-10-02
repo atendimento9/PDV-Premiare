@@ -1,0 +1,68 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CatalogBrowser from "../../components/CatalogBrowser.astro";
+import { byEditorialPriority, categories, productsInCategory } from "../../lib/catalog";
+import type { Category } from "../../types/catalog";
+
+export function getStaticPaths() {
+  return categories.map((category) => ({
+    params: { slug: category.slug },
+    props: { category },
+  }));
+}
+
+type Props = { category: Category };
+const { category } = Astro.props;
+const items = byEditorialPriority(productsInCategory(category.slug));
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Início", item: new URL("/", Astro.site).href },
+      { "@type": "ListItem", position: 2, name: "Catálogo", item: new URL("/catalogo", Astro.site).href },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: category.name,
+        item: new URL(`/categoria/${category.slug}`, Astro.site).href,
+      },
+    ],
+  },
+];
+---
+
+<Base
+  title={category.name}
+  description={`${category.count} ${category.count === 1 ? "produto personalizável" : "produtos personalizáveis"} na categoria ${category.name}. Veja fichas técnicas, quantidade mínima e fale com a equipe Premiare Criativa.`}
+  path={`/categoria/${category.slug}`}
+  jsonLd={jsonLd}
+>
+  <div class="container">
+    <Breadcrumbs
+      items={[{ label: "Catálogo", href: "/catalogo" }, { label: category.name }]}
+    />
+
+    <header class="page-head">
+      <span class="rule-band"></span>
+      <p class="utility">Categoria · {category.count} {category.count === 1 ? "produto" : "produtos"}</p>
+      <h1>{category.name}</h1>
+    </header>
+  </div>
+
+  <div class="container catalog-body">
+    <CatalogBrowser
+      items={items}
+      showCategoryFilter={false}
+      emptyHint="Tente outro termo ou remova um filtro. Você também pode ver o catálogo completo."
+    />
+  </div>
+</Base>
+
+<style>
+  .catalog-body {
+    padding-block-end: var(--space-4xl);
+  }
+</style>

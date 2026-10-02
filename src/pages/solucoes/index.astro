@@ -1,0 +1,161 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ProductImage from "../../components/ProductImage.astro";
+import { bySku, kits } from "../../lib/catalog";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Início", item: new URL("/", Astro.site).href },
+      { "@type": "ListItem", position: 2, name: "Soluções", item: new URL("/solucoes", Astro.site).href },
+    ],
+  },
+];
+
+const coverFor = (slug: string) => {
+  const kit = kits.find((k) => k.slug === slug);
+  const sku = kit?.components.find((c) => c.sku && bySku.get(c.sku)?.image)?.sku;
+  return sku ? bySku.get(sku) : undefined;
+};
+---
+
+<Base
+  title="Soluções por ocasião"
+  description="Cinco composições montadas com produtos do catálogo, para onboarding, liderança, eventos, café e reconhecimento. Pontos de partida que a equipe adapta ao seu público."
+  path="/solucoes"
+  jsonLd={jsonLd}
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Soluções" }]} />
+
+    <header class="page-head">
+      <span class="rule-band"></span>
+      <p class="utility">Soluções por ocasião</p>
+      <h1>Composições prontas para adaptar</h1>
+      <p class="lede">
+        Cada solução parte de produtos que já estão no catálogo. Os itens podem ser
+        trocados, retirados ou combinados com outras categorias — a composição final
+        é definida com a equipe.
+      </p>
+    </header>
+
+    <ul class="solutions">
+      {
+        kits.map((kit, i) => {
+          const cover = coverFor(kit.slug);
+          return (
+            <li class="solution">
+              {/* Sem foto de capa o link ficava no HTML como caixa vazia, e no
+                  desktop reservava uma coluna de 200 px em branco. */}
+              {cover && (
+                <a class="solution__media" href={`/solucoes/${kit.slug}`} tabindex="-1" aria-hidden="true">
+                  <ProductImage product={cover} />
+                </a>
+              )}
+              <div class="solution__body">
+                <p class="utility">{kit.audience}</p>
+                <h2 class="solution__name">
+                  <a href={`/solucoes/${kit.slug}`}>{kit.name}</a>
+                </h2>
+                {kit.concept && <p class="solution__concept">{kit.concept}</p>}
+                <ul class="solution__items">
+                  {kit.components.map((c) => (
+                    <li>{c.label}</li>
+                  ))}
+                </ul>
+                <a class="btn btn--ghost btn--sm" href={`/solucoes/${kit.slug}`}>
+                  Ver a solução<span class="visually-hidden"> {kit.name}</span>
+                </a>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .solutions {
+    display: grid;
+    gap: var(--space-l);
+    list-style: none;
+    padding-block-end: var(--space-4xl);
+  }
+
+  .solution {
+    display: grid;
+    gap: var(--space-l);
+    padding: var(--space-l);
+    background: var(--brand-white);
+    border: 1px solid var(--line);
+    border-block-start: 3px solid var(--brand-yellow);
+    border-radius: var(--radius-lg);
+  }
+
+  @media (min-width: 720px) {
+    /* `auto` e nao `200px`: o card sem foto nao reserva a coluna da imagem. */
+    .solution {
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: var(--space-xl);
+    }
+
+    .solution__media {
+      width: 200px;
+    }
+  }
+
+  .solution__media {
+    display: block;
+    background: var(--surface-muted);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .solution__body {
+    display: grid;
+    gap: var(--space-xs);
+    justify-items: start;
+  }
+
+  .solution__body p {
+    margin: 0;
+  }
+
+  .solution__name {
+    font-size: var(--step-3);
+  }
+
+  .solution__name a {
+    color: var(--brand-blue);
+    text-decoration: none;
+  }
+
+  .solution__name a:hover {
+    text-decoration: underline;
+  }
+
+  .solution__concept {
+    color: var(--text-muted);
+  }
+
+  .solution__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-xs);
+    margin-block: var(--space-xs);
+    list-style: none;
+    font-size: var(--step--1);
+    color: var(--text-muted);
+  }
+
+  .solution__items li {
+    padding: 2px var(--space-xs);
+    background: var(--surface-muted);
+    border-radius: var(--radius);
+  }
+</style>

@@ -1,0 +1,182 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FloatingContact from "../components/FloatingContact.astro";
+import ContactChooser from "../components/ContactChooser.astro";
+import "../styles/base.css";
+
+type Props = {
+  title: string;
+  description: string;
+  /** Caminho canonico da pagina, comecando com "/". */
+  path: string;
+  /** JSON-LD ja montado. Nunca inclui offers, price, rating ou disponibilidade. */
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+  /** Pagina que abre com um hero escuro: o cabecalho fica sobreposto a ele. */
+  heroOverlay?: boolean;
+};
+
+const {
+  title,
+  description,
+  path,
+  jsonLd = [],
+  noindex = false,
+  heroOverlay = false,
+} = Astro.props;
+
+const canonical = new URL(path, Astro.site).href;
+
+/**
+ * Alguns produtos tem nomes longos de verdade. Entre encurtar o nome e perder o
+ * sufixo da marca, o nome vence: e o que identifica o item no resultado de
+ * busca. So quando o nome sozinho ainda estoura e que ele e cortado em
+ * fronteira de palavra — e apenas aqui, no rotulo da aba. O nome completo
+ * continua no h1, no corpo da pagina e nos dados estruturados.
+ */
+const MAX_TITLE = 70;
+const BRAND_SUFFIX = " · Premiare Criativa";
+
+function buildTitle(base: string): string {
+  if (path === "/") return base;
+  if (base.length + BRAND_SUFFIX.length <= MAX_TITLE) return base + BRAND_SUFFIX;
+  if (base.length <= MAX_TITLE) return base;
+  const cut = base.slice(0, MAX_TITLE - 1);
+  return cut.slice(0, cut.lastIndexOf(" ")) + "…";
+}
+
+const fullTitle = buildTitle(title);
+
+/**
+ * O JSON-LD carrega nomes e textos vindos da planilha, que sao conteudo nao
+ * confiavel. `JSON.stringify` nao escapa `<`, entao uma celula com `</script>`
+ * fecharia a tag e o resto viraria markup. Escapar os tres caracteres abaixo
+ * neutraliza isso sem alterar o valor lido pelos buscadores.
+ */
+const serializeJsonLd = (data: Record<string, unknown>): string =>
+  JSON.stringify(data)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026");
+---
+
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Premiare Criativa" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#002566" />
+
+    {/* Os dois arquivos que a primeira dobra sempre usa: Roboto no titulo e
+        Lato Regular no corpo. O Lato Bold e o subconjunto latin-ext ficam de
+        fora do preload — sao pedidos so quando a pagina precisa deles. */}
+    <link
+      rel="preload"
+      href="/fonts/roboto-var-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/lato-400-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script is:inline>
+      document.documentElement.classList.remove("no-js");
+      // Rede de seguranca. A entrada das secoes esconde os elementos ate o
+      // observador liberar; se esse modulo nao rodar (erro, CSP, bloqueio de
+      // script), a pagina inteira ficaria em branco. Uma animacao que falha
+      // nao pode esconder o conteudo, entao aqui tudo reaparece.
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          if (window.__revealReady) return;
+          document.querySelectorAll("[data-reveal]").forEach(function (el) {
+            el.classList.add("is-in");
+          });
+        }, 1200);
+      });
+    </script>
+
+    {
+      jsonLd.map((data) => (
+        <script type="application/ld+json" set:html={serializeJsonLd(data)} />
+      ))
+    }
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <Header overlay={heroOverlay} />
+    <main id="conteudo">
+      <slot />
+    </main>
+    <Footer />
+    <FloatingContact />
+    <ContactChooser />
+
+    <script>
+      // Entrada de secao: uma vez por elemento, sem repetir no scroll de volta.
+      // Quem pediu menos movimento nao recebe animacao nenhuma.
+      // Avisa a rede de seguranca do <head> que a entrada esta sob controle.
+      window.__revealReady = true;
+
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const targets = document.querySelectorAll<HTMLElement>("[data-reveal]");
+
+      if (reduce.matches || !("IntersectionObserver" in window)) {
+        targets.forEach((el) => el.classList.add("is-in"));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              const el = entry.target as HTMLElement;
+              const index = Number(el.dataset.revealIndex ?? 0);
+              el.style.setProperty("--reveal-delay", `${Math.min(index, 6) * 70}ms`);
+              el.classList.add("is-in");
+              io.unobserve(el);
+            });
+          },
+          // Libera ANTES de o elemento entrar na tela, nao depois. Com a margem
+          // negativa que havia aqui, quem rolava rapido no celular alcancava o
+          // titulo ainda invisivel e via um buraco onde devia haver texto.
+          { rootMargin: "0px 0px 20% 0px", threshold: 0 },
+        );
+        targets.forEach((el) => io.observe(el));
+
+        // O observador nao reporta nada enquanto a aba esta em segundo plano,
+        // e um visitante pode abrir o site numa aba de fundo e so olhar depois.
+        // Passado um segundo, o que ja esta na area visivel aparece de todo
+        // jeito; o que esta abaixo continua entrando na rolagem.
+        window.setTimeout(() => {
+          document
+            .querySelectorAll<HTMLElement>("[data-reveal]:not(.is-in)")
+            .forEach((el) => {
+              const rect = el.getBoundingClientRect();
+              if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add("is-in");
+              }
+            });
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

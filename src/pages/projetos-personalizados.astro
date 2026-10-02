@@ -1,0 +1,219 @@
+---
+import Base from "../layouts/Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+import SectionHead from "../components/SectionHead.astro";
+
+const template =
+  "Olá! Vim pelo site da Premiare Criativa e gostaria de desenvolver um projeto personalizado. Minha quantidade estimada é {QTD}.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Início", item: new URL("/", Astro.site).href },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Projetos personalizados",
+        item: new URL("/projetos-personalizados", Astro.site).href,
+      },
+    ],
+  },
+];
+
+const briefingItems = [
+  { label: "Ocasião", text: "Onboarding, convenção, premiação, fim de ano, evento, campanha interna." },
+  { label: "Público", text: "Quem recebe: colaboradores, lideranças, clientes, parceiros ou convidados." },
+  { label: "Quantidade estimada", text: "Mesmo aproximada, ela orienta as opções possíveis." },
+  { label: "Mensagem", text: "O que a ação precisa comunicar e como a marca deve aparecer." },
+  { label: "Prazo desejado", text: "A data em que o material precisa estar na mão de quem recebe." },
+  { label: "Arquivos da marca", text: "Logotipo e manual, se houver, para avaliar a aplicação." },
+];
+---
+
+<Base
+  title="Projetos personalizados"
+  description="Composições exclusivas, embalagens próprias e peças desenvolvidas para uma campanha específica. Conte a ocasião e o público, e a equipe Premiare Criativa monta a proposta."
+  path="/projetos-personalizados"
+  jsonLd={jsonLd}
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Projetos personalizados" }]} />
+  </div>
+
+  <section class="container intro">
+    <div class="intro__text">
+      <span class="rule-band"></span>
+      <p class="utility">Projetos personalizados</p>
+      <h1>Quando o catálogo não resolve, a gente desenvolve</h1>
+      <p class="lede">
+        Composições exclusivas, embalagens próprias e peças pensadas para uma
+        campanha específica — do conceito à proposta, com a equipe acompanhando
+        cada decisão.
+      </p>
+    </div>
+
+    <div class="intro__form">
+      <QuoteForm
+        template={template}
+        subject="Projeto personalizado"
+        askBrief
+        ctaLabel="Conte o que você precisa"
+      />
+    </div>
+  </section>
+
+  <section class="section section--muted">
+    <div class="container">
+      <SectionHead
+        eyebrow="Para começar"
+        title="O que ajuda no primeiro contato"
+        lede="Nada disso é obrigatório. Quanto mais claro o objetivo, mais rápido a proposta fica de pé."
+      />
+      <ul class="briefing">
+        {
+          briefingItems.map((item, i) => (
+            <li class="briefing__item">
+              <span class="utility">{item.label}</span>
+              <p>{item.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="Como conduzimos" title="Do briefing à aprovação" />
+      <ol class="flow">
+        <li>
+          <span class="utility">Etapa 1</span>
+          <h3>Entendimento</h3>
+          <p>A equipe ouve a ocasião, o público e a mensagem antes de sugerir qualquer item.</p>
+        </li>
+        <li>
+          <span class="utility">Etapa 2</span>
+          <h3>Proposta de composição</h3>
+          <p>Uma seleção de peças e uma ideia de apresentação, pensadas para o objetivo.</p>
+        </li>
+        <li>
+          <span class="utility">Etapa 3</span>
+          <h3>Confirmação técnica</h3>
+          <p>Materiais, técnicas de personalização, quantidades e condições são confirmados.</p>
+        </li>
+        <li>
+          <span class="utility">Etapa 4</span>
+          <h3>Aprovação</h3>
+          <p>Você valida a composição e a aplicação da marca antes da produção.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro {
+    display: grid;
+    gap: var(--space-2xl);
+    padding-block: var(--space-l) var(--space-3xl);
+  }
+
+  @media (min-width: 900px) {
+    .intro {
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: var(--space-3xl);
+      align-items: start;
+    }
+  }
+
+  .intro__text {
+    display: grid;
+    gap: var(--space-s);
+    justify-items: start;
+  }
+
+  .intro__text p {
+    margin: 0;
+  }
+
+  .briefing {
+    display: grid;
+    gap: var(--space-l);
+    list-style: none;
+  }
+
+  @media (min-width: 640px) {
+    .briefing {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .briefing {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .briefing__item {
+    display: grid;
+    gap: var(--space-2xs);
+    align-content: start;
+    padding: var(--space-m) var(--space-m) var(--space-m) var(--space-l);
+    background: var(--brand-white);
+    border-inline-start: 3px solid var(--brand-yellow);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .briefing__item p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+
+  .flow {
+    display: grid;
+    gap: var(--space-l);
+    list-style: none;
+  }
+
+  @media (min-width: 640px) {
+    .flow {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .flow {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  /* Mesma etapa, mesmo desenho da home: faixa amarela no topo da coluna.
+     Antes esta lista usava um fio cinza e as duas paginas contavam a mesma
+     historia com dois desenhos diferentes. */
+  .flow li {
+    display: grid;
+    gap: var(--space-2xs);
+    align-content: start;
+    padding-block-start: var(--space-m);
+    border-block-start: 3px solid var(--brand-yellow);
+  }
+
+  .flow .utility {
+    color: var(--brand-blue);
+  }
+
+  .flow h3 {
+    font-size: var(--step-1);
+    font-weight: var(--weight-strong);
+  }
+
+  .flow p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+</style>

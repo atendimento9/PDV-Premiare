@@ -1,0 +1,657 @@
+---
+import Base from "../layouts/Base.astro";
+import HeroVideo from "../components/HeroVideo.astro";
+import ClientMarquee from "../components/ClientMarquee.astro";
+import SectionHead from "../components/SectionHead.astro";
+import ProductCard from "../components/ProductCard.astro";
+import ProductImage from "../components/ProductImage.astro";
+import { CONTACT_LABEL, contactLink, generalMessage, siteConfig } from "../config/site";
+import { categories, categoryCover, featuredProducts, kits, products } from "../lib/catalog";
+import type { Product } from "../types/catalog";
+import { faqs } from "../content/faq";
+
+const showcase = featuredProducts.slice(0, 8);
+
+/**
+ * Terceira camada da estrategia da planilha: pecas avulsas com que a Premiare
+ * monta composicoes. "Kit" no nome e o proprio dado dizendo que o item ja e uma
+ * composicao pronta, entao ele fica de fora daqui.
+ */
+const isModular = (p: Product) => !/^kit\b/i.test(p.name);
+const modularGroups = [
+  { label: "Tecnologia", match: (p: Product) => p.category.slug === "tecnologia" },
+  { label: "Bebidas", match: (p: Product) => p.category.slug === "alimentacao-e-bebidas" },
+  { label: "Embalagens", match: (p: Product) => /^caixa\b/i.test(p.name) },
+  { label: "Escritório", match: (p: Product) => p.category.slug === "escritorio-e-home-office" },
+  { label: "Mobilidade", match: (p: Product) => p.category.slug === "viagens-e-mobilidade" },
+  { label: "Eventos", match: (p: Product) => p.category.slug === "eventos-e-acoes-promocionais" },
+]
+  .map((g) => ({ ...g, items: products.filter((p) => isModular(p) && g.match(p)) }))
+  .filter((g) => g.items.length > 0);
+
+const benefits = [
+  {
+    title: "Atendimento consultivo",
+    text: "A equipe entende o objetivo da ação antes de sugerir qualquer produto.",
+  },
+  {
+    title: "Produtos personalizáveis",
+    text: "Cada item do catálogo indica o que pode receber a marca, quando essa informação está confirmada.",
+  },
+  {
+    title: "Curadoria de soluções",
+    text: "Composições organizadas por ocasião, para você partir de um ponto pronto.",
+  },
+  {
+    title: "Projetos sob medida",
+    text: "Quando o catálogo não resolve, a composição é desenvolvida do zero.",
+  },
+];
+
+const steps = [
+  { title: "Conte sua necessidade", text: "Ocasião, público, quantidade estimada e o que a ação precisa comunicar." },
+  { title: "Escolha produtos ou uma solução", text: "Do catálogo, de um kit por ocasião ou de uma combinação nova." },
+  { title: "Receba atendimento personalizado", text: "A equipe confirma disponibilidade, técnicas e condições com você." },
+  { title: "Aprove a composição e a personalização", text: "Você valida os itens e a aplicação da marca antes da produção." },
+];
+
+const homeFaqs = faqs.slice(0, 7);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    slogan: siteConfig.tagline,
+    url: new URL("/", Astro.site).href,
+    logo: new URL("/brand/premiare-logo.svg", Astro.site).href,
+  },
+];
+---
+
+<Base
+  title="Premiare Criativa · Brindes corporativos e kits personalizados"
+  description="Catálogo B2B de brindes corporativos, kits e projetos personalizados. Curadoria por ocasião, atendimento consultivo e orçamento com a equipe Premiare Criativa."
+  path="/"
+  jsonLd={jsonLd}
+  heroOverlay
+>
+  <HeroVideo />
+
+  <ClientMarquee />
+
+  <!-- --------------------------------------------------------- categorias -->
+  <section class="section section--muted">
+    <div class="container">
+      <SectionHead
+        eyebrow="Catálogo"
+        title="Nove categorias de curadoria"
+        lede="A organização que a equipe usa para montar propostas, do executivo ao promocional."
+      />
+      <ul class="grid grid--cards category-list">
+        {
+          categories.map((category, i) => {
+            const cover = categoryCover(category);
+            return (
+              <li class="category">
+                <a href={`/categoria/${category.slug}`}>
+                  <span class="category__media">
+                    {cover && <ProductImage product={cover} />}
+                  </span>
+                  <span class="category__body">
+                    <span class="utility">
+                      {category.count} {category.count === 1 ? "produto" : "produtos"}
+                    </span>
+                    <span class="category__name">{category.name}</span>
+                  </span>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------- beneficios -->
+  <section class="section">
+    <div class="container">
+      <ul class="benefits">
+        {
+          benefits.map((b, i) => (
+            <li class="benefit">
+              <span class="rule-band"></span>
+              <h2 class="benefit__title">{b.title}</h2>
+              <p>{b.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------------- destaque -->
+  <section class="section">
+    <div class="container">
+      <SectionHead
+        eyebrow="Seleção Premiare"
+        title="Produtos em destaque"
+        lede="Soluções selecionadas pelo potencial de personalização, utilidade e apresentação corporativa."
+      />
+      <div class="grid grid--products">
+        {showcase.map((product, i) => <ProductCard product={product} index={i} />)}
+      </div>
+      <p class="section__more">
+        <a class="btn btn--ghost" href="/catalogo">Ver o catálogo completo</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------------- solucoes -->
+  <section class="section section--muted">
+    <div class="container">
+      <SectionHead
+        eyebrow="Soluções por ocasião"
+        title="Composições prontas para adaptar"
+        lede="Cinco pontos de partida montados com produtos do catálogo. Cada um pode ser ajustado ao seu público e à sua ocasião."
+      />
+      <ul class="grid grid--cards">
+        {
+          kits.map((kit, i) => (
+            <li class="kit">
+              <p class="utility">{kit.audience}</p>
+              <h3 class="kit__name">
+                <a href={`/solucoes/${kit.slug}`}>{kit.name}</a>
+              </h3>
+              {kit.concept && <p class="kit__concept">{kit.concept}</p>}
+              <ul class="kit__items">
+                {kit.components.map((c) => (
+                  <li>{c.label}</li>
+                ))}
+              </ul>
+              <a class="btn btn--ghost btn--sm kit__cta" href={`/solucoes/${kit.slug}`}>
+                Ver a solução<span class="visually-hidden"> {kit.name}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- ---------------------------------------------------------- modulares -->
+  <section class="section">
+    <div class="container">
+      <SectionHead
+        eyebrow="Componentes modulares"
+        title="Peças para compor do seu jeito"
+        lede="Itens avulsos do catálogo, agrupados por afinidade, para montar uma composição exclusiva."
+      />
+      <ul class="modules">
+        {
+          modularGroups.map((group, i) => (
+            <li class="module">
+              <span class="module__label">{group.label}</span>
+              <span class="utility">
+                {group.items.length} {group.items.length === 1 ? "item" : "itens"}
+              </span>
+              <ul class="module__items">
+                {group.items.slice(0, 4).map((p) => (
+                  <li>
+                    <a href={`/produto/${p.slug}`}>{p.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------ projetos -->
+  <section class="section section--deep is-deep">
+    <div class="container projects">
+      <div>
+        <span class="rule-band"></span>
+        <h2 data-reveal>Quando o catálogo não resolve, a gente desenvolve</h2>
+        <p class="lede" data-reveal data-reveal-index="1">
+          Composições exclusivas, embalagens próprias e peças pensadas para uma
+          campanha específica — do conceito à entrega da proposta.
+        </p>
+      </div>
+      <div class="projects__cta" data-reveal data-reveal-index="2">
+        <a class="btn btn--primary" href="/projetos-personalizados">Conte o que você precisa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- --------------------------------------------------------- como funciona -->
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="Como funciona" title="Do briefing à aprovação" />
+      <ol class="steps">
+        {
+          steps.map((step, i) => (
+            <li class="step">
+              {/* A numeracao aqui e informacao: as etapas acontecem nesta ordem. */}
+              <span class="step__number utility">Etapa {i + 1}</span>
+              <h3 class="step__title">{step.title}</h3>
+              <p>{step.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------------------- faq -->
+  <section class="section section--muted">
+    <div class="container faq">
+      <SectionHead eyebrow="Perguntas frequentes" title="O que a equipe mais responde" />
+      <div class="faq__list">
+        {
+          homeFaqs.map((item) => (
+            <details class="faq__item">
+              <summary>
+                <span>{item.q}</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </summary>
+              <p>{item.a}</p>
+            </details>
+          ))
+        }
+      </div>
+      <p class="section__more">
+        <a class="btn btn--ghost" href="/perguntas-frequentes">Ver todas as perguntas</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------ cta final -->
+  <section class="section final-cta">
+    <div class="container final-cta__inner">
+      <span class="rule-band"></span>
+      <h2 data-reveal>Qual é a sua próxima ocasião?</h2>
+      <p class="lede" data-reveal data-reveal-index="1">
+        Conte a ocasião e o público. A equipe volta com uma composição e as condições.
+      </p>
+      <div class="final-cta__actions" data-reveal data-reveal-index="2">
+        <a
+        class="btn btn--primary"
+        href="/contato"
+        data-contact-open
+        data-contact-message={generalMessage()}
+      >
+        {CONTACT_LABEL}
+      </a>
+        <a class="btn btn--ghost" href="/catalogo">Explorar catálogo</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ---------------------------------------------------------- beneficios */
+  .benefits {
+    display: grid;
+    gap: var(--space-l);
+    list-style: none;
+  }
+
+  @media (min-width: 640px) {
+    .benefits {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .benefits {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .benefit {
+    display: grid;
+    gap: var(--space-xs);
+    align-content: start;
+  }
+
+  .benefit__title {
+    font-size: var(--step-1);
+    font-weight: var(--weight-strong);
+  }
+
+  .benefit p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+
+  /* ---------------------------------------------------------- categorias */
+  .category-list {
+    list-style: none;
+  }
+
+  .category a {
+    display: grid;
+    /* No celular as nove categorias vinham empilhadas com foto de 96 px: quase
+       1.800 px só para listar nomes. Com 64 px e menos respiro, a mesma lista
+       cabe em pouco mais da metade — e continua tocável com folga. */
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+    gap: var(--space-s);
+    height: 100%;
+    padding: var(--space-s) var(--space-m);
+    background: var(--brand-white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: border-color var(--dur-base) var(--ease),
+      box-shadow var(--dur-base) var(--ease);
+  }
+
+  @media (min-width: 560px) {
+    .category a {
+      grid-template-columns: 96px 1fr;
+      gap: var(--space-m);
+      padding: var(--space-m);
+    }
+  }
+
+  .category a:hover {
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow-1);
+  }
+
+  .category__media {
+    display: block;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .category__body {
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .category__name {
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+    line-height: 1.3;
+  }
+
+  /* ------------------------------------------------------------ solucoes */
+  .kit {
+    /* Coluna flex, nao grid: com `align-content: start` as linhas ficam
+       coladas no topo e nao sobra folga para o `margin-block-start: auto`
+       empurrar o botao — os CTAs desalinhavam entre cards de alturas iguais. */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-l);
+    background: var(--brand-white);
+    border: 1px solid var(--line);
+    border-block-start: 3px solid var(--brand-yellow);
+    border-radius: var(--radius-lg);
+  }
+
+  /* O publico do kit ora cabe numa linha, ora em duas. Com a segunda reservada,
+     os nomes das solucoes vizinhas comecam na mesma altura. */
+  @media (min-width: 560px) {
+    .kit > .utility {
+      min-height: 2.8em;
+    }
+  }
+
+  .kit__name {
+    font-size: var(--step-2);
+  }
+
+  @media (min-width: 560px) {
+    .kit__name {
+      min-height: 2.3em;
+    }
+  }
+
+  .kit__name a {
+    color: var(--brand-blue);
+    text-decoration: none;
+  }
+
+  .kit__name a:hover {
+    text-decoration: underline;
+  }
+
+  .kit__concept {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+
+  .kit__items {
+    display: grid;
+    gap: 2px;
+    margin-block: var(--space-xs);
+    padding-inline-start: var(--space-m);
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+
+  .kit__cta {
+    align-self: start;
+    margin-block-start: auto;
+  }
+
+  /* ----------------------------------------------------------- modulares */
+  .modules {
+    display: grid;
+    gap: var(--space-l);
+    list-style: none;
+  }
+
+  @media (min-width: 640px) {
+    .modules {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .modules {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .module {
+    display: grid;
+    gap: var(--space-2xs);
+    align-content: start;
+    padding: var(--space-m) var(--space-m) var(--space-m) var(--space-l);
+    border-inline-start: 3px solid var(--brand-yellow);
+    background: var(--surface-muted);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .module__label {
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+    font-size: var(--step-1);
+  }
+
+  .module__items {
+    display: grid;
+    gap: 2px;
+    margin-block-start: var(--space-xs);
+    list-style: none;
+    font-size: var(--step--1);
+  }
+
+  .module__items a {
+    display: flex;
+    align-items: center;
+    /* Links empilhados nao tem a excecao de "texto corrido": precisam de
+       area de toque propria. */
+    min-height: 44px;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .module__items a:hover {
+    color: var(--brand-blue);
+    text-decoration: underline;
+  }
+
+  /* ------------------------------------------------------------ projetos */
+  .projects {
+    display: grid;
+    gap: var(--space-l);
+    align-items: center;
+  }
+
+  .projects > div {
+    display: grid;
+    gap: var(--space-m);
+    justify-items: start;
+  }
+
+  @media (min-width: 860px) {
+    .projects {
+      grid-template-columns: 1.6fr auto;
+      gap: var(--space-2xl);
+    }
+  }
+
+  /* -------------------------------------------------------------- etapas */
+  .steps {
+    display: grid;
+    gap: var(--space-l);
+    list-style: none;
+    counter-reset: step;
+  }
+
+  @media (min-width: 640px) {
+    .steps {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .steps {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .step {
+    display: grid;
+    gap: var(--space-2xs);
+    align-content: start;
+    padding-block-start: var(--space-m);
+    border-block-start: 3px solid var(--brand-yellow);
+  }
+
+  .step__number {
+    color: var(--brand-blue);
+  }
+
+  .step__title {
+    font-size: var(--step-1);
+    font-weight: var(--weight-strong);
+  }
+
+  /* Nas quatro colunas, tres titulos quebram em duas linhas e um cabe em uma:
+     sem reservar a segunda linha, o paragrafo dessa coluna sobe 20 px e a
+     fileira perde a linha de base comum. */
+  @media (min-width: 1024px) {
+    .step__title {
+      min-height: 2.3em;
+    }
+  }
+
+  .step p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+
+  /* ----------------------------------------------------------------- faq */
+  .faq__list {
+    display: grid;
+    gap: var(--space-xs);
+    max-width: var(--container-narrow);
+  }
+
+  .faq__item {
+    background: var(--brand-white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+  }
+
+  .faq__item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-m);
+    min-height: 56px;
+    padding: var(--space-s) var(--space-m);
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq__icon {
+    position: relative;
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+  }
+
+  .faq__icon::before,
+  .faq__icon::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 6px;
+    height: 2px;
+    background: var(--brand-blue);
+    border-radius: 2px;
+  }
+
+  .faq__icon::after {
+    transform: rotate(90deg);
+    transition: transform var(--dur-fast) var(--ease);
+  }
+
+  .faq__item[open] .faq__icon::after {
+    transform: none;
+  }
+
+  .faq__item p {
+    margin: 0;
+    padding: 0 var(--space-m) var(--space-m);
+    color: var(--text-muted);
+  }
+
+  /* ------------------------------------------------------------ cta final */
+  .final-cta__inner {
+    display: grid;
+    gap: var(--space-m);
+    justify-items: center;
+    text-align: center;
+  }
+
+  .final-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    justify-content: center;
+  }
+
+  .section__more {
+    margin-block-start: var(--space-xl);
+  }
+</style>

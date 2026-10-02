@@ -1,0 +1,666 @@
+---
+import ProductCard from "./ProductCard.astro";
+import { categories } from "../lib/catalog";
+import type { Product } from "../types/catalog";
+
+type Props = {
+  items: Product[];
+  /** Quando a lista ja e de uma categoria, o filtro de categoria some. */
+  showCategoryFilter?: boolean;
+  emptyHint?: string;
+};
+
+const { items, showCategoryFilter = true, emptyHint } = Astro.props;
+
+const strip = (s: string) =>
+  s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+/**
+ * Facetas de material: um vocabulario fixo confrontado com o texto real da
+ * planilha. So aparece o que existe de fato — nada e inferido nem inventado.
+ */
+const MATERIAL_VOCAB = [
+  "Bambu", "Aço inox", "Alumínio", "Vidro", "PU", "Neoprene", "Papel",
+  "Plástico", "Silicone", "Feltro", "Couro sintético", "EVA", "Algodão",
+];
+
+const materialFacets = MATERIAL_VOCAB.map((label) => {
+  const needle = strip(label);
+  const matches = items.filter((p) => {
+    const hay = strip([p.materials, p.dimensionsAndCapacity].filter(Boolean).join(" "));
+    return new RegExp(`\\b${needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`).test(hay);
+  });
+  return { label, slug: strip(label).replace(/[^a-z0-9]+/g, "-"), count: matches.length };
+}).filter((f) => f.count > 0);
+
+const MIN_QTY_STEPS = [10, 25, 50, 100];
+const qtyFacets = MIN_QTY_STEPS.map((max) => ({
+  max,
+  count: items.filter((p) => (p.minimumQuantity?.value ?? Infinity) <= max).length,
+})).filter((f) => f.count > 0);
+
+const usedCategories = categories.filter((c) =>
+  items.some((p) => p.category.slug === c.slug),
+);
+
+/**
+ * O codigo interno do produto nao entra aqui: ele foi retirado do site e o
+ * `data-haystack` e atributo publico, visivel no HTML entregue.
+ */
+const haystack = (p: Product) =>
+  strip(
+    [
+      p.name, p.category.name, p.materials, p.colors,
+      p.personalization, p.differentiators, p.indicatedFor, p.premiareApplication,
+    ].filter(Boolean).join(" "),
+  );
+
+const materialsOf = (p: Product) =>
+  materialFacets
+    .filter((f) => {
+      const hay = strip([p.materials, p.dimensionsAndCapacity].filter(Boolean).join(" "));
+      return new RegExp(`\\b${strip(f.label).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`).test(hay);
+    })
+    .map((f) => f.slug)
+    .join(" ");
+
+const PAGE_SIZE = 12;
+---
+
+<div class="browser" data-browser data-page-size={PAGE_SIZE}>
+  <form class="browser__search" role="search" id="buscar" data-search-form>
+    <label class="utility" for="busca-catalogo">Buscar no catálogo</label>
+    <div class="browser__search-row">
+      <input
+        id="busca-catalogo"
+        type="search"
+        name="q"
+        placeholder="Nome, material, ocasião…"
+        autocomplete="off"
+        data-search-input
+      />
+      <button type="button" class="btn btn--ghost browser__filters-toggle" data-filters-open>
+        Filtros<span class="browser__filters-count" data-filters-count hidden></span>
+      </button>
+    </div>
+  </form>
+
+  <div class="browser__layout">
+    <!-- ------------------------------------------------------------ filtros -->
+    <aside class="filters" data-filters aria-label="Filtros do catálogo">
+      <div class="filters__head">
+        <h2 class="utility">Filtros</h2>
+        <button type="button" class="filters__close" data-filters-close>
+          <span class="visually-hidden">Fechar filtros</span>
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+
+      {
+        showCategoryFilter && usedCategories.length > 1 && (
+          <fieldset class="filters__group">
+            <legend class="utility">Categoria</legend>
+            {usedCategories.map((c) => (
+              <label class="filters__option">
+                <input type="checkbox" data-filter="category" value={c.slug} />
+                <span>{c.name}</span>
+                <span class="filters__count">{c.count}</span>
+              </label>
+            ))}
+          </fieldset>
+        )
+      }
+
+      {
+        materialFacets.length > 0 && (
+          <fieldset class="filters__group">
+            <legend class="utility">Material</legend>
+            {materialFacets.map((f) => (
+              <label class="filters__option">
+                <input type="checkbox" data-filter="material" value={f.slug} />
+                <span>{f.label}</span>
+                <span class="filters__count">{f.count}</span>
+              </label>
+            ))}
+          </fieldset>
+        )
+      }
+
+      {
+        qtyFacets.length > 0 && (
+          <fieldset class="filters__group">
+            <legend class="utility">Quantidade mínima</legend>
+            {qtyFacets.map((f) => (
+              <label class="filters__option">
+                <input type="radio" name="qtd" data-filter="minqty" value={String(f.max)} />
+                <span>A partir de {f.max} unidades ou menos</span>
+                <span class="filters__count">{f.count}</span>
+              </label>
+            ))}
+            <label class="filters__option">
+              <input type="radio" name="qtd" data-filter="minqty" value="" checked />
+              <span>Qualquer quantidade</span>
+            </label>
+          </fieldset>
+        )
+      }
+
+      <fieldset class="filters__group">
+        <legend class="utility">Curadoria</legend>
+        <label class="filters__option">
+          <input type="checkbox" data-filter="featured" value="1" />
+          <span>Somente Seleção Premiare</span>
+        </label>
+      </fieldset>
+
+      <button type="button" class="btn btn--ghost btn--sm" data-clear hidden>
+        Limpar filtros
+      </button>
+    </aside>
+
+    <!-- ------------------------------------------------------------ lista -->
+    <div class="browser__results">
+      <div class="browser__toolbar">
+        <p class="browser__count" data-count role="status" aria-live="polite">
+          {items.length} {items.length === 1 ? "produto" : "produtos"}
+        </p>
+        <label class="browser__sort">
+          <span class="utility">Ordenar por</span>
+          <select data-sort>
+            <option value="featured">Destaques primeiro</option>
+            <option value="curated">Ordem da curadoria</option>
+            <option value="alpha">Nome (A–Z)</option>
+            <option value="minqty">Quantidade mínima</option>
+          </select>
+        </label>
+      </div>
+
+      <ul class="grid grid--products browser__grid" data-grid>
+        {
+          items.map((product, i) => (
+            <li
+              data-item
+              data-slug={product.slug}
+              data-category={product.category.slug}
+              data-material={materialsOf(product)}
+              data-minqty={product.minimumQuantity?.value ?? ""}
+              data-featured={product.featured ? "1" : "0"}
+              data-name={strip(product.name)}
+              data-order={i}
+              data-haystack={haystack(product)}
+            >
+              <ProductCard
+                product={product}
+                index={i}
+                priority={i < 4}
+                showCategory={showCategoryFilter}
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="browser__more">
+        <button type="button" class="btn btn--ghost" data-more>Carregar mais</button>
+      </p>
+
+      <div class="browser__empty" data-empty hidden>
+        <span class="rule-band"></span>
+        <h3>Nenhum produto com esses filtros</h3>
+        <p>{emptyHint ?? "Tente outro termo ou remova um filtro. A equipe também monta composições fora do que está listado aqui."}</p>
+        <button type="button" class="btn btn--primary" data-clear-empty>Limpar filtros</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .browser {
+    display: grid;
+    gap: var(--space-l);
+    /* Item de grid nao encolhe abaixo do proprio conteudo sem isto, e a
+       barra de busca e o seletor de ordem empurravam a pagina para alem da
+       largura da tela no celular. */
+    min-width: 0;
+  }
+
+  .browser__search {
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .browser__search-row {
+    display: flex;
+    gap: var(--space-s);
+  }
+
+  .browser__search input {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 48px;
+    padding-inline: var(--space-m);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--brand-white);
+    font: inherit;
+  }
+
+  .browser__search input:focus-visible {
+    border-color: var(--brand-blue);
+  }
+
+  .browser__filters-toggle {
+    flex: 0 0 auto;
+  }
+
+  /* `display` explicito vence o `[hidden]` do navegador: sem esta regra o
+     contador aparece marcando "0" mesmo sem filtro ativo. */
+  .browser__filters-count[hidden] {
+    display: none;
+  }
+
+  .browser__filters-count {
+    display: inline-grid;
+    place-content: center;
+    min-width: 22px;
+    height: 22px;
+    margin-inline-start: var(--space-xs);
+    padding-inline: 6px;
+    background: var(--brand-yellow);
+    color: var(--brand-blue);
+    border-radius: 999px;
+    font-size: var(--utility-size);
+    font-weight: var(--weight-strong);
+  }
+
+  /* Item de grid ou de flex nasce com `min-width: auto` e se recusa a encolher
+     abaixo do proprio conteudo. Sem zerar isso em cada nivel, a barra de busca
+     e a barra de ordenacao empurram a pagina para fora da tela no celular. */
+  .browser > *,
+  .browser__layout > *,
+  .browser__results > * {
+    min-width: 0;
+  }
+
+  .browser__search,
+  .browser__search-row,
+  .browser__toolbar {
+    min-width: 0;
+  }
+
+  .browser__layout {
+    display: grid;
+    gap: var(--space-xl);
+    min-width: 0;
+  }
+
+  /* ------------------------------------------------------------- filtros */
+  .filters {
+    display: grid;
+    gap: var(--space-l);
+    align-content: start;
+  }
+
+  .filters__head {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .filters__close {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    color: var(--brand-blue);
+    cursor: pointer;
+  }
+
+  .filters__group {
+    display: grid;
+    gap: var(--space-2xs);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-block-start: 1px solid var(--line);
+    padding-block-start: var(--space-m);
+  }
+
+  .filters__group legend {
+    padding: 0;
+    margin-block-end: var(--space-xs);
+    color: var(--brand-blue);
+  }
+
+  .filters__option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    /* O alvo real e o rotulo, nao a caixa de 18 px dentro dele. */
+    min-height: 44px;
+    font-size: var(--step--1);
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+
+  .filters__option input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--brand-blue);
+    flex: 0 0 auto;
+  }
+
+  .filters__option span:first-of-type {
+    flex: 1 1 auto;
+  }
+
+  .filters__count {
+    /* O contador e informacao, nao enfeite: fica secundario pelo tamanho e
+       pelo peso, nunca por contraste baixo. */
+    color: var(--text-muted);
+    font-size: var(--utility-size);
+    font-weight: var(--weight-strong);
+  }
+
+  /* ----------------------------------------------------------- resultados */
+  .browser__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s) var(--space-l);
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: var(--space-l);
+    padding-block-end: var(--space-s);
+    border-block-end: 1px solid var(--line);
+  }
+
+  .browser__count {
+    margin: 0;
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+  }
+
+  .browser__sort {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .browser__sort select {
+    min-width: 0;
+    max-width: 100%;
+    min-height: 44px;
+    padding-inline: var(--space-s);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--brand-white);
+    font: inherit;
+    font-size: var(--step--1);
+    color: var(--brand-blue);
+  }
+
+  /* A grade geral do site conta colunas pela largura da JANELA. Aqui sobra
+     menos: a coluna de filtros come 280 px, e a mesma regra espremia quatro
+     cards em ~200 px cada, contra ~270 px nas grades sem filtro. Contando pela
+     largura REAL disponivel, o card do catalogo volta ao tamanho dos demais. */
+  .browser__grid {
+    grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+    list-style: none;
+  }
+
+  .browser__grid li[hidden] {
+    display: none;
+  }
+
+  .browser__more {
+    margin-block-start: var(--space-xl);
+    text-align: center;
+  }
+
+  .browser__empty {
+    display: grid;
+    gap: var(--space-s);
+    justify-items: start;
+    padding: var(--space-2xl) 0;
+  }
+
+  .browser__empty p {
+    color: var(--text-muted);
+  }
+
+  @media (min-width: 900px) {
+    .browser__layout {
+      grid-template-columns: 232px minmax(0, 1fr);
+      gap: var(--space-2xl);
+    }
+    .browser__filters-toggle {
+      display: none;
+    }
+  }
+
+  /* Abaixo de 900px os filtros viram gaveta. */
+  @media (max-width: 899px) {
+    .filters {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      gap: var(--space-m);
+      width: min(340px, 90vw);
+      margin-inline-start: auto;
+      padding: var(--space-l);
+      background: var(--brand-white);
+      overflow-y: auto;
+      box-shadow: var(--shadow-2);
+    }
+    .filters[hidden] {
+      display: none;
+    }
+    .filters__head {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  type SortKey = "featured" | "curated" | "alpha" | "minqty";
+
+  document.querySelectorAll<HTMLElement>("[data-browser]").forEach((root) => {
+    const grid = root.querySelector<HTMLElement>("[data-grid]")!;
+    const items = Array.from(grid.querySelectorAll<HTMLElement>("[data-item]"));
+    const countEl = root.querySelector<HTMLElement>("[data-count]")!;
+    const emptyEl = root.querySelector<HTMLElement>("[data-empty]")!;
+    const moreWrap = root.querySelector<HTMLElement>(".browser__more")!;
+    const moreBtn = root.querySelector<HTMLButtonElement>("[data-more]")!;
+    const searchInput = root.querySelector<HTMLInputElement>("[data-search-input]")!;
+    const sortSelect = root.querySelector<HTMLSelectElement>("[data-sort]")!;
+    const filtersEl = root.querySelector<HTMLElement>("[data-filters]")!;
+    const clearBtn = root.querySelector<HTMLButtonElement>("[data-clear]")!;
+    const clearEmptyBtn = root.querySelector<HTMLButtonElement>("[data-clear-empty]")!;
+    const countBadge = root.querySelector<HTMLElement>("[data-filters-count]")!;
+    const openBtn = root.querySelector<HTMLButtonElement>("[data-filters-open]")!;
+    const closeBtn = root.querySelector<HTMLButtonElement>("[data-filters-close]")!;
+    const pageSize = Number(root.dataset.pageSize ?? 12);
+
+    let shown = pageSize;
+
+    const strip = (s: string) =>
+      s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+    const checked = (name: string) =>
+      Array.from(
+        filtersEl.querySelectorAll<HTMLInputElement>(`[data-filter="${name}"]:checked`),
+      ).map((el) => el.value).filter(Boolean);
+
+    const activeCount = () =>
+      checked("category").length + checked("material").length +
+      checked("featured").length + (checked("minqty")[0] ? 1 : 0);
+
+    const matches = (el: HTMLElement): boolean => {
+      const terms = strip(searchInput.value).split(/\s+/).filter(Boolean);
+      const hay = el.dataset.haystack ?? "";
+      if (!terms.every((t) => hay.includes(t))) return false;
+
+      const cats = checked("category");
+      if (cats.length && !cats.includes(el.dataset.category ?? "")) return false;
+
+      const mats = checked("material");
+      const own = (el.dataset.material ?? "").split(" ").filter(Boolean);
+      if (mats.length && !mats.some((m) => own.includes(m))) return false;
+
+      if (checked("featured").length && el.dataset.featured !== "1") return false;
+
+      const maxQty = checked("minqty")[0];
+      if (maxQty) {
+        const value = el.dataset.minqty ? Number(el.dataset.minqty) : Infinity;
+        if (value > Number(maxQty)) return false;
+      }
+      return true;
+    };
+
+    const sorters: Record<SortKey, (a: HTMLElement, b: HTMLElement) => number> = {
+      curated: (a, b) => Number(a.dataset.order) - Number(b.dataset.order),
+      featured: (a, b) =>
+        Number(b.dataset.featured) - Number(a.dataset.featured) ||
+        Number(a.dataset.order) - Number(b.dataset.order),
+      alpha: (a, b) => (a.dataset.name ?? "").localeCompare(b.dataset.name ?? "", "pt-BR"),
+      minqty: (a, b) => {
+        const va = a.dataset.minqty ? Number(a.dataset.minqty) : Infinity;
+        const vb = b.dataset.minqty ? Number(b.dataset.minqty) : Infinity;
+        return va - vb || Number(a.dataset.order) - Number(b.dataset.order);
+      },
+    };
+
+    function render() {
+      const visible = items.filter(matches);
+      visible.sort(sorters[sortSelect.value as SortKey]);
+
+      // Reordena no DOM para que a ordem visual seja tambem a ordem de leitura
+      // e a de tabulacao.
+      visible.forEach((el) => grid.appendChild(el));
+
+      items.forEach((el) => {
+        el.hidden = true;
+      });
+      visible.slice(0, shown).forEach((el) => {
+        el.hidden = false;
+      });
+
+      const total = visible.length;
+      countEl.textContent =
+        total === 0
+          ? "Nenhum produto encontrado"
+          : `${total} ${total === 1 ? "produto" : "produtos"}`;
+
+      emptyEl.hidden = total > 0;
+      grid.hidden = total === 0;
+      moreWrap.hidden = total <= shown;
+      moreBtn.textContent = `Carregar mais (${Math.max(total - shown, 0)})`;
+
+      const active = activeCount();
+      clearBtn.hidden = active === 0 && searchInput.value === "";
+      countBadge.hidden = active === 0;
+      countBadge.textContent = String(active);
+    }
+
+    function reset() {
+      searchInput.value = "";
+      filtersEl
+        .querySelectorAll<HTMLInputElement>('[data-filter]')
+        .forEach((el) => {
+          if (el.type === "radio") el.checked = el.value === "";
+          else el.checked = false;
+        });
+      shown = pageSize;
+      render();
+    }
+
+    root.addEventListener("input", (event) => {
+      const target = event.target as HTMLElement;
+      if (target.matches("[data-search-input], [data-filter], [data-sort]")) {
+        shown = pageSize;
+        render();
+      }
+    });
+
+    root.addEventListener("change", (event) => {
+      const target = event.target as HTMLElement;
+      if (target.matches("[data-filter], [data-sort]")) {
+        shown = pageSize;
+        render();
+      }
+    });
+
+    root.querySelector("[data-search-form]")?.addEventListener("submit", (e) => e.preventDefault());
+    moreBtn.addEventListener("click", () => {
+      shown += pageSize;
+      render();
+    });
+    clearBtn.addEventListener("click", reset);
+    clearEmptyBtn.addEventListener("click", reset);
+
+    // ------------------------------------------------------- gaveta mobile
+    const mobile = window.matchMedia("(max-width: 899px)");
+    const syncDrawer = () => {
+      filtersEl.hidden = mobile.matches;
+    };
+    syncDrawer();
+    mobile.addEventListener("change", syncDrawer);
+
+    const focusables = () =>
+      filtersEl.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input, select, [tabindex]:not([tabindex="-1"])',
+      );
+
+    function onKeydown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeFilters();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const list = Array.from(focusables());
+      if (!list.length) return;
+      const first = list[0];
+      const last = list[list.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    function openFilters() {
+      filtersEl.hidden = false;
+      openBtn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+      focusables()[0]?.focus();
+      document.addEventListener("keydown", onKeydown);
+    }
+
+    function closeFilters() {
+      if (!mobile.matches) return;
+      filtersEl.hidden = true;
+      openBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+      openBtn.focus();
+      document.removeEventListener("keydown", onKeydown);
+    }
+
+    openBtn.setAttribute("aria-expanded", "false");
+    openBtn.addEventListener("click", openFilters);
+    closeBtn.addEventListener("click", closeFilters);
+
+    // A busca do cabecalho envia para /catalogo?q=termo. Se o parametro
+    // estiver presente, ele preenche o campo desta pagina antes da primeira
+    // renderizacao — sem isso, a busca do header seria só decorativa.
+    const initialQuery = new URLSearchParams(location.search).get("q");
+    if (initialQuery) searchInput.value = initialQuery;
+
+    render();
+  });
+</script>

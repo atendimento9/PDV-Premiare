@@ -1,0 +1,341 @@
+---
+import { CONTACT_LABEL, generalMessage } from "../config/site";
+
+/** O upload estático do Wix não aceita MP4; nesse modo o poster é o hero. */
+const staticHero = import.meta.env.PUBLIC_WIX_STATIC === "1";
+
+/**
+ * Abertura de marca da home.
+ *
+ * O video e puramente decorativo: fica fora da arvore de acessibilidade, nao
+ * recebe foco e nao intercepta clique. Nenhuma informacao existe apenas nele.
+ *
+ * O arquivo servido e um RECORTE do material aprovado. O original e um mockup
+ * de tela inteira que ja traz cabecalho, menu, botao e uma faixa de clientes
+ * com a palavra "LOGO" desenhada dentro da imagem. Publicar o quadro inteiro
+ * duplicaria o cabecalho real e colocaria placeholder no ar, entao so a faixa
+ * de ondas foi aproveitada. Cores, velocidade e sentido do movimento seguem
+ * exatamente como no arquivo original: sem filtro, sem blur, sem overlay
+ * escuro por cima do video.
+ *
+ * A curva branca do rodape do hero foi medida quadro a quadro no material
+ * original (ela e estatica ali) e refeita em SVG. Assim a transicao azul ->
+ * branco cai sempre no pixel exato do limite da secao, em qualquer viewport —
+ * o que nao aconteceria se ela viesse dentro do video, que e recortado por
+ * `object-fit: cover`.
+ */
+
+/** Curva tracada do material aprovado, normalizada para o viewBox. */
+const WAVE_PATH =
+  "M0,7 L40,14 L80,20 L120,26 L160,31 L200,35 L240,38 L280,42 L320,44 " +
+  "L360,46 L400,48 L440,50 L480,51 L520,52 L560,53 L600,53 L640,53 L680,53 " +
+  "L720,52 L760,52 L800,51 L840,49 L880,48 L920,45 L960,43 L1000,40 " +
+  "L1040,37 L1080,33 L1120,28 L1160,22 L1200,16 L1240,9 L1280,0 " +
+  "L1280,56 L0,56 Z";
+---
+
+<section class="hero" data-hero>
+  <div class="hero__media" aria-hidden="true">
+    {
+      staticHero ? (
+        <div class="hero__video" data-static-hero></div>
+      ) : (
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="/video/hero-premiare-poster.webp"
+          tabindex="-1"
+          disablepictureinpicture
+          data-hero-video
+        >
+          <source
+            src="/video/hero-premiare-mobile.mp4"
+            type="video/mp4"
+            media="(max-width: 767px)"
+          />
+          <source src="/video/hero-premiare-desktop.mp4" type="video/mp4" />
+        </video>
+      )
+    }
+  </div>
+
+  {/* Veu de contraste: azul sobre azul, so atras do texto. */}
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  {/* A entrada do hero e feita em CSS, nao com `data-reveal`. O titulo e o
+      maior elemento da primeira dobra: preso ao observador de rolagem, ele
+      nascia invisivel e so aparecia depois que o modulo JS rodava — atrasando
+      o que o visitante ve primeiro. Em CSS a animacao comeca no primeiro
+      quadro pintado, com ou sem JS. */}
+  <div class="hero__inner">
+    <p class="utility hero__eyebrow">PREMIARE CRIATIVA</p>
+    <h1 class="hero__title">
+      Mais do que objetos. <br />Símbolos de valor.
+    </h1>
+    <p class="hero__lede">
+      Soluções personalizadas para empresas que querem transformar marcas,
+      relacionamentos e conquistas em algo memorável.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="/catalogo">Explorar catálogo</a>
+      <a
+        class="btn hero__btn-outline"
+        href="/contato"
+        data-contact-open
+        data-contact-message={generalMessage()}
+      >
+        {CONTACT_LABEL}
+      </a>
+    </div>
+  </div>
+
+  <svg
+    class="hero__wave"
+    viewBox="0 0 1280 56"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d={WAVE_PATH} fill="var(--brand-white)"></path>
+  </svg>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    /* Fundo solido da marca por baixo de tudo: nunca ha quadro preto,
+       nem antes do poster, nem se o video falhar. */
+    background: var(--brand-blue);
+    padding-block: calc(var(--header-h) + var(--space-2xl)) var(--space-4xl);
+    /* Altura controlada: cabe numa tela e ainda deixa entrever a transicao
+       inferior, sem obrigar rolagem longa ate o catalogo. */
+    min-height: clamp(560px, 86svh, 660px);
+    overflow: hidden;
+  }
+
+  @media (min-width: 900px) {
+    .hero {
+      /* Mais compacto: a 100% de zoom o carrossel de clientes precisa
+         entrever-se ainda na primeira dobra, em 1366–1920px de largura. */
+      min-height: clamp(460px, 56svh, 560px);
+      padding-block: calc(var(--header-h) + var(--space-l)) var(--space-2xl);
+    }
+
+    .hero__title {
+      margin-block-start: var(--space-s);
+    }
+
+    .hero__lede {
+      margin-block-start: var(--space-m);
+    }
+
+    .hero__actions {
+      margin-block-start: var(--space-l);
+    }
+  }
+
+  /* ------------------------------------------------------------- video */
+
+  .hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    /* O poster tambem entra como fundo: cobre o intervalo entre o primeiro
+       quadro pintado e o inicio da reproducao, sem piscar. */
+    background: var(--brand-blue) url("/video/hero-premiare-poster-mobile.webp")
+      center / cover no-repeat;
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    .hero__media {
+      background-image: url("/video/hero-premiare-poster.webp");
+    }
+  }
+
+  .hero__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* No celular o recorte e estreito: puxa o enquadramento para onde a onda
+       e o traco amarelo realmente aparecem. */
+    object-position: 62% center;
+    display: block;
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    .hero__video {
+      object-position: center;
+    }
+  }
+
+  /* Movimento reduzido: o video sai de cena e fica o poster do fundo. */
+  .hero[data-motion="reduced"] .hero__video {
+    display: none;
+  }
+
+  .hero__scrim {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--hero-scrim);
+    pointer-events: none;
+  }
+
+  /* ----------------------------------------------------------- conteudo */
+
+  /* Mesma caixa do resto do site (`.container`): o titulo do hero nasce na
+     mesma linha vertical do logotipo, do menu e de todas as secoes abaixo.
+     Com a caixa larga que havia aqui, a abertura comecava 36 px a esquerda de
+     tudo o que vem depois — a primeira coisa que se ve estava fora do prumo. */
+  .hero__inner {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--space-l);
+  }
+
+  .hero__inner > * {
+    margin: 0;
+    animation: hero-in 520ms var(--ease) both;
+  }
+
+  .hero__title {
+    animation-delay: 70ms;
+  }
+
+  .hero__lede {
+    animation-delay: 140ms;
+  }
+
+  .hero__actions {
+    animation-delay: 210ms;
+  }
+
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__inner > * {
+      animation: none;
+    }
+  }
+
+  .hero__eyebrow {
+    color: var(--brand-yellow);
+  }
+
+  .hero__title {
+    margin-block: var(--space-m) 0;
+    /* Medido no Roboto Bold: "Mais do que objetos." pede 474 px a 53,6 px, e
+       15ch dava 461 — a frase quebrava em tres linhas em vez das duas que o
+       <br> define. O Roboto e mais largo que a fonte anterior. */
+    max-width: 18ch;
+    color: var(--brand-white);
+    /* Mesma escala do resto do site. A clamp própria que existia aqui parava em
+       3,35rem enquanto o `--step-5` parava em 3,6rem: dois tamanhos de display
+       que se leem iguais. O `--step-5` foi ajustado para este teto. */
+    font-size: var(--step-5);
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  .hero__lede {
+    margin-block-start: var(--space-l);
+    max-width: 46ch;
+    color: var(--text-on-deep-muted);
+    font-size: var(--step-1);
+    line-height: 1.55;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    margin-block-start: var(--space-xl);
+  }
+
+  /* No celular os dois botoes empilham; larguras diferentes ficam desalinhadas
+     e tiram a hierarquia. Ambos ocupam a linha inteira. */
+  @media (max-width: 559px) {
+    .hero__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  /* Secundario discreto: contorno claro, sem disputar com o amarelo. */
+  .hero__btn-outline {
+    background: transparent;
+    color: var(--brand-white);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .hero__btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--brand-white);
+  }
+
+  .hero__btn-outline:focus-visible {
+    outline-color: var(--brand-yellow);
+  }
+
+  /* --------------------------------------------------------------- onda */
+
+  .hero__wave {
+    position: absolute;
+    inset-inline: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 40px;
+    display: block;
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    .hero__wave {
+      height: 62px;
+    }
+  }
+
+</style>
+
+<script>
+  // O video e enfeite. Quem pediu menos movimento recebe o quadro parado — e
+  // o download tambem para, em vez de continuar consumindo dados a toa.
+  const section = document.querySelector<HTMLElement>("[data-hero]");
+  const video = document.querySelector<HTMLVideoElement>("[data-hero-video]");
+
+  if (section && video) {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const apply = () => {
+      if (reduce.matches) {
+        section.dataset.motion = "reduced";
+        video.removeAttribute("autoplay");
+        video.pause();
+      } else {
+        delete section.dataset.motion;
+        // `play()` cobre o caso de a preferencia mudar com a pagina aberta.
+        void video.play().catch(() => {
+          /* Autoplay recusado: o poster de fundo ja esta no lugar. */
+        });
+      }
+    };
+
+    apply();
+    reduce.addEventListener("change", apply);
+  }
+</script>

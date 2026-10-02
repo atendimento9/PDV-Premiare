@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "produtos-executivos-e-premium",
+    "name": "Produtos executivos e premium",
+    "count": 5,
+    "coverSlug": "carteira-magnetica-em-pu-de-grande-capacidade-com-bloqueio-rfid"
+  },
+  {
+    "slug": "tecnologia",
+    "name": "Tecnologia",
+    "count": 4,
+    "coverSlug": "cordao-lanyard-com-suporte-para-celular-cabo-usb-c-e-adaptadores-reciclados"
+  },
+  {
+    "slug": "sustentabilidade",
+    "name": "Sustentabilidade",
+    "count": 4,
+    "coverSlug": "kit-churrasco-em-caixa-presente-de-papel-kraft-reciclado-com-2-utensilios-em-aco"
+  },
+  {
+    "slug": "viagens-e-mobilidade",
+    "name": "Viagens e mobilidade",
+    "count": 3,
+    "coverSlug": "kit-viagem-personalizado"
+  },
+  {
+    "slug": "escritorio-e-home-office",
+    "name": "Escritório e home office",
+    "count": 2,
+    "coverSlug": "suporte-celular-aluminio"
+  },
+  {
+    "slug": "alimentacao-e-bebidas",
+    "name": "Alimentação e bebidas",
+    "count": 7,
+    "coverSlug": "kit-cafe-com-cafeteira-francesa-personalizado"
+  },
+  {
+    "slug": "eventos-e-acoes-promocionais",
+    "name": "Eventos e ações promocionais",
+    "count": 3,
+    "coverSlug": "chaveiro-tag-nfc-personalizado"
+  },
+  {
+    "slug": "kits-e-presentes-para-colaboradores",
+    "name": "Kits e presentes para colaboradores",
+    "count": 7,
+    "coverSlug": "kit-boas-vindas-personalizado-squeeze-caderno-e-caneta"
+  },
+  {
+    "slug": "produtos-criativos-ou-diferenciados",
+    "name": "Produtos criativos ou diferenciados",
+    "count": 5,
+    "coverSlug": "cartao-multifuncoes-em-aco-inox-com-20-funcoes"
+  }
+]

@@ -1,0 +1,256 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import QuoteForm from "../../components/QuoteForm.astro";
+import SectionHead from "../../components/SectionHead.astro";
+import { bySku, kits } from "../../lib/catalog";
+import type { Kit, Product } from "../../types/catalog";
+
+export function getStaticPaths() {
+  return kits.map((kit) => ({ params: { slug: kit.slug }, props: { kit } }));
+}
+
+type Props = { kit: Kit };
+const { kit } = Astro.props;
+
+const linked = kit.components
+  .map((c) => (c.sku ? bySku.get(c.sku) : undefined))
+  .filter((p): p is Product => Boolean(p));
+
+const unlinked = kit.components.filter((c) => !c.sku);
+
+const template = `Olá! Vim pelo site da Premiare Criativa e gostaria de desenvolver uma composição baseada na solução ${kit.name}. Minha quantidade estimada é {QTD}.`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Início", item: new URL("/", Astro.site).href },
+      { "@type": "ListItem", position: 2, name: "Soluções", item: new URL("/solucoes", Astro.site).href },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: kit.name,
+        item: new URL(`/solucoes/${kit.slug}`, Astro.site).href,
+      },
+    ],
+  },
+];
+---
+
+<Base
+  title={kit.name}
+  description={`${kit.name}: composição para ${kit.audience ?? "ações corporativas"}. ${kit.concept ?? ""}`.trim().slice(0, 300)}
+  path={`/solucoes/${kit.slug}`}
+  jsonLd={jsonLd}
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Soluções", href: "/solucoes" }, { label: kit.name }]} />
+  </div>
+
+  <div class="container kit-head">
+    <div class="kit-head__text">
+      <span class="rule-band"></span>
+      <p class="utility">Solução por ocasião</p>
+      <h1>{kit.name}</h1>
+      {kit.concept && <p class="lede">{kit.concept}</p>}
+
+      <dl class="kit-head__meta">
+        {
+          kit.audience && (
+            <div>
+              <dt class="utility">Público</dt>
+              <dd>{kit.audience}</dd>
+            </div>
+          )
+        }
+        <div>
+          <dt class="utility">Composição</dt>
+          <dd>{kit.components.length} itens</dd>
+        </div>
+      </dl>
+
+      {
+        kit.presentation && (
+          <p class="kit-head__presentation">
+            <strong>Personalização e apresentação:</strong> {kit.presentation}
+          </p>
+        )
+      }
+    </div>
+
+    <div class="kit-head__cta">
+      <QuoteForm
+        template={template}
+        subject={kit.name}
+        ctaLabel="Solicitar uma composição personalizada"
+      />
+      <p class="kit-head__hint">
+        Esta composição é um ponto de partida. Itens podem ser trocados ou retirados
+        conforme o público, a ocasião e a quantidade.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <SectionHead
+        eyebrow="Composição sugerida"
+        title="Itens desta solução"
+        lede="Cada item leva à sua ficha no catálogo, com o que está confirmado sobre material, medidas e personalização."
+      />
+      <div class="grid grid--products">
+        {linked.map((product, i) => <ProductCard product={product} index={i} />)}
+      </div>
+
+      {
+        unlinked.length > 0 && (
+          <div class="kit-extra">
+            <h3 class="kit-extra__title">Também na composição</h3>
+            <ul>
+              {unlinked.map((c) => (
+                <li>{c.label}</li>
+              ))}
+            </ul>
+            <p>Estes itens são definidos com a equipe durante o atendimento.</p>
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="section section--muted">
+    <div class="container other-kits">
+      <SectionHead eyebrow="Outras ocasiões" title="Continue explorando" />
+      <ul>
+        {
+          kits
+            .filter((k) => k.slug !== kit.slug)
+            .map((k) => (
+              <li>
+                <a href={`/solucoes/${k.slug}`}>
+                  <span class="utility">{k.audience}</span>
+                  <span class="other-kits__name">{k.name}</span>
+                </a>
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .kit-head {
+    display: grid;
+    gap: var(--space-xl);
+    padding-block: var(--space-l) var(--space-2xl);
+  }
+
+  @media (min-width: 900px) {
+    .kit-head {
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: var(--space-3xl);
+      align-items: start;
+    }
+  }
+
+  .kit-head__text {
+    display: grid;
+    gap: var(--space-s);
+    justify-items: start;
+  }
+
+  .kit-head__text p {
+    margin: 0;
+  }
+
+  .kit-head__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m) var(--space-xl);
+    margin: var(--space-s) 0 0;
+    padding-block-start: var(--space-m);
+    border-block-start: 3px solid var(--brand-yellow);
+  }
+
+  .kit-head__meta dt,
+  .kit-head__meta dd {
+    margin: 0;
+  }
+
+  .kit-head__meta dd {
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+    max-width: 34ch;
+  }
+
+  .kit-head__presentation {
+    margin-block-start: var(--space-s);
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+
+  .kit-head__hint {
+    margin: var(--space-m) 0 0;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+
+  .kit-extra {
+    margin-block-start: var(--space-2xl);
+    padding: var(--space-l);
+    background: var(--surface-muted);
+    border-inline-start: 3px solid var(--brand-yellow);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .kit-extra__title {
+    font-size: var(--step-1);
+    margin-block-end: var(--space-xs);
+  }
+
+  .kit-extra ul {
+    padding-inline-start: var(--space-m);
+    color: var(--text-muted);
+  }
+
+  .kit-extra p {
+    margin-block-start: var(--space-s);
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+
+  .other-kits ul {
+    display: grid;
+    gap: var(--space-s);
+    list-style: none;
+  }
+
+  @media (min-width: 720px) {
+    .other-kits ul {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .other-kits a {
+    display: grid;
+    gap: var(--space-2xs);
+    padding: var(--space-m);
+    background: var(--brand-white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+  }
+
+  .other-kits a:hover {
+    border-color: var(--line-strong);
+  }
+
+  .other-kits__name {
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+  }
+</style>

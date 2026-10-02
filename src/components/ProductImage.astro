@@ -1,0 +1,67 @@
+---
+import type { Product } from "../types/catalog";
+
+type Props = {
+  product: Product;
+  /** "card" usa a variante menor; "detail" usa a maior. */
+  size?: "card" | "detail";
+  priority?: boolean;
+};
+
+const { product, size = "card", priority = false } = Astro.props;
+const image = product.image;
+const rendered = size === "detail" ? 640 : 320;
+---
+
+{
+  image ? (
+    <img
+      class="product-image"
+      src={size === "detail" ? image.srcLarge : image.srcSmall}
+      srcset={`${image.srcSmall} 480w, ${image.src} 800w, ${image.srcLarge} 1200w`}
+      sizes={size === "detail" ? "(min-width: 900px) 560px, 92vw" : "(min-width: 1180px) 260px, (min-width: 560px) 40vw, 88vw"}
+      alt={image.alt}
+      width={rendered}
+      height={rendered}
+      loading={priority ? "eager" : "lazy"}
+      fetchpriority={priority ? "high" : undefined}
+      decoding={priority ? "sync" : "async"}
+    />
+  ) : (
+    /* Reserva visual para qualquer produto futuro ainda sem imagem aprovada. */
+    <div class="product-image product-image--empty" role="img" aria-label={`${product.name}: foto sob consulta`}>
+      <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true" focusable="false">
+        <rect x="6" y="10" width="36" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M6 30l9-8 7 6 6-5 14 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+      </svg>
+      <span>Foto sob consulta</span>
+    </div>
+  )
+}
+
+<style>
+  .product-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: var(--brand-white);
+  }
+
+  .product-image--empty {
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: var(--space-xs);
+    background: var(--surface-muted);
+    color: var(--line-strong);
+  }
+
+  .product-image--empty span {
+    font-size: var(--utility-size);
+    font-weight: var(--utility-weight);
+    letter-spacing: var(--utility-tracking);
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+</style>

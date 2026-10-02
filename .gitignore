@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.cache/
+.astro/
+*.zip
+premiare-wix-headless/
+wix-upload-test/
+--full-page
+.env
+.env.*
+!.env.example

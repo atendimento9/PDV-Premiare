@@ -1,0 +1,40 @@
+---
+type Props = {
+  eyebrow?: string;
+  title: string;
+  lede?: string;
+  /** Nivel do heading, para nao quebrar a ordem da pagina. */
+  as?: "h2" | "h3";
+  align?: "start" | "center";
+};
+
+const { eyebrow, title, lede, as: Tag = "h2", align = "start" } = Astro.props;
+---
+
+<header class:list={["section-head", align === "center" && "section-head--center"]} data-reveal>
+  <span class="rule-band"></span>
+  {eyebrow && <p class="utility">{eyebrow}</p>}
+  <Tag>{title}</Tag>
+  {lede && <p class="lede">{lede}</p>}
+</header>
+
+<style>
+  .section-head {
+    display: grid;
+    gap: var(--space-s);
+    margin-block-end: var(--space-2xl);
+  }
+
+  .section-head p {
+    margin: 0;
+  }
+
+  .section-head--center {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .section-head--center .lede {
+    max-width: 56ch;
+  }
+</style>

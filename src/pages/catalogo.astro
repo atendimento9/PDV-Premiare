@@ -1,0 +1,51 @@
+---
+import Base from "../layouts/Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CatalogBrowser from "../components/CatalogBrowser.astro";
+import { byEditorialPriority, categories, products } from "../lib/catalog";
+
+const items = byEditorialPriority(products);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Início", item: new URL("/", Astro.site).href },
+      { "@type": "ListItem", position: 2, name: "Catálogo", item: new URL("/catalogo", Astro.site).href },
+    ],
+  },
+];
+---
+
+<Base
+  title="Catálogo de brindes corporativos"
+  description={`Catálogo com ${products.length} produtos personalizáveis em ${categories.length} categorias de curadoria. Busque por nome, material ou ocasião e fale com a equipe.`}
+  path="/catalogo"
+  jsonLd={jsonLd}
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Catálogo" }]} />
+
+    <header class="page-head">
+      <span class="rule-band"></span>
+      <p class="utility">Catálogo</p>
+      <h1>Produtos personalizáveis</h1>
+      <p class="lede">
+        {products.length} itens organizados nas {categories.length} categorias que a equipe
+        usa para montar propostas. Cada ficha traz o que está confirmado — o resto,
+        a equipe confirma no atendimento.
+      </p>
+    </header>
+  </div>
+
+  <div class="container catalog-body">
+    <CatalogBrowser items={items} />
+  </div>
+</Base>
+
+<style>
+  .catalog-body {
+    padding-block-end: var(--space-4xl);
+  }
+</style>

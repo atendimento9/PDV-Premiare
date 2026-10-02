@@ -1,0 +1,138 @@
+---
+import Base from "../layouts/Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { CONTACT_LABEL, contactLink, generalMessage } from "../config/site";
+import { faqs } from "../content/faq";
+
+/** FAQPage descreve exatamente o que esta visivel abaixo, item a item. */
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Início", item: new URL("/", Astro.site).href },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Perguntas frequentes",
+        item: new URL("/perguntas-frequentes", Astro.site).href,
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  },
+];
+---
+
+<Base
+  title="Perguntas frequentes"
+  description="Quantidade mínima, personalização, montagem de kits, disponibilidade e como solicitar orçamento na Premiare Criativa."
+  path="/perguntas-frequentes"
+  jsonLd={jsonLd}
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: "Perguntas frequentes" }]} />
+
+    <header class="page-head">
+      <span class="rule-band"></span>
+      <p class="utility">Perguntas frequentes</p>
+      <h1>O que a equipe mais responde</h1>
+      <p class="lede">
+        Se a sua dúvida não estiver aqui, fale com a equipe: a resposta costuma
+        depender do produto e da ocasião.
+      </p>
+    </header>
+
+    <div class="faq-page">
+      <ol class="faq-list">
+        {
+          faqs.map((item) => (
+            <li class="faq-entry">
+              <h2>{item.q}</h2>
+              <p>{item.a}</p>
+            </li>
+          ))
+        }
+      </ol>
+
+      <aside class="faq-cta">
+        <h2>Não encontrou?</h2>
+        <p>A equipe responde ocasião por ocasião, com o que está confirmado.</p>
+        <a
+        class="btn btn--primary"
+        href="/contato"
+        data-contact-open
+        data-contact-message={generalMessage()}
+      >
+        {CONTACT_LABEL}
+      </a>
+      </aside>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .faq-page {
+    display: grid;
+    gap: var(--space-2xl);
+    padding-block-end: var(--space-4xl);
+  }
+
+  @media (min-width: 900px) {
+    .faq-page {
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: var(--space-3xl);
+      align-items: start;
+    }
+  }
+
+  .faq-list {
+    display: grid;
+    gap: var(--space-xl);
+    list-style: none;
+  }
+
+  .faq-entry {
+    display: grid;
+    gap: var(--space-xs);
+    padding-block-start: var(--space-m);
+    border-block-start: 3px solid var(--brand-yellow);
+  }
+
+  .faq-entry h2 {
+    font-size: var(--step-2);
+  }
+
+  .faq-entry p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .faq-cta {
+    display: grid;
+    gap: var(--space-s);
+    justify-items: start;
+    padding: var(--space-l);
+    background: var(--surface-muted);
+    border-radius: var(--radius-lg);
+    position: sticky;
+    top: 96px;
+  }
+
+  .faq-cta h2 {
+    font-size: var(--step-2);
+  }
+
+  .faq-cta p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+</style>

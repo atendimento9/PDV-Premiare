@@ -1,0 +1,26 @@
+{
+  "name": "premiare-criativa-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "node scripts/lint.mjs",
+    "typecheck": "astro check --minimumSeverity error",
+    "import-catalog": "python scripts/import-catalog.py",
+    "optimize-images": "node scripts/optimize-images.mjs",
+    "validate-catalog": "node scripts/validate-catalog.mjs",
+    "check-forbidden": "node scripts/check-forbidden.mjs",
+    "check-budget": "node scripts/check-budget.mjs",
+    "check-links": "node scripts/check-links.mjs",
+    "gates": "npm run validate-catalog && npm run check-forbidden && npm run check-budget && npm run check-links"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "astro": "^7.3.5",
+    "sharp": "^0.34.4",
+    "typescript": "^5.9.2"
+  }
+}

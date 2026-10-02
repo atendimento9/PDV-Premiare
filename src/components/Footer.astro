@@ -1,0 +1,200 @@
+---
+import {
+  CONTACT_LABEL,
+  contactLink,
+  formatWhatsApp,
+  generalMessage,
+  hasEmail,
+  hasWhatsApp,
+  mailtoLink,
+  primaryAttendant,
+  primaryEmail,
+  siteConfig,
+  whatsappNumber,
+} from "../config/site";
+import { categories } from "../lib/catalog";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer is-deep">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <span class="rule-band"></span>
+        <p class="site-footer__tagline">{siteConfig.tagline}</p>
+        <p class="site-footer__note">
+          Brindes corporativos, kits e projetos personalizados para reconhecer
+          pessoas, fortalecer relacionamentos e valorizar marcas.
+        </p>
+        <a
+          class="btn btn--primary"
+          href="/contato"
+          data-contact-open
+          data-contact-message={generalMessage()}
+        >
+          {CONTACT_LABEL}
+        </a>
+
+        {
+          (hasWhatsApp || hasEmail) && (
+            <ul class="site-footer__channels">
+              {hasWhatsApp && (
+                <li>
+                  <a href={contactLink(generalMessage())}>
+                    {primaryAttendant?.name} · {formatWhatsApp(whatsappNumber)}
+                  </a>
+                </li>
+              )}
+              {hasEmail && (
+                <li>
+                  <a href={mailtoLink(primaryEmail, "Contato pelo site — Premiare Criativa")}>
+                    {primaryEmail}
+                  </a>
+                </li>
+              )}
+              <li>
+                <a href="/contato">Ver todos os canais</a>
+              </li>
+            </ul>
+          )
+        }
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Categorias">
+        <h2 class="utility">Categorias</h2>
+        <ul>
+          {
+            categories.map((c) => (
+              <li>
+                <a href={`/categoria/${c.slug}`}>{c.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <nav class="site-footer__nav" aria-label="Institucional">
+        <h2 class="utility">Institucional</h2>
+        <ul>
+          <li><a href="/catalogo">Catálogo completo</a></li>
+          <li><a href="/solucoes">Soluções por ocasião</a></li>
+          <li><a href="/projetos-personalizados">Projetos personalizados</a></li>
+          <li><a href="/perguntas-frequentes">Perguntas frequentes</a></li>
+          <li><a href="/contato">Contato</a></li>
+          <li><a href="/politica-de-privacidade">Privacidade</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>
+        © {year} {siteConfig.legalName} · CNPJ {siteConfig.cnpj}
+      </p>
+      <p>Este site apresenta o portfólio. Condições comerciais são tratadas no atendimento.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--surface-deep);
+    color: var(--text-on-deep);
+    padding-block: var(--space-3xl) var(--space-l);
+  }
+
+  .site-footer__top {
+    display: grid;
+    gap: var(--space-2xl);
+  }
+
+  @media (min-width: 860px) {
+    .site-footer__top {
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: var(--space-xl);
+    }
+  }
+
+  .site-footer__brand {
+    display: grid;
+    gap: var(--space-m);
+    justify-items: start;
+  }
+
+  .site-footer__tagline {
+    margin: 0;
+    font-size: var(--step-3);
+    font-weight: var(--weight-strong);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--brand-white);
+    max-width: 18ch;
+  }
+
+  .site-footer__note {
+    color: var(--text-on-deep-muted);
+    font-size: var(--step--1);
+    max-width: 42ch;
+  }
+
+  .site-footer__channels {
+    list-style: none;
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .site-footer__channels a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--text-on-deep-muted);
+    font-size: var(--step--1);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .site-footer__channels a:hover {
+    color: var(--brand-white);
+    text-decoration: underline;
+  }
+
+  .site-footer__nav h2 {
+    margin-block-end: var(--space-m);
+  }
+
+  .site-footer__nav ul {
+    list-style: none;
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .site-footer__nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--text-on-deep-muted);
+    font-size: var(--step--1);
+    text-decoration: none;
+  }
+
+  .site-footer__nav a:hover {
+    color: var(--brand-white);
+    text-decoration: underline;
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-l);
+    justify-content: space-between;
+    margin-block-start: var(--space-2xl);
+    padding-block-start: var(--space-l);
+    border-block-start: 1px solid rgba(255, 255, 255, 0.16);
+    color: var(--text-on-deep-muted);
+    font-size: var(--step--1);
+  }
+
+  .site-footer__bottom p {
+    margin: 0;
+  }
+</style>

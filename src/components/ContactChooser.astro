@@ -1,0 +1,303 @@
+---
+import {
+  formatWhatsApp,
+  generalMessage,
+  hasEmail,
+  hasWhatsApp,
+  mailtoLink,
+  siteConfig,
+  whatsappLink,
+} from "../config/site";
+
+/**
+ * Escolha do canal de atendimento.
+ *
+ * A Premiare atende por tres numeros de WhatsApp. Mandar todo botao do site
+ * para um deles concentraria a fila num atendente so e tiraria a escolha de
+ * quem esta comprando — entao o botao abre esta janela e a pessoa decide por
+ * onde falar.
+ *
+ * A mensagem muda conforme o botao: num produto ela ja cita o produto e a
+ * quantidade digitada; num botao geral, e a mensagem padrao. Quem abre passa o
+ * texto em `data-contact-message`; aqui ele e enxertado em todos os links no
+ * momento da abertura.
+ *
+ * Sem JavaScript a janela nunca abre e cada botao continua sendo um link real
+ * para /contato, onde os mesmos canais estao listados.
+ */
+const zap = siteConfig.attendants.map((a) => ({
+  name: a.name,
+  digits: a.whatsapp,
+  label: formatWhatsApp(a.whatsapp),
+  href: whatsappLink(a.whatsapp, generalMessage()),
+}));
+---
+
+{
+  (hasWhatsApp || hasEmail) && (
+    <dialog class="chooser" data-contact-dialog aria-labelledby="chooser-titulo">
+      <div class="chooser__head">
+        <h2 class="chooser__title" id="chooser-titulo">
+          Falar com um especialista
+        </h2>
+        <button type="button" class="chooser__close" data-contact-close>
+          <span class="visually-hidden">Fechar</span>
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+            <path
+              d="M4 4l8 8M12 4l-8 8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <p class="chooser__hint" data-contact-subject hidden />
+
+      {hasWhatsApp && (
+        <section class="chooser__group">
+          <h3 class="utility">WhatsApp</h3>
+          <p class="chooser__note">Resposta mais rápida. Qualquer um atende.</p>
+          <ul class="chooser__list">
+            {zap.map((c) => (
+              <li>
+                <a
+                  class="chooser__option"
+                  href={c.href}
+                  data-chooser-zap
+                  data-digits={c.digits}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="chooser__option-label">
+                    <span class="chooser__name">{c.name}</span>
+                    <span class="chooser__number">{c.label}</span>
+                  </span>
+                  <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+                    <path
+                      d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {hasEmail && (
+        <section class="chooser__group">
+          <h3 class="utility">E-mail</h3>
+          <ul class="chooser__list">
+            {siteConfig.emails.map((address) => (
+              <li>
+                <a
+                  class="chooser__option chooser__option--mail"
+                  href={mailtoLink(address)}
+                  data-chooser-mail
+                  data-address={address}
+                >
+                  <span class="chooser__option-label">{address}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </dialog>
+  )
+}
+
+<style>
+  .chooser {
+    width: min(420px, calc(100vw - 2 * var(--space-m)));
+    /* Numa tela baixa (celular deitado) a caixa rola dentro de si mesma em vez
+       de vazar para fora da area visivel. */
+    max-height: calc(100dvh - 2 * var(--space-l));
+    overflow-y: auto;
+    padding: var(--space-l);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--brand-white);
+    color: var(--text);
+    box-shadow: var(--shadow-2);
+  }
+
+  .chooser::backdrop {
+    background: rgba(0, 18, 62, 0.45);
+  }
+
+  .chooser__head {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: var(--space-m);
+  }
+
+  .chooser__title {
+    font-size: var(--step-2);
+  }
+
+  .chooser__close {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    /* Encosta o X na borda otica da caixa sem encolher o alvo de toque. */
+    margin: calc(var(--space-xs) * -1) calc(var(--space-xs) * -1) 0 0;
+    background: transparent;
+    border: 0;
+    border-radius: var(--radius);
+    color: var(--brand-blue);
+    cursor: pointer;
+  }
+
+  .chooser__close:hover {
+    background: var(--surface-muted);
+  }
+
+  .chooser__hint {
+    margin: var(--space-xs) 0 0;
+    padding: var(--space-xs) var(--space-s);
+    background: var(--blue-100);
+    border-radius: var(--radius);
+    color: var(--brand-blue);
+    font-size: var(--step--1);
+    font-weight: var(--weight-strong);
+    overflow-wrap: anywhere;
+  }
+
+  .chooser__hint[hidden] {
+    display: none;
+  }
+
+  .chooser__group {
+    margin-block-start: var(--space-l);
+  }
+
+  .chooser__note {
+    margin: var(--space-2xs) 0 var(--space-xs);
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+
+  .chooser__list {
+    display: grid;
+    gap: var(--space-xs);
+    margin-block-start: var(--space-xs);
+    list-style: none;
+  }
+
+  .chooser__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-s);
+    min-height: 52px;
+    padding-inline: var(--space-m);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+    text-decoration: none;
+  }
+
+  .chooser__option:hover {
+    border-color: var(--brand-blue);
+    background: var(--blue-100);
+  }
+
+  .chooser__option--mail {
+    font-size: var(--step--1);
+    overflow-wrap: anywhere;
+  }
+
+  .chooser__option-label {
+    display: grid;
+    gap: 1px;
+  }
+
+  .chooser__name {
+    line-height: 1.3;
+  }
+
+  .chooser__number {
+    color: var(--text-muted);
+    font-size: var(--step--1);
+    font-weight: var(--weight-body);
+  }
+</style>
+
+<script>
+  import {
+    mailtoLink,
+    whatsappLink,
+  } from "../config/site";
+
+  const dialog = document.querySelector<HTMLDialogElement>("[data-contact-dialog]");
+
+  if (dialog) {
+    const subjectEl = dialog.querySelector<HTMLElement>("[data-contact-subject]");
+    let devolverFocoPara: HTMLElement | null = null;
+
+    const abrir = (message: string, subject: string) => {
+      dialog.querySelectorAll<HTMLAnchorElement>("[data-chooser-zap]").forEach((a) => {
+        const digits = a.dataset.digits ?? "";
+        a.href = whatsappLink(digits, message);
+      });
+      dialog.querySelectorAll<HTMLAnchorElement>("[data-chooser-mail]").forEach((a) => {
+        const address = a.dataset.address ?? "";
+        // No e-mail a mensagem vai no corpo, nao no assunto.
+        a.href = `${mailtoLink(address, subject || "Contato pelo site — Premiare Criativa")}&body=${encodeURIComponent(message)}`;
+      });
+
+      if (subjectEl) {
+        subjectEl.textContent = subject;
+        subjectEl.hidden = subject.length === 0;
+      }
+
+      dialog.showModal();
+      dialog.querySelector<HTMLAnchorElement>(".chooser__option")?.focus();
+    };
+
+    // Delegado: os botoes existem em quase toda pagina e o formulario de
+    // orcamento reescreve a mensagem a cada tecla.
+    document.addEventListener("click", (event) => {
+      const alvo = (event.target as HTMLElement | null)?.closest<HTMLElement>(
+        "[data-contact-open]",
+      );
+      if (!alvo) return;
+      // Clique com modificador continua abrindo o destino real em nova aba.
+      const mouse = event as MouseEvent;
+      if (mouse.button !== 0 || mouse.ctrlKey || mouse.metaKey || mouse.shiftKey || mouse.altKey) {
+        return;
+      }
+      event.preventDefault();
+      devolverFocoPara = alvo;
+      abrir(alvo.dataset.contactMessage ?? "", alvo.dataset.contactSubject ?? "");
+    });
+
+    dialog.querySelector("[data-contact-close]")?.addEventListener("click", () => {
+      dialog.close();
+    });
+
+    // Clique fora da caixa: o alvo do clique e o proprio <dialog> so quando cai
+    // no backdrop, porque o conteudo esta dentro dos filhos.
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    dialog.addEventListener("close", () => {
+      devolverFocoPara?.focus();
+      devolverFocoPara = null;
+    });
+  }
+</script>

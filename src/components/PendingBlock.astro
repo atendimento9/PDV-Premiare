@@ -1,0 +1,55 @@
+---
+/**
+ * Marcador de texto que a Premiare precisa fornecer.
+ *
+ * Existe porque a alternativa e pior: inventar historia de empresa, CNPJ, base
+ * legal de tratamento de dados ou contato do encarregado. Um espaco marcado e
+ * honesto; um paragrafo plausivel e inventado nao e.
+ *
+ * Deixa rastro em dois lugares: visivel na pagina para quem revisa, e como
+ * comentario no HTML para varredura automatica.
+ *
+ * `hint` e a instrucao interna — o que precisa ser fornecido e por que. Ela
+ * sempre vai para o comentario. `note` e o que o visitante le; quando nao e
+ * informada, o proprio `hint` aparece (paginas legais, onde a instrucao ja e
+ * escrita em linguagem de negocio). Numa pagina que o cliente mostra a um
+ * visitante, passe um `note` proprio: instrucao de implementacao nao e texto
+ * de site.
+ */
+type Props = { title: string; hint: string; note?: string };
+const { title, hint, note } = Astro.props;
+---
+
+<Fragment set:html={`<!-- PENDENTE-CLIENTE: ${title} — ${hint} -->`} />
+
+<div class="pending">
+  <p class="utility">Pendente · conteúdo a ser fornecido pela Premiare</p>
+  <p class="pending__title">{title}</p>
+  <p class="pending__hint">{note ?? hint}</p>
+</div>
+
+<style>
+  .pending {
+    display: grid;
+    gap: var(--space-2xs);
+    padding: var(--space-m) var(--space-l);
+    background: var(--surface-muted);
+    border: 1px dashed var(--line-strong);
+    border-inline-start: 3px solid var(--brand-yellow);
+    border-radius: var(--radius);
+  }
+
+  .pending p {
+    margin: 0;
+  }
+
+  .pending__title {
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+  }
+
+  .pending__hint {
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+</style>

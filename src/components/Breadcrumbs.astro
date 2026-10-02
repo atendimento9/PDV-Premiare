@@ -1,0 +1,65 @@
+---
+type Crumb = { label: string; href?: string };
+type Props = { items: Crumb[] };
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumbs" aria-label="Você está aqui">
+  <ol>
+    <li><a href="/">Início</a></li>
+    {
+      items.map((item) => (
+        <li>
+          {item.href ? (
+            <a href={item.href}>{item.label}</a>
+          ) : (
+            <span aria-current="page">{item.label}</span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs {
+    padding-block: var(--space-m);
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-xs);
+    list-style: none;
+    font-size: var(--step--1);
+    color: var(--text-muted);
+  }
+
+  .breadcrumbs li + li::before {
+    content: "/";
+    margin-inline-end: var(--space-xs);
+    color: var(--line-strong);
+  }
+
+  /* 44 px de altura de toque sem engordar a linha: o alvo cresce para cima e
+     para baixo do texto com padding, e a margem negativa devolve o espaco ao
+     fluxo, para a trilha continuar visualmente fina. */
+  .breadcrumbs a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-block: -10px;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--brand-blue);
+    text-decoration: underline;
+  }
+
+  .breadcrumbs [aria-current="page"] {
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+  }
+</style>

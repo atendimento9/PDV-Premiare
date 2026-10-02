@@ -1,0 +1,1150 @@
+---
+import { byEditorialPriority, categories, productsInCategory, products } from "../lib/catalog";
+
+type Props = {
+  /**
+   * Cabecalho sobreposto a uma abertura escura: fundo transparente, textos
+   * claros e a versao negativa da marca. Ao rolar, vira solido.
+   */
+  overlay?: boolean;
+};
+
+const { overlay = false } = Astro.props;
+
+const current = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isCurrent = (href: string) => current === href || current.startsWith(href + "/");
+
+/** Os tres itens principais. "Produtos" ganha a bandeja; os outros dois sao links diretos. */
+const nav = [
+  { href: "/solucoes", label: "Soluções" },
+  { href: "/projetos-personalizados", label: "Projetos personalizados" },
+];
+
+/**
+ * Colunas da bandeja: as 9 categorias reais do catalogo, cada uma com ate 2
+ * acessos rapidos — os produtos de maior prioridade editorial daquela
+ * categoria. Nada inventado: mesma fonte e mesma ordem determinística usadas
+ * no resto do site (byEditorialPriority + productsInCategory).
+ */
+const megaColumns = categories.map((c) => ({
+  ...c,
+  quick: byEditorialPriority(productsInCategory(c.slug)).slice(0, 2),
+}));
+---
+
+<header class="site-header" data-site-header data-overlay={overlay ? "" : undefined}>
+  <div class="container site-header__bar">
+    <a class="site-header__logo" href="/" aria-label="Premiare Criativa, página inicial">
+      <img
+        class="site-header__logo-img site-header__logo-img--color"
+        src="/brand/premiare-logo.svg"
+        alt=""
+        width="176"
+        height="47"
+        fetchpriority="high"
+      />
+      {
+        overlay && (
+          <img
+            class="site-header__logo-img site-header__logo-img--neg"
+            src="/brand/premiare-logo-negativa.svg"
+            alt=""
+            width="176"
+            height="49"
+            fetchpriority="high"
+          />
+        )
+      }
+    </a>
+
+    <nav class="site-nav" aria-label="Principal">
+      <ul class="site-nav__list">
+        <li class="site-nav__item site-nav__item--mega" data-mega-item>
+          <a
+            href="/catalogo"
+            class="site-nav__link site-nav__trigger"
+            aria-expanded="false"
+            aria-controls="produtos-bandeja"
+            aria-current={isCurrent("/catalogo") || isCurrent("/categoria") ? "page" : undefined}
+            data-mega-trigger
+          >
+            Produtos
+            <svg
+              class="site-nav__chevron"
+              viewBox="0 0 12 8"
+              width="10"
+              height="7"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M1 1.5 6 6.5 11 1.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </a>
+
+          <div class="mega" id="produtos-bandeja" data-mega-panel>
+            <div class="container mega__inner">
+              <ul class="mega__grid">
+                {
+                  megaColumns.map((c) => (
+                    <li class="mega__col">
+                      <a class="mega__cat" href={`/categoria/${c.slug}`}>
+                        <span>{c.name}</span>
+                        <span class="utility mega__count">{c.count}</span>
+                      </a>
+                      {c.quick.length > 0 && (
+                        <ul class="mega__quick">
+                          {c.quick.map((p) => (
+                            <li>
+                              <a href={`/produto/${p.slug}`}>{p.name}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))
+                }
+              </ul>
+
+              <div class="mega__aside">
+                <span class="rule-band"></span>
+                <p class="mega__aside-title">Catálogo completo</p>
+                <p class="mega__aside-text">
+                  {products.length} produtos em {categories.length} categorias
+                  de curadoria, com ficha técnica e quantidade mínima.
+                </p>
+                <a class="btn btn--primary btn--sm mega__aside-cta" href="/catalogo">
+                  Ver catálogo completo
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="site-nav__link"
+                aria-current={isCurrent(item.href) ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <form class="site-header__search" action="/catalogo" role="search">
+      <label class="visually-hidden" for="busca-header">Buscar produtos</label>
+      <input
+        id="busca-header"
+        name="q"
+        type="search"
+        placeholder="Buscar produtos…"
+        autocomplete="off"
+        data-header-search
+      />
+      <button type="submit" class="site-header__search-btn" aria-label="Buscar">
+        <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true" focusable="false">
+          <circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"></circle>
+          <path d="M13.5 13.5 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+    </form>
+
+    <div class="site-header__actions">
+      <button
+        type="button"
+        class="site-header__search-toggle"
+        aria-label="Buscar"
+        data-search-toggle
+      >
+        <svg viewBox="0 0 20 20" width="19" height="19" aria-hidden="true" focusable="false">
+          <circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"></circle>
+          <path d="M13.5 13.5 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <button
+        type="button"
+        class="site-header__toggle"
+        aria-expanded="false"
+        aria-controls="menu-mobile"
+      >
+        <span class="visually-hidden">Abrir menu</span>
+        <span class="site-header__burger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="drawer" id="menu-mobile" hidden>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="drawer__head">
+        <span class="utility">Menu</span>
+        <button type="button" class="drawer__close" data-drawer-close>
+          <span class="visually-hidden">Fechar menu</span>
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+
+      <form class="drawer__search" action="/catalogo" role="search">
+        <label class="visually-hidden" for="busca-header-mobile">Buscar produtos</label>
+        <input
+          id="busca-header-mobile"
+          name="q"
+          type="search"
+          placeholder="Buscar produtos…"
+          autocomplete="off"
+          data-drawer-search
+        />
+        <button type="submit" class="drawer__search-btn" aria-label="Buscar">
+          <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true" focusable="false">
+            <circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"></circle>
+            <path d="M13.5 13.5 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </form>
+
+      <nav aria-label="Principal (mobile)">
+        <ul class="drawer__list">
+          <li class="drawer__accordion">
+            <button
+              type="button"
+              class="drawer__accordion-btn"
+              aria-expanded="false"
+              aria-controls="drawer-produtos-sub"
+              data-accordion-trigger
+            >
+              Produtos
+              <svg
+                class="drawer__accordion-chevron"
+                viewBox="0 0 12 8"
+                width="11"
+                height="8"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M1 1.5 6 6.5 11 1.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+            {/* O grid 0fr->1fr que anima a altura precisa de UM item de
+                grid so; por isso a lista real fica dentro deste wrapper,
+                em vez de ser ela mesma o container animado. */}
+            <div class="drawer__accordion-panel" id="drawer-produtos-sub" data-accordion-panel>
+              <ul class="drawer__accordion-panel-inner">
+                {
+                  categories.map((c) => (
+                    <li>
+                      <a href={`/categoria/${c.slug}`}>
+                        {c.name} <span class="utility" aria-hidden="true">{c.count}</span>
+                      </a>
+                    </li>
+                  ))
+                }
+                <li class="drawer__accordion-all">
+                  <a href="/catalogo">Ver catálogo completo</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          {
+            nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--brand-white);
+    border-block-end: 1px solid var(--line);
+  }
+
+  .site-header__bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-l);
+    min-height: var(--header-h);
+    transition: min-height var(--dur-base) var(--ease);
+  }
+
+  /* --------------------------------------------- cabecalho sobre o hero */
+
+  /* Fora do fluxo: o video passa por baixo, em vez de o hero comecar
+     depois de uma faixa branca. */
+  .site-header[data-overlay] {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    background: transparent;
+    border-block-end-color: transparent;
+    transition: background-color var(--dur-base) var(--ease),
+      border-color var(--dur-base) var(--ease),
+      box-shadow var(--dur-base) var(--ease);
+  }
+
+  .site-header[data-overlay] .site-nav__link,
+  .site-header[data-overlay] .site-header__search-toggle {
+    color: var(--brand-white);
+  }
+
+  .site-header[data-overlay] .site-header__search input {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: var(--brand-white);
+  }
+
+  .site-header[data-overlay] .site-header__search input::placeholder {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .site-header[data-overlay] .site-header__search-btn {
+    color: var(--brand-white);
+  }
+
+  .site-header[data-overlay] .site-header__toggle,
+  .site-header[data-overlay] .site-header__search-toggle {
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .site-header[data-overlay] .site-header__burger,
+  .site-header[data-overlay] .site-header__burger::before,
+  .site-header[data-overlay] .site-header__burger::after {
+    background: var(--brand-white);
+  }
+
+  .site-header[data-overlay] :focus-visible {
+    outline-color: var(--brand-yellow);
+  }
+
+  /* Troca entre as duas versoes OFICIAIS da marca. Nenhuma e recolorida
+     por CSS: cada fundo recebe o arquivo feito para ele. */
+  .site-header__logo {
+    display: grid;
+    /* A marca e o alvo de "voltar ao inicio" em toda pagina: 44 px de altura
+       minima, mesmo quando a arte do logotipo mede menos. */
+    align-content: center;
+    min-height: 44px;
+  }
+
+  .site-header__logo-img {
+    grid-area: 1 / 1;
+    /* No celular a marca nao pode ocupar metade da barra. */
+    width: 140px;
+    height: auto;
+    transition: opacity var(--dur-base) var(--ease);
+  }
+
+  @media (min-width: 560px) {
+    .site-header__logo-img {
+      width: 176px;
+    }
+  }
+
+  .site-header[data-overlay] .site-header__logo-img--color {
+    opacity: 0;
+  }
+
+  .site-header[data-overlay] .site-header__logo-img--neg {
+    opacity: 1;
+  }
+
+  .site-header__logo-img--neg {
+    opacity: 0;
+  }
+
+  /* Estado rolado: solido, mais compacto, legibilidade total. */
+  .site-header[data-overlay][data-scrolled] {
+    background: var(--brand-white);
+    border-block-end-color: var(--line);
+    box-shadow: var(--shadow-1);
+  }
+
+  .site-header[data-overlay][data-scrolled] .site-header__bar {
+    min-height: var(--header-h-solid);
+  }
+
+  .site-header[data-overlay][data-scrolled] .site-nav__link,
+  .site-header[data-overlay][data-scrolled] .site-header__search-toggle {
+    color: var(--brand-blue);
+  }
+
+  .site-header[data-overlay][data-scrolled] .site-header__search input {
+    background: var(--surface-muted);
+    border-color: var(--line-strong);
+    color: var(--text);
+  }
+
+  .site-header[data-overlay][data-scrolled] .site-header__search input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .site-header[data-overlay][data-scrolled] .site-header__search-btn {
+    color: var(--brand-blue);
+  }
+
+  .site-header[data-overlay][data-scrolled] .site-header__toggle,
+  .site-header[data-overlay][data-scrolled] .site-header__search-toggle {
+    border-color: var(--line-strong);
+  }
+
+  .site-header[data-overlay][data-scrolled] .site-header__burger,
+  .site-header[data-overlay][data-scrolled] .site-header__burger::before,
+  .site-header[data-overlay][data-scrolled] .site-header__burger::after {
+    background: var(--brand-blue);
+  }
+
+  .site-header[data-overlay][data-scrolled] .site-header__logo-img--color {
+    opacity: 1;
+  }
+
+  .site-header[data-overlay][data-scrolled] .site-header__logo-img--neg {
+    opacity: 0;
+  }
+
+  .site-header[data-overlay][data-scrolled] :focus-visible {
+    outline-color: var(--brand-blue);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-header[data-overlay],
+    .site-header__bar,
+    .site-header__logo-img {
+      transition: none;
+    }
+  }
+
+  .site-header__logo {
+    flex: 0 0 auto;
+    line-height: 0;
+  }
+
+  /* ------------------------------------------------------------------ nav */
+
+  .site-nav {
+    display: none;
+    flex: 0 0 auto;
+  }
+
+  .site-nav__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: var(--space-l);
+    list-style: none;
+    white-space: nowrap;
+  }
+
+  .site-nav__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    /* 44 px de alvo: a barra tem 76 px de altura, sobra espaco. Nao muda o
+       desenho — o texto continua centrado na mesma linha. */
+    min-height: 44px;
+    color: var(--brand-blue);
+    font-size: var(--step--1);
+    font-weight: var(--weight-strong);
+    text-decoration: none;
+  }
+
+  /* A mesma faixa amarela da marca marca a pagina atual — e agora tambem
+     a bandeja aberta, mesmo indicador visual para os dois estados. */
+  .site-nav__link::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -2px;
+    height: 3px;
+    background: var(--brand-yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-fast) var(--ease);
+  }
+
+  .site-nav__link:hover::after,
+  .site-nav__link[aria-current="page"]::after,
+  .site-nav__trigger[aria-expanded="true"]::after {
+    transform: scaleX(1);
+  }
+
+  .site-nav__chevron {
+    color: currentColor;
+    transition: transform var(--dur-fast) var(--ease);
+  }
+
+  .site-nav__trigger[aria-expanded="true"] .site-nav__chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ------------------------------------------------------------- bandeja */
+
+  .mega {
+    position: absolute;
+    top: 100%;
+    inset-inline: 0;
+    z-index: 39;
+    background: var(--brand-white);
+    border-block-start: 1px solid var(--line);
+    box-shadow: var(--shadow-2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity var(--dur-base) var(--ease), transform var(--dur-base) var(--ease),
+      visibility 0s var(--dur-base);
+  }
+
+  /* Estado unico: deriva do aria-expanded do gatilho, sem atributo redundante. */
+  .site-nav__trigger[aria-expanded="true"] + .mega {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+    transition: opacity var(--dur-base) var(--ease), transform var(--dur-base) var(--ease),
+      visibility 0s;
+  }
+
+  .mega__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 268px;
+    gap: var(--space-2xl);
+    padding-block: var(--space-xl);
+  }
+
+  .mega__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-l) var(--space-xl);
+    list-style: none;
+  }
+
+  .mega__col {
+    display: grid;
+    gap: 2px;
+    align-content: start;
+  }
+
+  .mega__cat {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-xs);
+    padding-block: 6px;
+    border-block-end: 1px solid var(--line);
+    margin-block-end: var(--space-2xs);
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+    font-size: var(--step--1);
+    text-decoration: none;
+    white-space: normal;
+  }
+
+  .mega__cat:hover {
+    text-decoration: underline;
+  }
+
+  .mega__count {
+    flex: 0 0 auto;
+    color: var(--text-muted);
+  }
+
+  .mega__quick {
+    list-style: none;
+    display: grid;
+    gap: 1px;
+  }
+
+  .mega__quick a {
+    display: block;
+    padding-block: 4px;
+    font-size: var(--step--1);
+    color: var(--text-muted);
+    text-decoration: none;
+    white-space: normal;
+  }
+
+  .mega__quick a:hover {
+    color: var(--brand-blue);
+    text-decoration: underline;
+  }
+
+  .mega__aside {
+    display: grid;
+    gap: var(--space-xs);
+    align-content: start;
+    justify-items: start;
+    padding-inline-start: var(--space-xl);
+    border-inline-start: 1px solid var(--line);
+  }
+
+  .mega__aside-title {
+    margin: 0;
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+    font-size: var(--step-1);
+    white-space: normal;
+  }
+
+  .mega__aside-text {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+    white-space: normal;
+  }
+
+  .mega__aside-cta {
+    margin-block-start: var(--space-2xs);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mega {
+      transition: none;
+    }
+  }
+
+  /* ---------------------------------------------------------------- busca */
+
+  .site-header__search {
+    display: none;
+    align-items: center;
+    position: relative;
+    flex: 1 1 220px;
+    max-width: 300px;
+    min-width: 0;
+    margin-inline-start: auto;
+  }
+
+  .site-header__search input {
+    width: 100%;
+    min-height: 44px;
+    padding-inline: var(--space-m) 42px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: var(--surface-muted);
+    font: inherit;
+    font-size: var(--step--1);
+    color: var(--text);
+    transition: border-color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+  }
+
+  .site-header__search input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .site-header__search input:focus-visible {
+    outline: none;
+    border-color: var(--brand-blue);
+    background: var(--brand-white);
+    box-shadow: 0 0 0 3px var(--blue-100);
+  }
+
+  .site-header__search-btn {
+    position: absolute;
+    inset-inline-end: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* O alvo cresce para 44 px; o icone continua do mesmo tamanho, so ganha
+       area clicavel em volta. */
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    color: var(--brand-blue);
+    cursor: pointer;
+  }
+
+  .site-header__search-btn:hover {
+    background: var(--blue-100);
+  }
+
+  .site-header[data-overlay] .site-header__search-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  /* Icone de busca isolado: so aparece enquanto o campo completo nao cabe. */
+  .site-header__search-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    color: var(--brand-blue);
+    cursor: pointer;
+  }
+
+  /* ------------------------------------------------------------- acoes */
+
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+  }
+
+  .site-header__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+
+  .site-header__burger,
+  .site-header__burger::before,
+  .site-header__burger::after {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--brand-blue);
+    border-radius: 2px;
+  }
+
+  .site-header__burger {
+    position: relative;
+  }
+
+  .site-header__burger::before,
+  .site-header__burger::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+  }
+
+  .site-header__burger::before {
+    top: -6px;
+  }
+  .site-header__burger::after {
+    top: 6px;
+  }
+
+  /* Abaixo do ponto em que nav + busca + CTA cabem numa linha so, tudo vira
+     gaveta: um icone de busca isolado substitui o campo completo. */
+  @media (max-width: 1023px) {
+    .site-header__search-toggle {
+      display: inline-flex;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .site-nav {
+      display: block;
+    }
+    .site-header__search {
+      display: flex;
+    }
+    .site-header__toggle {
+      display: none;
+    }
+  }
+
+  /* -------------------------------------------------------------- drawer */
+
+  .drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: rgba(0, 12, 33, 0.5);
+  }
+
+  .drawer[hidden] {
+    display: none;
+  }
+
+  .drawer__panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    width: min(360px, 88vw);
+    height: 100%;
+    margin-inline-start: auto;
+    padding: var(--space-l);
+    background: var(--brand-white);
+    overflow-y: auto;
+    animation: drawer-in 200ms var(--ease);
+  }
+
+  @keyframes drawer-in {
+    from {
+      transform: translateX(16px);
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .drawer__panel {
+      animation: none;
+    }
+  }
+
+  .drawer__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .drawer__close {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    color: var(--brand-blue);
+    cursor: pointer;
+  }
+
+  .drawer__search {
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
+  .drawer__search input {
+    width: 100%;
+    min-height: 48px;
+    padding-inline: var(--space-m) 44px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--surface-muted);
+    font: inherit;
+    color: var(--text);
+  }
+
+  .drawer__search input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .drawer__search input:focus-visible {
+    outline: none;
+    border-color: var(--brand-blue);
+    background: var(--brand-white);
+    box-shadow: 0 0 0 3px var(--blue-100);
+  }
+
+  .drawer__search-btn {
+    position: absolute;
+    inset-inline-end: 4px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: var(--radius);
+    color: var(--brand-blue);
+    cursor: pointer;
+  }
+
+  .drawer__list {
+    list-style: none;
+    display: grid;
+  }
+
+  .drawer__list > li > a {
+    display: block;
+    padding-block: var(--space-s);
+    min-height: 44px;
+    border-block-end: 1px solid var(--line);
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+    text-decoration: none;
+  }
+
+  .drawer__list a[aria-current="page"] {
+    color: var(--brand-blue);
+    box-shadow: inset 3px 0 0 var(--brand-yellow);
+    padding-inline-start: var(--space-s);
+  }
+
+  /* --------------------------------------------------------- acordeao */
+
+  .drawer__accordion-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-block: var(--space-s);
+    min-height: 44px;
+    border: 0;
+    border-block-end: 1px solid var(--line);
+    background: transparent;
+    color: var(--brand-blue);
+    font: inherit;
+    font-weight: var(--weight-strong);
+    text-align: start;
+    cursor: pointer;
+  }
+
+  .drawer__accordion-chevron {
+    flex: 0 0 auto;
+    color: var(--text-muted);
+    transition: transform var(--dur-fast) var(--ease);
+  }
+
+  .drawer__accordion-btn[aria-expanded="true"] .drawer__accordion-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* O grid so anima direito com UM item de grid dentro dele — por isso a
+     lista real (drawer__accordion-panel-inner) fica encapsulada aqui, em
+     vez deste elemento conter os <li> diretamente. Com varios filhos, so o
+     primeiro respeitaria a faixa "0fr" e os demais vazariam com sua altura
+     natural — foi exatamente o bug corrigido nesta versao. */
+  .drawer__accordion-panel {
+    display: grid;
+    /* Fechado por padrao: altura zero, sem exibir sombra de conteudo cortado. */
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--dur-base) var(--ease);
+  }
+
+  .drawer__accordion-panel > * {
+    overflow: hidden;
+  }
+
+  .drawer__accordion-btn[aria-expanded="true"] + .drawer__accordion-panel {
+    grid-template-rows: 1fr;
+  }
+
+  .drawer__accordion-panel-inner {
+    list-style: none;
+    display: grid;
+  }
+
+  .drawer__accordion-panel a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xs);
+    padding-block: var(--space-xs);
+    padding-inline-start: var(--space-m);
+    min-height: 40px;
+    color: var(--text-muted);
+    font-size: var(--step--1);
+    font-weight: var(--weight-body);
+    text-decoration: none;
+  }
+
+  .drawer__accordion-panel a:hover {
+    color: var(--brand-blue);
+  }
+
+  .drawer__accordion-all a {
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .drawer__accordion-panel {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // --------------------------------------------------- cabecalho sobreposto
+  // Vira solido assim que sai da area do hero. Listener passivo + rAF, para
+  // nao disputar com a rolagem.
+  const overlayHeader = document.querySelector<HTMLElement>(
+    ".site-header[data-overlay]",
+  );
+
+  if (overlayHeader) {
+    const THRESHOLD = 64;
+    let ticking = false;
+
+    const sync = () => {
+      ticking = false;
+      if (window.scrollY > THRESHOLD) overlayHeader.dataset.scrolled = "";
+      else delete overlayHeader.dataset.scrolled;
+    };
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(sync);
+      },
+      { passive: true },
+    );
+
+    sync();
+  }
+
+  // ------------------------------------------------------------- bandeja
+  // Disclosure, nao menu modal: Tab flui naturalmente por dentro (o painel
+  // fica no DOM logo apos o gatilho), ESC fecha e devolve o foco, clique
+  // fora fecha, e um pequeno atraso no mouseleave evita fechar so porque o
+  // cursor passou pela folga entre o botao e a bandeja.
+  document.querySelectorAll<HTMLElement>("[data-mega-item]").forEach((item) => {
+    const trigger = item.querySelector<HTMLAnchorElement>("[data-mega-trigger]");
+    const panel = item.querySelector<HTMLElement>("[data-mega-panel]");
+    if (!trigger || !panel) return;
+
+    let closeTimer: number | undefined;
+
+    const isOpen = () => trigger.getAttribute("aria-expanded") === "true";
+
+    const openMenu = () => {
+      window.clearTimeout(closeTimer);
+      trigger.setAttribute("aria-expanded", "true");
+    };
+
+    const closeMenu = () => {
+      window.clearTimeout(closeTimer);
+      trigger.setAttribute("aria-expanded", "false");
+    };
+
+    const scheduleClose = () => {
+      window.clearTimeout(closeTimer);
+      closeTimer = window.setTimeout(closeMenu, 220);
+    };
+
+    item.addEventListener("mouseenter", openMenu);
+    item.addEventListener("mouseleave", scheduleClose);
+
+    trigger.addEventListener("click", (event) => {
+      // Clique com modificador (nova aba, etc.) segue o comportamento padrao.
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
+        return;
+      }
+      event.preventDefault();
+      if (isOpen()) closeMenu();
+      else openMenu();
+    });
+
+    item.addEventListener("focusout", (event) => {
+      const next = event.relatedTarget as Node | null;
+      if (!next || !item.contains(next)) closeMenu();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && isOpen()) {
+        closeMenu();
+        trigger.focus();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (isOpen() && !item.contains(event.target as Node)) closeMenu();
+    });
+  });
+
+  // --------------------------------------------------------- mobile: menu
+  const header = document.querySelector<HTMLElement>(".site-header");
+  const toggle = header?.querySelector<HTMLButtonElement>(".site-header__toggle");
+  const searchToggle = header?.querySelector<HTMLButtonElement>("[data-search-toggle]");
+  const drawer = document.getElementById("menu-mobile");
+
+  if (toggle && drawer) {
+    const panel = drawer.querySelector<HTMLElement>(".drawer__panel")!;
+    const drawerSearch = drawer.querySelector<HTMLInputElement>("[data-drawer-search]");
+    // Exclui o que estiver dentro de um painel de acordeao fechado (inert):
+    // sem isso, o Tab-trap poderia considerar "ultimo item" um link que o
+    // proprio navegador recusa focar, travando o ciclo de foco.
+    const focusables = () =>
+      Array.from(
+        panel.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((el) => !el.closest("[inert]"));
+
+    const open = (focusTarget?: HTMLElement | null) => {
+      drawer.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+      (focusTarget ?? focusables()[0])?.focus();
+      document.addEventListener("keydown", onKeydown);
+    };
+
+    const close = () => {
+      drawer.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+      toggle.focus();
+      document.removeEventListener("keydown", onKeydown);
+    };
+
+    // Foco preso no painel: Tab nao escapa para a pagina atras do menu.
+    function onKeydown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const items = Array.from(focusables());
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    toggle.addEventListener("click", () => open());
+    // O icone de busca no topo abre o mesmo painel, com o foco ja no campo.
+    searchToggle?.addEventListener("click", () => open(drawerSearch));
+    drawer.querySelector("[data-drawer-close]")?.addEventListener("click", close);
+    drawer.addEventListener("click", (event) => {
+      if (event.target === drawer) close();
+    });
+
+    // ---------------------------------------------------- mobile: acordeao
+    // O painel fechado encolhe para altura zero via grid, mas continua no
+    // DOM — sem `inert`, os links dentro dele ainda seriam alcancaveis pelo
+    // Tab mesmo invisiveis. `inert` tira do painel fechado do foco e da
+    // interacao sem interromper a transicao visual.
+    drawer.querySelectorAll<HTMLElement>("[data-accordion-trigger]").forEach((btn) => {
+      const targetId = btn.getAttribute("aria-controls");
+      const accordionPanel = targetId ? document.getElementById(targetId) : null;
+      if (accordionPanel) accordionPanel.inert = true;
+
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!open));
+        if (accordionPanel) accordionPanel.inert = open;
+      });
+    });
+  }
+</script>

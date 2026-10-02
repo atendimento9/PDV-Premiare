@@ -1,0 +1,212 @@
+---
+import Base from "../layouts/Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { mailtoLink, primaryEmail, siteConfig } from "../config/site";
+
+/**
+ * Politica enxuta, de proposito.
+ *
+ * Este site nao trata dado pessoal nenhum: nao ha formulario que envie dados,
+ * nao ha cookie, nao ha analytics. Sem tratamento, nao ha finalidade, base
+ * legal nem prazo de retencao a declarar — e um modelo generico copiado de
+ * outro site prometeria o que a Premiare nao faz, o que e pior do que a
+ * ausencia do texto.
+ *
+ * O que sobra e o que de fato se aplica: o escopo (este site), a lista
+ * verificavel do que ele nao faz, o aviso de que o atendimento acontece fora
+ * daqui e a identificacao de quem responde. Isso cobre a pagina inteira, sem
+ * bloco pendente.
+ *
+ * Cobre tambem os cookies: sem cookie, uma pagina separada so para dizer isso
+ * seria uma segunda copia da mesma frase para manter atualizada.
+ *
+ * ATENCAO ao publicar: as afirmacoes abaixo descrevem os arquivos de `dist/`.
+ * Se a hospedagem injetar analytics ou cookie proprio, elas deixam de ser
+ * verdadeiras e esta pagina precisa mudar junto.
+ */
+const UPDATED_AT = "2 de setembro de 2026";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Início", item: new URL("/", Astro.site).href },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Privacidade",
+        item: new URL("/politica-de-privacidade", Astro.site).href,
+      },
+    ],
+  },
+];
+---
+
+<Base
+  title="Privacidade"
+  description="Este site não coleta dados de visitantes: sem formulário, sem cookies e sem ferramentas de rastreamento. Identificação da Premiare Criativa e canal de contato."
+  path="/politica-de-privacidade"
+  jsonLd={jsonLd}
+>
+  <div class="container legal">
+    <Breadcrumbs items={[{ label: "Privacidade" }]} />
+
+    <header class="page-head">
+      <span class="rule-band"></span>
+      <p class="utility">Privacidade e cookies</p>
+      <h1>Privacidade</h1>
+      <p class="lede">
+        Esta página descreve o que este site faz com os dados de quem o visita.
+        A resposta curta é: nada.
+      </p>
+    </header>
+
+    <div class="legal__body stack">
+      <section class="statement">
+        <span class="rule-band"></span>
+        <h2>Este site não coleta dados</h2>
+        <p>
+          As afirmações abaixo descrevem o site como ele está publicado e podem
+          ser conferidas no código-fonte da página:
+        </p>
+        <ul>
+          <li>Não há formulário que envie dados a um servidor.</li>
+          <li>Não são gravados cookies, nem usado o armazenamento local do navegador.</li>
+          <li>
+            Não há ferramenta de análise de audiência, pixel de rastreamento ou
+            script de terceiro instalado.
+          </li>
+          <li>
+            As fontes tipográficas e as imagens são servidas por este próprio
+            site, sem requisição a servidores externos.
+          </li>
+          <li>
+            A busca, os filtros e a ordenação do catálogo funcionam inteiramente
+            no seu navegador.
+          </li>
+          <li>
+            O campo de quantidade estimada serve apenas para montar a mensagem
+            que você mesmo envia. O que você digita não é armazenado nem
+            transmitido a este site.
+          </li>
+        </ul>
+        <p>
+          É por isso que você não vê um aviso de cookies aqui: não existe coleta
+          a consentir.
+        </p>
+      </section>
+
+      <section class="stack">
+        <h2>Ao falar com a equipe</h2>
+        <p>
+          Os botões de orçamento levam você para fora deste site, a um aplicativo
+          de mensagens ou ao seu programa de e-mail. O que você enviar por lá é
+          tratado pela Premiare Criativa e pelo aplicativo utilizado, cada um sob
+          as próprias regras.
+        </p>
+      </section>
+
+      <section class="stack">
+        <h2>Quem responde por este site</h2>
+        <dl class="controller">
+          <div>
+            <dt class="utility">Razão social</dt>
+            <dd>{siteConfig.legalName}</dd>
+          </div>
+          <div>
+            <dt class="utility">CNPJ</dt>
+            <dd>{siteConfig.cnpj}</dd>
+          </div>
+          <div>
+            <dt class="utility">Endereço</dt>
+            <dd>{siteConfig.address}</dd>
+          </div>
+          <div>
+            <dt class="utility">Contato</dt>
+            <dd>
+              <a href={mailtoLink(primaryEmail, "Privacidade — Premiare Criativa")}>
+                {primaryEmail}
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="stack">
+        <h2>Se isso mudar</h2>
+        <p>
+          Caso este site passe a usar alguma ferramenta de medição de audiência,
+          esta página será atualizada e um aviso de consentimento entrará no ar
+          antes de qualquer coleta.
+        </p>
+        <p class="legal__date">Última atualização: {UPDATED_AT}.</p>
+      </section>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .legal {
+    padding-block-end: var(--space-4xl);
+  }
+
+  .legal__body {
+    max-width: var(--container-narrow);
+  }
+
+  .legal__body h2 {
+    font-size: var(--step-2);
+    margin-block-start: var(--space-l);
+  }
+
+  .legal__body p,
+  .legal__body li {
+    color: var(--text-muted);
+  }
+
+  .legal__body ul {
+    padding-inline-start: var(--space-m);
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .statement {
+    display: grid;
+    gap: var(--space-s);
+    padding: var(--space-l);
+    background: var(--surface-muted);
+    border-radius: var(--radius-lg);
+  }
+
+  .statement h2 {
+    margin-block-start: 0;
+  }
+
+  .legal__date {
+    margin-block-start: var(--space-m);
+    font-size: var(--step--1);
+  }
+
+  .controller {
+    display: grid;
+    gap: var(--space-s);
+    margin: 0;
+    padding: var(--space-m) var(--space-l);
+    background: var(--surface-muted);
+    border-inline-start: 3px solid var(--brand-yellow);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .controller dt,
+  .controller dd {
+    margin: 0;
+  }
+
+  .controller dd {
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+    font-size: var(--step--1);
+    overflow-wrap: anywhere;
+  }
+</style>

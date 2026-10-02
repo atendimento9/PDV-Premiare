@@ -1,0 +1,169 @@
+---
+import { CLIENTS_LABEL, clients } from "../content/clients";
+
+/**
+ * Faixa de prova social que faz a ponte entre o hero azul e o conteudo
+ * comercial. Nao e uma secao "Nossos clientes": e a ultima camada do hero.
+ *
+ * O loop e feito com duas copias identicas da mesma trilha, deslocando 50% da
+ * largura total. Como a segunda copia comeca exatamente onde a primeira
+ * termina, o reinicio cai num quadro visualmente igual ao inicial — nao ha
+ * salto. A copia existe so para os olhos: ela sai da arvore de acessibilidade,
+ * para o leitor de tela nao anunciar cada marca duas vezes.
+ */
+---
+
+<section class="clients" aria-labelledby="clientes-titulo">
+  <div class="container">
+    <h2 class="utility clients__label" id="clientes-titulo">{CLIENTS_LABEL}</h2>
+  </div>
+
+  <div class="clients__viewport">
+    <div class="clients__track">
+      <ul class="clients__set">
+        {
+          clients.map((client) => (
+            <li class="clients__item" style={`--logo-h:${client.opticalHeight}px`}>
+              <img
+                src={`/clients/${client.slug}.webp`}
+                alt={client.name}
+                width={client.width}
+                height={client.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+          ))
+        }
+      </ul>
+      {/* Copia puramente visual: fecha o loop sem duplicar conteudo lido. */}
+      <ul class="clients__set" aria-hidden="true">
+        {
+          clients.map((client) => (
+            <li class="clients__item" style={`--logo-h:${client.opticalHeight}px`}>
+              <img
+                src={`/clients/${client.slug}.webp`}
+                alt=""
+                width={client.width}
+                height={client.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .clients {
+    /* Encosta no limite inferior do hero: a faixa e a ultima camada da
+       abertura, nao uma secao nova com respiro proprio. */
+    padding-block: var(--space-m) var(--space-xl);
+    background: var(--brand-white);
+  }
+
+  .clients__label {
+    margin: 0 0 var(--space-m);
+    text-align: center;
+  }
+
+  .clients__viewport {
+    overflow: hidden;
+    /* Esmaece as pontas para o movimento nascer e morrer sem borda dura. */
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #fff 6%,
+      #fff 94%,
+      transparent
+    );
+    mask-image: linear-gradient(90deg, transparent, #fff 6%, #fff 94%, transparent);
+  }
+
+  .clients__track {
+    display: flex;
+    width: max-content;
+    animation: clients-scroll var(--marquee-duration, 64s) linear infinite;
+    will-change: transform;
+  }
+
+  .clients__set {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3xl);
+    padding-inline: calc(var(--space-3xl) / 2);
+    list-style: none;
+  }
+
+  .clients__item {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+  }
+
+  /* Normalizacao pela CAIXA VISUAL: altura otica igual para todos, largura
+     livre. Nenhum logotipo e esticado para caber numa largura fixa. */
+  .clients__item img {
+    /* Altura otica por marca (ver content/clients.ts). A largura acompanha a
+       proporcao original — nenhum logotipo e deformado para encaixar. */
+    height: calc(var(--logo-h, 34px) * 0.8);
+    width: auto;
+    object-fit: contain;
+  }
+
+  @keyframes clients-scroll {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .clients {
+      padding-block: var(--space-l) var(--space-2xl);
+    }
+    .clients__item img {
+      height: var(--logo-h, 34px);
+    }
+  }
+
+  /* No celular a faixa e mais baixa e um pouco mais lenta, para nao roubar
+     espaco da primeira dobra nem competir com a leitura. */
+  @media (max-width: 767px) {
+    .clients__set {
+      gap: var(--space-2xl);
+      padding-inline: var(--space-m);
+    }
+    .clients__track {
+      --marquee-duration: 78s;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .clients__viewport {
+      overflow: visible;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+    .clients__track {
+      animation: none;
+      width: 100%;
+      justify-content: center;
+    }
+    /* Sem movimento, a copia visual nao tem funcao e sairia como repeticao. */
+    .clients__track .clients__set[aria-hidden="true"] {
+      display: none;
+    }
+    .clients__set {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-l) var(--space-xl);
+      padding-inline: var(--space-l);
+    }
+  }
+</style>

@@ -1,0 +1,89 @@
+---
+import { generalMessage, hasWhatsApp } from "../config/site";
+
+const label = hasWhatsApp
+  ? "Escolher um canal para falar com um especialista"
+  : "Ir para a página de contato";
+---
+
+<a
+  class="floating-contact"
+  href="/contato"
+  aria-label={label}
+  data-contact-open
+  data-contact-message={generalMessage()}
+>
+  {/* A marca do WhatsApp so aparece quando ha WhatsApp configurado. Sem numero,
+      o destino e /contato, e o simbolo de outra empresa ali prometeria um canal
+      que nao existe. */}
+  {
+    hasWhatsApp ? (
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <path
+          fill="currentColor"
+          d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.6.7.7-2.5-.2-.4A8 8 0 0 1 12 4Zm-3.2 4.3c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.7 4.2 3.7 2 .8 2.4.6 2.9.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.6-1.5c-.2-.4-.3-.4-.5-.4h-.4Z"
+        />
+      </svg>
+    ) : (
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <path
+          d="M4 5.5h16v11H9l-5 4v-15Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linejoin="round"
+        />
+      </svg>
+    )
+  }
+  <span class="floating-contact__text">Orçamento</span>
+</a>
+
+<style>
+  /* Presente, nao insistente: sem pulso infinito e sem competir com o CTA
+     principal da secao que o visitante esta lendo. */
+  .floating-contact {
+    position: fixed;
+    right: var(--space-m);
+    bottom: var(--space-m);
+    z-index: 30;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    min-height: 48px;
+    padding-inline: var(--space-m);
+    background: var(--brand-blue);
+    color: var(--brand-white);
+    border-radius: 999px;
+    font-size: var(--step--1);
+    font-weight: var(--weight-strong);
+    text-decoration: none;
+    box-shadow: var(--shadow-2);
+    transition: background-color var(--dur-fast) var(--ease);
+  }
+
+  .floating-contact:hover {
+    background: var(--blue-700);
+  }
+
+  .floating-contact:focus-visible {
+    outline: 3px solid var(--brand-yellow);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 480px) {
+    .floating-contact__text {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .floating-contact {
+      width: 52px;
+      justify-content: center;
+      padding-inline: 0;
+    }
+  }
+</style>

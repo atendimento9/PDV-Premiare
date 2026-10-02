@@ -1,0 +1,371 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ProductImage from "../../components/ProductImage.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import QuoteForm from "../../components/QuoteForm.astro";
+import SectionHead from "../../components/SectionHead.astro";
+import { products, relatedProducts, specRows, kitsWithProduct } from "../../lib/catalog";
+import type { Product } from "../../types/catalog";
+
+export function getStaticPaths() {
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+type Props = { product: Product };
+const { product } = Astro.props;
+
+/**
+ * A quantidade minima ja abre a pagina, na faixa amarela sob o titulo. Repeti-la
+ * na ficha tecnica logo abaixo faz o leitor conferir duas vezes o mesmo numero.
+ */
+const specs = specRows(product).filter((row) => row.label !== "Quantidade mínima");
+const related = relatedProducts(product);
+const inKits = kitsWithProduct(product.sku);
+
+const template = `Olá! Vim pelo site da Premiare Criativa e gostaria de solicitar um orçamento para o produto ${product.name}. Minha quantidade estimada é {QTD}.`;
+
+const summary =
+  product.differentiators ??
+  product.indicatedFor ??
+  `${product.name} personalizável para ações corporativas.`;
+
+const description = `${product.name}, da categoria ${product.category.name}. ${summary}`.slice(0, 300);
+
+/**
+ * Product sem `offers`: nao ha preco, moeda nem disponibilidade neste site.
+ * O Search Console vai apontar "campo ausente: offers" — e intencional, nao e
+ * erro a corrigir. Tambem nao ha rating nem review: nao existe essa informacao.
+ *
+ * Sem `sku` tambem: o codigo interno foi retirado de todo o site, e o JSON-LD e
+ * publico como qualquer outra parte da pagina.
+ */
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Início", item: new URL("/", Astro.site).href },
+      { "@type": "ListItem", position: 2, name: "Catálogo", item: new URL("/catalogo", Astro.site).href },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.category.name,
+        item: new URL(`/categoria/${product.category.slug}`, Astro.site).href,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: product.name,
+        item: new URL(`/produto/${product.slug}`, Astro.site).href,
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: summary,
+    category: product.category.name,
+    ...(product.image ? { image: new URL(product.image.src, Astro.site).href } : {}),
+    ...(product.materials ? { material: product.materials } : {}),
+    brand: { "@type": "Brand", name: "Premiare Criativa" },
+  },
+];
+---
+
+<Base
+  title={product.name}
+  description={description}
+  path={`/produto/${product.slug}`}
+  jsonLd={jsonLd}
+>
+  <div class="container">
+    <Breadcrumbs
+      items={[
+        { label: "Catálogo", href: "/catalogo" },
+        { label: product.category.name, href: `/categoria/${product.category.slug}` },
+        { label: product.name },
+      ]}
+    />
+  </div>
+
+  <article class="container product">
+    <div class="product__media">
+      {/* Uma imagem so, grande. Sem miniatura falsa e sem repetir o arquivo. */}
+      <ProductImage product={product} size="detail" priority />
+    </div>
+
+    <div class="product__intro">
+      <p class="utility">{product.category.name}</p>
+      <h1>{product.name}</h1>
+
+      <dl class="product__plate">
+        {
+          product.minimumQuantity && (
+            <div>
+              <dt class="utility">Quantidade mínima</dt>
+              <dd>{product.minimumQuantity.originalText}</dd>
+            </div>
+          )
+        }
+        {
+          product.leadTime && (
+            <div>
+              <dt class="utility">Prazo de produção</dt>
+              <dd>{product.leadTime}</dd>
+            </div>
+          )
+        }
+      </dl>
+
+      {product.differentiators && <p class="product__highlight">{product.differentiators}</p>}
+
+      {
+        product.technicalNotes && (
+          <p class="product__note">
+            <strong>Importante:</strong> {product.technicalNotes}
+          </p>
+        )
+      }
+
+      <QuoteForm template={template} subject={product.name} />
+
+      <p class="product__consult">
+        Consulte opções, disponibilidade e condições de personalização com nossa equipe.
+      </p>
+    </div>
+  </article>
+
+  <div class="container product__detail">
+    {
+      specs.length > 0 && (
+        <section class="panel" aria-labelledby="ficha">
+          <h2 class="panel__title" id="ficha">
+            Ficha técnica
+          </h2>
+          <dl class="specs">
+            {specs.map((row) => (
+              <div class="specs__row">
+                <dt>{row.label}</dt>
+                <dd>{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )
+    }
+
+    <div class="product__aside">
+      {
+        product.indicatedFor && (
+          <section class="panel">
+            <h2 class="panel__title">
+              Indicado para
+            </h2>
+            <p>{product.indicatedFor}</p>
+          </section>
+        )
+      }
+
+      {
+        product.premiareApplication && (
+          <section class="panel">
+            <h2 class="panel__title">
+              Exemplo de aplicação
+            </h2>
+            <p>{product.premiareApplication}</p>
+          </section>
+        )
+      }
+
+      {
+        product.kitCombination && (
+          <section class="panel">
+            <h2 class="panel__title">
+              Combinação em kit
+            </h2>
+            <p>{product.kitCombination}</p>
+            {
+              inKits.length > 0 && (
+                <ul class="panel__links">
+                  {inKits.map((kit) => (
+                    <li>
+                      <a href={`/solucoes/${kit.slug}`}>{kit.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              )
+            }
+          </section>
+        )
+      }
+    </div>
+  </div>
+
+  {
+    related.length > 0 && (
+      <section class="section section--muted">
+        <div class="container">
+          <SectionHead eyebrow="Também no catálogo" title="Produtos relacionados" />
+          <div class="grid grid--products">
+            {related.map((item, i) => (
+              <ProductCard product={item} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  .product {
+    display: grid;
+    gap: var(--space-xl);
+    padding-block: var(--space-m) var(--space-2xl);
+  }
+
+  .product__media {
+    background: var(--brand-white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: var(--space-l);
+  }
+
+  .product__intro {
+    display: grid;
+    gap: var(--space-m);
+    align-content: start;
+  }
+
+  .product__intro > p {
+    margin: 0;
+  }
+
+  .product__plate {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m) var(--space-xl);
+    margin: 0;
+    padding-block-start: var(--space-m);
+    border-block-start: 3px solid var(--brand-yellow);
+  }
+
+  .product__plate dt {
+    margin: 0;
+  }
+
+  .product__plate dd {
+    margin: 0;
+    color: var(--brand-blue);
+    font-weight: var(--weight-strong);
+  }
+
+  .product__highlight {
+    color: var(--text-muted);
+    font-size: var(--step-1);
+  }
+
+  .product__note {
+    padding: var(--space-s) var(--space-m);
+    background: var(--blue-100);
+    border-radius: var(--radius);
+    color: var(--brand-blue);
+    font-size: var(--step--1);
+  }
+
+  .product__consult {
+    color: var(--text-muted);
+    font-size: var(--step--1);
+  }
+
+  @media (min-width: 900px) {
+    .product {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--space-3xl);
+      align-items: start;
+    }
+  }
+
+  /* ------------------------------------------------------------- detalhe */
+  .product__detail {
+    display: grid;
+    gap: var(--space-xl);
+    padding-block-end: var(--space-3xl);
+  }
+
+  @media (min-width: 900px) {
+    .product__detail {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: var(--space-3xl);
+    }
+  }
+
+  .product__aside {
+    display: grid;
+    gap: var(--space-xl);
+    align-content: start;
+  }
+
+  .panel__title {
+    margin-block-end: var(--space-m);
+    font-size: var(--step-2);
+  }
+
+  .panel p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .panel__links {
+    display: grid;
+    margin-block-start: var(--space-s);
+    padding-inline-start: var(--space-m);
+    font-size: var(--step--1);
+  }
+
+  /* Links empilhados nao tem a excecao de "texto corrido": precisam de area de
+     toque propria. */
+  .panel__links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .specs {
+    margin: 0;
+    border-block-start: 1px solid var(--line);
+  }
+
+  .specs__row {
+    display: grid;
+    gap: var(--space-2xs);
+    padding-block: var(--space-m);
+    border-block-end: 1px solid var(--line);
+  }
+
+  @media (min-width: 560px) {
+    .specs__row {
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: var(--space-l);
+    }
+  }
+
+  .specs dt {
+    margin: 0;
+    font-size: var(--utility-size);
+    font-weight: var(--utility-weight);
+    letter-spacing: var(--utility-tracking);
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .specs dd {
+    margin: 0;
+    color: var(--text);
+  }
+</style>

@@ -1,0 +1,203 @@
+---
+
+/** Caber numa URL de WhatsApp e continuar legivel no atendimento. */
+const MAX_BRIEF = 600;
+
+type Props = {
+  /** Mensagem ja pronta, com {QTD} onde entra a quantidade digitada. */
+  template: string;
+  /** Do que se trata o pedido — nome do produto, do kit ou do projeto. */
+  subject?: string;
+  /**
+   * Abre um campo livre para o visitante descrever o que precisa. Num produto
+   * do catalogo o item ja diz o que e; num projeto sob medida, nao — ali a
+   * descricao e a parte principal do pedido.
+   */
+  askBrief?: boolean;
+  briefLabel?: string;
+  briefPlaceholder?: string;
+  ctaLabel?: string;
+  compact?: boolean;
+};
+
+const {
+  template,
+  subject,
+  askBrief = false,
+  briefLabel = "O que você precisa",
+  briefPlaceholder = "Ocasião, público, prazo e o que a ação precisa comunicar.",
+  ctaLabel = "Solicitar orçamento",
+  compact = false,
+} = Astro.props;
+
+/**
+ * O botao abre a escolha de canal (ContactChooser), levando junto a mensagem ja
+ * montada com produto e quantidade. O `href` e o caminho de quem esta sem
+ * JavaScript: /contato, com o que foi digitado na URL, para a pagina repetir o
+ * pedido em vez de descartar o que a pessoa escreveu.
+ */
+const contactHref = (quantity?: string): string => {
+  const params = new URLSearchParams();
+  if (subject) params.set("assunto", subject);
+  if (quantity) params.set("qtd", quantity);
+  const query = params.toString();
+  return query ? `/contato?${query}` : "/contato";
+};
+
+const fallbackHref = contactHref();
+---
+
+<div
+  class:list={["quote", compact && "quote--compact"]}
+  data-quote
+  data-template={template}
+  data-subject={subject}
+>
+  {
+    askBrief && (
+      <div class="quote__field">
+        <label class="utility" for={`brief-${template.length}`}>
+          {briefLabel}
+        </label>
+        <textarea
+          id={`brief-${template.length}`}
+          rows="4"
+          maxlength={MAX_BRIEF}
+          placeholder={briefPlaceholder}
+          data-quote-brief
+        />
+      </div>
+    )
+  }
+
+  <div class="quote__field">
+    <label class="utility" for={`qtd-${template.length}`}>Quantidade estimada</label>
+    <input
+      id={`qtd-${template.length}`}
+      type="text"
+      inputmode="numeric"
+      autocomplete="off"
+      maxlength="7"
+      placeholder="Ex.: 100"
+      data-quote-input
+    />
+    <p class="quote__hint">Opcional. Ajuda a equipe a preparar a proposta.</p>
+  </div>
+
+  <a
+    class="btn btn--primary quote__cta"
+    href={fallbackHref}
+    data-quote-cta
+    data-contact-open
+    data-contact-subject={subject}
+    data-contact-message={template.replace("{QTD}", "a definir")}
+  >
+    {ctaLabel}
+  </a>
+</div>
+
+<style>
+  .quote {
+    display: grid;
+    gap: var(--space-m);
+    padding: var(--space-l);
+    background: var(--surface-muted);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+  }
+
+  .quote--compact {
+    padding: var(--space-m);
+  }
+
+  .quote__field {
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .quote input,
+  .quote textarea {
+    min-height: 48px;
+    padding-inline: var(--space-s);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--brand-white);
+    font: inherit;
+    color: var(--text);
+  }
+
+  .quote textarea {
+    padding-block: var(--space-s);
+    /* So na vertical: redimensionar na horizontal estoura a coluna. */
+    resize: vertical;
+    line-height: 1.5;
+  }
+
+  .quote input:focus-visible,
+  .quote textarea:focus-visible {
+    border-color: var(--brand-blue);
+  }
+
+  .quote__hint {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--text-muted);
+  }
+
+  .quote__cta {
+    justify-self: start;
+  }
+
+  @media (min-width: 560px) {
+    .quote__cta {
+      justify-self: stretch;
+    }
+  }
+</style>
+
+<script>
+  const MAX_BRIEF = 600;
+
+  document.querySelectorAll<HTMLElement>("[data-quote]").forEach((root) => {
+    const input = root.querySelector<HTMLInputElement>("[data-quote-input]");
+    const brief = root.querySelector<HTMLTextAreaElement>("[data-quote-brief]");
+    const cta = root.querySelector<HTMLAnchorElement>("[data-quote-cta]");
+    if (!input || !cta) return;
+
+    const template = root.dataset.template ?? "";
+    const subject = root.dataset.subject ?? "";
+
+    const update = () => {
+      // Entrada do visitante e dado, nunca instrucao: so digitos, no maximo 7,
+      // e sempre codificada antes de entrar na URL.
+      const digits = input.value.replace(/\D/g, "").slice(0, 7);
+      if (digits !== input.value) input.value = digits;
+
+      // A descricao e texto livre. Quebras de linha viram espaco para caber numa
+      // URL, e o tamanho e limitado — o campo tambem tem `maxlength`, mas o
+      // limite real precisa valer aqui, que e onde a URL e montada.
+      const briefText = (brief?.value ?? "")
+        .replace(/\s+/g, " ")
+        .trim()
+        .slice(0, MAX_BRIEF);
+
+      // Mensagem que a janela de escolha vai enxertar no canal escolhido.
+      const quantity = digits.length > 0 ? digits : "a definir";
+      cta.dataset.contactMessage =
+        template.replace("{QTD}", quantity) +
+        (briefText ? ` O que preciso: ${briefText}` : "");
+
+      // E o caminho de quem esta sem JavaScript continua valendo no href.
+      const params = new URLSearchParams();
+      if (subject) params.set("assunto", subject);
+      if (digits) params.set("qtd", digits);
+      if (briefText) params.set("descricao", briefText);
+      const query = params.toString();
+      cta.href = query ? `/contato?${query}` : "/contato";
+    };
+
+    input.addEventListener("input", update);
+    brief?.addEventListener("input", update);
+    update();
+  });
+</script>
