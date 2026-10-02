@@ -1,7 +1,7 @@
 # Site institucional e catálogo B2B — Premiare Criativa
 
 Catálogo comercial, vitrine institucional e geração de leads por WhatsApp.
-Build estático, publicável na Wix.
+Site estático em Astro, publicado pela Vercel a partir da branch de produção do GitHub.
 
 **Não é e-commerce.** Não existem preço, carrinho, checkout, pagamento, login,
 cadastro, área do cliente nem estoque — em nenhuma camada, nem como campo nulo.
@@ -17,7 +17,7 @@ npm run dev
 
 Abre em `http://localhost:4321`.
 
-Para conferir o **build de verdade**, que é o que vai para a Wix:
+Para conferir o build de produção localmente:
 
 ```bash
 npm run build
@@ -37,30 +37,44 @@ Sem `SITE_URL`, o build usa o marcador `https://dominio-a-definir.invalid` em
 canonical, Open Graph e sitemap. É proposital: um domínio adivinhado passaria
 despercebido, um `.invalid` não.
 
-Envie para a Wix a pasta **`dist/`**, com `index.html` na raiz. Detalhes em
-[`docs/WIX_EXPORT.md`](docs/WIX_EXPORT.md).
+O projeto usa Astro com saída estática. Na Vercel, o comando de build é
+`npm run build` e a pasta de saída é `dist/`. Com a integração Git ativa, pushes
+na branch de produção geram deploy de produção; outras branches geram previews.
+Consulte [`docs/VERCEL_DEPLOYMENT.md`](docs/VERCEL_DEPLOYMENT.md) para conferir
+as configurações e o domínio.
 
 ## Atualizar o catálogo
 
-A planilha `relatorio_premiare_astor*.xlsx` é a **fonte única**. Nada é
-transcrito à mão.
+A planilha `relatorio_premiare_astor*.xlsx` fornece os 40 produtos originais.
+A seleção editorial em `scripts/curate-catalog.mjs` mantém 19 deles e acrescenta
+46 itens verificados no catálogo da Astor. O resultado público tem 65 produtos.
+As escolhas e os links das fichas oficiais estão em
+[`docs/CURADORIA_2026-10-02.md`](docs/CURADORIA_2026-10-02.md).
 
 ```bash
-npm run import-catalog    # lê a planilha, gera os JSONs e extrai as imagens
-npm run optimize-images   # baixa a versão em alta, valida e gera as variantes webp
+npm run import-catalog    # importa a planilha, prepara suas fotos e aplica a curadoria
+npm run retire-unselected-images  # arquiva fotos de itens fora da seleção
+npm run curation-report   # registra seleção, retiradas e fichas oficiais
 npm run build
 npm run gates
 ```
 
-O pipeline aplica as 13 imagens genéricas revisadas em
+Para atualizar as fichas e fotos da Astor antes da curadoria, execute
+`node scripts/fetch-astor-selection.mjs` e
+`node scripts/prepare-astor-images.mjs`. A lista de SKUs e sua classificação
+AA/AAA estão em `scripts/astor-selection-spec.json`; as URLs e descrições
+oficiais verificadas ficam em `scripts/astor-selection.source.json`, fora do
+JSON público. As soluções por ocasião são propostas editoriais e dependem de
+confirmação comercial no orçamento.
+
+O pipeline da planilha aplica as imagens genéricas revisadas em
 `assets/catalog-curated/` antes de gerar as variantes; o mapeamento está em
 `scripts/catalog-image-overrides.json`. O importador procura a planilha em
 `$PREMIARE_XLSX_DIR`, depois `./source/`,
 depois `~/Downloads/`. Ele **não escreve** na planilha original.
 
-Se a contagem divergir de 40 produtos / 9 categorias / 10 destaques / 5 kits, a
-validação falha e mostra os números reais. Investigue a planilha; não ajuste o
-dado para o gate passar.
+Se a contagem final divergir de 65 produtos / 7 categorias / 10 destaques /
+5 soluções, a validação falha e mostra os números reais.
 
 ## Scripts
 
@@ -71,7 +85,11 @@ dado para o gate passar.
 | `npm run preview` | Preview do Astro |
 | `npm run lint` | Regras próprias do projeto (sem HTML cru com dado, sem host externo, sem cor fora dos tokens, WhatsApp centralizado) |
 | `npm run typecheck` | `astro check` |
-| `npm run import-catalog` | Importa a planilha |
+| `npm run import-original-catalog` | Importa a planilha e salva a base original |
+| `npm run import-catalog` | Importa, prepara as fotos originais e aplica a seleção de 65 itens |
+| `npm run curate-catalog` | Recria os JSONs públicos a partir da base original e da seleção Astor |
+| `npm run retire-unselected-images` | Arquiva imagens sem referência fora da pasta pública |
+| `npm run curation-report` | Atualiza o registro interno com links das fichas oficiais |
 | `npm run optimize-images` | Pipeline de mídia |
 | `npm run validate-catalog` | Contagens, integridade e allowlist do JSON público |
 | `npm run check-forbidden` | Varre `dist/` e `src/` por preço, carrinho, URL do fornecedor, dado interno |
@@ -112,7 +130,7 @@ public/            Logo, fontes, imagens do catálogo, favicon
 | Revisão e substituição de imagens | `scripts/image-review.json`, `scripts/catalog-image-overrides.json` |
 | Clientes do carrossel | `src/content/clients.ts` |
 | Vídeo e poster do hero | `public/video/` |
-| Limites de tamanho da Wix | topo de `scripts/check-budget.mjs` |
+| Limites de tamanho do build | topo de `scripts/check-budget.mjs` |
 
 ## Regras que o projeto se impõe
 
@@ -150,10 +168,8 @@ Estão nos gates, não só na intenção:
 | [`DESIGN_SYSTEM`](docs/DESIGN_SYSTEM.md) | Tokens e componentes |
 | [`INFORMATION_ARCHITECTURE`](docs/INFORMATION_ARCHITECTURE.md) | Rotas e navegação |
 | [`QA_REPORT`](docs/QA_REPORT.md) | O que foi testado e o que foi corrigido |
-| [`WIX_EXPORT`](docs/WIX_EXPORT.md) | Como publicar |
-| [`WIX_STUDIO_HANDOFF`](docs/WIX_STUDIO_HANDOFF.md) | Especificação para o editor visual |
-| [`WIX_CMS_SETUP`](docs/WIX_CMS_SETUP.md) | Coleções sugeridas |
-| [`PRE_LAUNCH_CHECKLIST`](docs/PRE_LAUNCH_CHECKLIST.md) | **Leia antes de publicar** |
+| [`VERCEL_DEPLOYMENT`](docs/VERCEL_DEPLOYMENT.md) | Build e publicação na Vercel |
+| [`PRE_LAUNCH_CHECKLIST`](docs/PRE_LAUNCH_CHECKLIST.md) | Conferência de produção |
 
 ## Pendências
 

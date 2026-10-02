@@ -1,5 +1,9 @@
 # Coleções sugeridas no Wix CMS
 
+> **Documento arquivado em 02/10/2026:** o projeto passou a ser hospedado na
+> Vercel e estes passos de Wix CMS não fazem parte da publicação atual. Consulte
+> `VERCEL_DEPLOYMENT.md`.
+
 Necessário apenas se a Premiare quiser editar o catálogo dentro da Wix. **Para
 publicar, não é preciso nada disto** — o build estático sobe direto.
 

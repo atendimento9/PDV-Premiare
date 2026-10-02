@@ -1,5 +1,11 @@
 # Atualização das imagens dos produtos — 02/10/2026
 
+> Este registro documenta as imagens da seleção original de 40 itens. A curadoria
+> atual de 65 produtos, inclusive as quatro imagens Astor editadas, está em
+> `CURADORIA_2026-10-02.md`.
+> A nota antiga sobre autorização das três referências adicionais foi superada
+> pelo registro da parceria Astor em `RIGHTS_CLEARANCE.md`.
+
 Pedido do cliente: remover marcas e logotipos das imagens de produto, mantendo
 os itens genéricos; pesquisar os três produtos sem foto e incluí-los no catálogo.
 

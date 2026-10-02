@@ -476,9 +476,11 @@ def main() -> int:
         path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     write_json(DATA_DIR / "catalog.generated.json", products)
+    write_json(DATA_DIR / "catalog.baseline.json", products)
     write_json(DATA_DIR / "categories.generated.json", cats)
     write_json(DATA_DIR / "featured.generated.json", featured_order)
     write_json(DATA_DIR / "kits.generated.json", kits)
+    write_json(DATA_DIR / "kits.baseline.json", kits)
     write_json(DATA_DIR / "catalog-search-index.json", search_index)
     write_json(ROOT / ".cache" / "internal.json", internal)
 

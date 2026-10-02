@@ -160,20 +160,19 @@ estruturados e no JSON — nenhum dado foi alterado, só o rótulo da aba.
 
 ---
 
-## 10. Limites de tamanho da Wix
+## 10. Tamanho do build e hospedagem na Vercel
 
-**Aberto:** o briefing manda confirmar os limites vigentes de tamanho de site e
-de arquivo na documentação da Wix.
+**Atualização de 02/10/2026:** a hospedagem foi definida na Vercel. Astro estático
+é suportado sem adapter; pushes à branch Git de produção geram deployment quando
+a integração Git do projeto está ativa.
 
-**Decidido:** **não foi possível confirmar** um limite oficial publicado
-especificamente para upload de site estático no Wix Headless. Os gates mantêm os
-valores de referência do briefing — 20 MB no total e 3 MB por arquivo.
+**Decidido:** os limites de 20 MB por build e 3 MB por arquivo são orçamentos
+internos de qualidade, não limites atribuídos à Vercel. As instruções de deploy
+atuais estão em `VERCEL_DEPLOYMENT.md`.
 
-**Por quê e por que não bloqueia:** o build fechou em **4,11 MB**, com maior
-arquivo de **134 KB**. Está uma ordem de grandeza abaixo de qualquer limite
-plausível, então a decisão não depende do número exato. Os limites estão em
-constantes no topo de `scripts/check-budget.mjs`, fáceis de ajustar quando a
-Premiare confirmar com o suporte da Wix. **Isto é uma pendência aberta.**
+**Por quê:** manter um orçamento de mídia próprio ajuda a evitar páginas pesadas,
+independente dos limites operacionais da hospedagem. As constantes ficam no topo
+de `scripts/check-budget.mjs`.
 
 ---
 

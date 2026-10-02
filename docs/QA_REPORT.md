@@ -1,5 +1,9 @@
 # Relatório de QA
 
+> **Registro histórico:** este relatório cobre a versão anterior do catálogo
+> (40 produtos) e precede a curadoria de 65 itens e a publicação na Vercel.
+> Consulte `CURADORIA_2026-10-02.md` e `VERCEL_DEPLOYMENT.md` para o estado atual.
+
 Site servido a partir de `/dist` por `scripts/serve-dist.mjs` (sem Vite, sem HMR
 — os bytes do build). Navegador com as ferramentas embutidas desta sessão.
 
@@ -205,7 +209,7 @@ check-links      OK   5.495 referências internas, 0 quebradas
   sem dispositivo físico).
 - Leitores de tela reais (NVDA, VoiceOver). A verificação foi de semântica,
   nomes acessíveis, foco e ordem — não de leitura assistiva de fato.
-- Comportamento pós-publicação na Wix.
+- Comportamento pós-publicação na Vercel.
 - Fluxo de WhatsApp de ponta a ponta, porque não há número configurado. O que foi
   testado é o fallback.
 

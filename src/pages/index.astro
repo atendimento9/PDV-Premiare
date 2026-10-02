@@ -20,11 +20,12 @@ const showcase = featuredProducts.slice(0, 8);
 const isModular = (p: Product) => !/^kit\b/i.test(p.name);
 const modularGroups = [
   { label: "Tecnologia", match: (p: Product) => p.category.slug === "tecnologia" },
-  { label: "Bebidas", match: (p: Product) => p.category.slug === "alimentacao-e-bebidas" },
+  { label: "Casa e gastronomia", match: (p: Product) => p.category.slug === "casa-e-gastronomia" },
   { label: "Embalagens", match: (p: Product) => /^caixa\b/i.test(p.name) },
-  { label: "Escritório", match: (p: Product) => p.category.slug === "escritorio-e-home-office" },
-  { label: "Mobilidade", match: (p: Product) => p.category.slug === "viagens-e-mobilidade" },
-  { label: "Eventos", match: (p: Product) => p.category.slug === "eventos-e-acoes-promocionais" },
+  { label: "Executivo", match: (p: Product) => p.category.slug === "executivo-e-trabalho" },
+  { label: "Mobilidade", match: (p: Product) => p.category.slug === "viagem-e-mobilidade" },
+  { label: "Hospitalidade", match: (p: Product) => p.category.slug === "bem-estar-e-hospitalidade" },
+  { label: "Reconhecimento", match: (p: Product) => p.category.slug === "reconhecimento-e-premiacao" },
 ]
   .map((g) => ({ ...g, items: products.filter((p) => isModular(p) && g.match(p)) }))
   .filter((g) => g.items.length > 0);
@@ -85,8 +86,8 @@ const jsonLd = [
     <div class="container">
       <SectionHead
         eyebrow="Catálogo"
-        title="Nove categorias de curadoria"
-        lede="A organização que a equipe usa para montar propostas, do executivo ao promocional."
+        title="Sete categorias de curadoria"
+        lede="Uma seleção AA e AAA de kits, presentes e soluções para cada ocasião."
       />
       <ul class="grid grid--cards category-list">
         {

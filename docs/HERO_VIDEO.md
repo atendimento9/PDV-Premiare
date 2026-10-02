@@ -1,5 +1,9 @@
 # Hero em vídeo da home
 
+> O site agora é hospedado na Vercel. As referências a Wix Media na seção 9 são
+> alternativas históricas e não descrevem a entrega atual; consulte
+> `VERCEL_DEPLOYMENT.md`.
+
 Documento da abertura de marca: o que foi feito com o material aprovado, por que,
 e o que a Premiare ainda precisa decidir.
 

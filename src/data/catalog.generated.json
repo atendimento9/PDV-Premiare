@@ -4,14 +4,14 @@
     "slug": "carteira-magnetica-em-pu-de-grande-capacidade-com-bloqueio-rfid",
     "name": "Carteira magnética em PU de grande capacidade com bloqueio RFID",
     "category": {
-      "name": "Produtos executivos e premium",
-      "slug": "produtos-executivos-e-premium"
+      "name": "Executivo e trabalho",
+      "slug": "executivo-e-trabalho"
     },
     "image": {
       "src": "/catalog/products/bd95127/cover-800.webp",
       "srcSmall": "/catalog/products/bd95127/cover-480.webp",
       "srcLarge": "/catalog/products/bd95127/cover-1200.webp",
-      "alt": "Carteira magnética em PU de grande capacidade com bloqueio RFID — Produtos executivos e premium",
+      "alt": "Carteira magnética em PU de grande capacidade com bloqueio RFID — Executivo e trabalho",
       "width": 800,
       "height": 800
     },
@@ -28,23 +28,23 @@
     "differentiators": "Até 12 cartões; bloqueio RFID; fecho magnético; anel extra para celulares sem magnetismo; caixa presente.",
     "indicatedFor": "Lideranças, clientes financeiros, consultorias e empresas de tecnologia.",
     "premiareApplication": "Presente executivo para carteira de clientes ou convenção de liderança.",
-    "kitCombination": "Combinar com powerbank, cabo espiral e copo Stanley.",
+    "kitCombination": null,
     "technicalNotes": null,
-    "featured": true
+    "featured": false
   },
   {
     "sku": "BDKV0160",
     "slug": "kit-vinho",
     "name": "Kit Vinho",
     "category": {
-      "name": "Produtos executivos e premium",
-      "slug": "produtos-executivos-e-premium"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
       "src": "/catalog/products/bdkv0160/cover-800.webp",
       "srcSmall": "/catalog/products/bdkv0160/cover-480.webp",
       "srcLarge": "/catalog/products/bdkv0160/cover-1200.webp",
-      "alt": "Kit Vinho — Produtos executivos e premium",
+      "alt": "Kit Vinho — Kits e experiências",
       "width": 800,
       "height": 800
     },
@@ -61,7 +61,7 @@
     "differentiators": "Estojo de bambu com saca-rolhas, anel corta-gotas e tampa de bico.",
     "indicatedFor": "Clientes, lideranças, parceiros e campanhas de fim de ano.",
     "premiareApplication": null,
-    "kitCombination": "Combinar com kit drink, copo Stanley ou caixa personalizada.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
@@ -70,14 +70,14 @@
     "slug": "kit-garrafa-termica-personalizada",
     "name": "Kit Garrafa Térmica Personalizada",
     "category": {
-      "name": "Produtos executivos e premium",
-      "slug": "produtos-executivos-e-premium"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
       "src": "/catalog/products/kit-ga0008/cover-800.webp",
       "srcSmall": "/catalog/products/kit-ga0008/cover-480.webp",
       "srcLarge": "/catalog/products/kit-ga0008/cover-1200.webp",
-      "alt": "Kit Garrafa Térmica Personalizada — Produtos executivos e premium",
+      "alt": "Kit Garrafa Térmica Personalizada — Kits e experiências",
       "width": 800,
       "height": 800
     },
@@ -94,23 +94,23 @@
     "differentiators": "Conjunto coordenado, caixa personalizada e mínimo baixo para ações segmentadas.",
     "indicatedFor": "Lideranças, clientes VIP, reconhecimento e trabalho híbrido.",
     "premiareApplication": "Presente de final de ano ou agradecimento a parceiros estratégicos.",
-    "kitCombination": "Já é um kit; pode receber drip coffee ou biscoito personalizado.",
+    "kitCombination": null,
     "technicalNotes": null,
-    "featured": true
+    "featured": false
   },
   {
     "sku": "BD-STANLEYPILSNER444ML",
     "slug": "copo-stanley-pilsner-glass-happy-hour-azure-444-ml",
     "name": "Copo Stanley Pilsner Glass Happy Hour Azure 444 mL",
     "category": {
-      "name": "Produtos executivos e premium",
-      "slug": "produtos-executivos-e-premium"
+      "name": "Casa e gastronomia",
+      "slug": "casa-e-gastronomia"
     },
     "image": {
       "src": "/catalog/products/bd-stanleypilsner444ml/cover-800.webp",
       "srcSmall": "/catalog/products/bd-stanleypilsner444ml/cover-480.webp",
       "srcLarge": "/catalog/products/bd-stanleypilsner444ml/cover-1200.webp",
-      "alt": "Copo Stanley Pilsner Glass Happy Hour Azure 444 mL — Produtos executivos e premium",
+      "alt": "Copo Stanley Pilsner Glass Happy Hour Azure 444 mL — Casa e gastronomia",
       "width": 800,
       "height": 800
     },
@@ -127,23 +127,23 @@
     "differentiators": "Marca reconhecida, parede dupla a vácuo, fundo prismático, base emborrachada e mínimo baixo.",
     "indicatedFor": "Lideranças, clientes estratégicos, premiações e hospitalidade.",
     "premiareApplication": "Presente de reconhecimento individual ou fechamento de ciclo comercial.",
-    "kitCombination": "Combinar com kit vinho, kit churrasco ou caixa cartonada.",
+    "kitCombination": null,
     "technicalNotes": null,
-    "featured": true
+    "featured": false
   },
   {
     "sku": "KIT-ESPU025",
     "slug": "kit-espumante-personalizado",
     "name": "Kit Espumante Personalizado",
     "category": {
-      "name": "Produtos executivos e premium",
-      "slug": "produtos-executivos-e-premium"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
       "src": "/catalog/products/kit-espu025/cover-800.webp",
       "srcSmall": "/catalog/products/kit-espu025/cover-480.webp",
       "srcLarge": "/catalog/products/kit-espu025/cover-1200.webp",
-      "alt": "Kit Espumante Personalizado — Produtos executivos e premium",
+      "alt": "Kit Espumante Personalizado — Kits e experiências",
       "width": 401,
       "height": 401
     },
@@ -160,73 +160,7 @@
     "differentiators": "Marca de espumante reconhecida, duas taças de cristal e apresentação pronta para celebrar.",
     "indicatedFor": "Lideranças, clientes premium, celebrações, premiações e fim de ano.",
     "premiareApplication": "Presente para celebração de metas, fechamento de parceria ou reconhecimento executivo.",
-    "kitCombination": "Já é um kit completo; pode receber chaveiro comemorativo ou cartão personalizado.",
-    "technicalNotes": null,
-    "featured": true
-  },
-  {
-    "sku": "BD97194",
-    "slug": "cordao-lanyard-com-suporte-para-celular-cabo-usb-c-e-adaptadores-reciclados",
-    "name": "Cordão lanyard com suporte para celular, cabo USB-C e adaptadores reciclados",
-    "category": {
-      "name": "Tecnologia",
-      "slug": "tecnologia"
-    },
-    "image": {
-      "src": "/catalog/products/bd97194/cover-800.webp",
-      "srcSmall": "/catalog/products/bd97194/cover-480.webp",
-      "srcLarge": "/catalog/products/bd97194/cover-1200.webp",
-      "alt": "Cordão lanyard com suporte para celular, cabo USB-C e adaptadores reciclados — Tecnologia",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "ABS 100% reciclado; TPE 100% reciclado; caixa presente de papel kraft reciclado.",
-    "colors": null,
-    "dimensionsAndCapacity": "Cabo: 1.200 mm; caixa: 155 × 40 × 30 mm; 59 g.",
-    "personalization": null,
-    "minimumQuantity": {
-      "value": 25,
-      "unit": "unidades",
-      "originalText": "25 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "USB-C/USB-C de 60 W; adaptadores USB-A e Lightning; dados a 480 Mbps; suporte de celular e mosquetão.",
-    "indicatedFor": "Eventos, congressos, equipes móveis, tecnologia e ESG.",
-    "premiareApplication": "Credencial funcional para evento: o participante usa o cordão e leva um cabo de alta potência.",
-    "kitCombination": "Combinar com tag NFC, eco copo e garrafa reciclada.",
-    "technicalNotes": null,
-    "featured": true
-  },
-  {
-    "sku": "BD97161",
-    "slug": "conjunto-de-cabo-espiral-com-carregamento-super-rapido-e-adaptadores",
-    "name": "Conjunto de cabo espiral com carregamento super-rápido e adaptadores",
-    "category": {
-      "name": "Tecnologia",
-      "slug": "tecnologia"
-    },
-    "image": {
-      "src": "/catalog/products/bd97161/cover-800.webp",
-      "srcSmall": "/catalog/products/bd97161/cover-480.webp",
-      "srcLarge": "/catalog/products/bd97161/cover-1200.webp",
-      "alt": "Conjunto de cabo espiral com carregamento super-rápido e adaptadores — Tecnologia",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "PC, PP, TPE e alumínio; caixa presente branca.",
-    "colors": null,
-    "dimensionsAndCapacity": "Cabo: 13 × 150 mm; esticado: 3 × 750 mm; caixa: 65 × 70 × 25 mm; 43 g.",
-    "personalization": null,
-    "minimumQuantity": {
-      "value": 25,
-      "unit": "unidades",
-      "originalText": "25 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Cabo 6 em 1; USB-C de 60 W; adaptadores USB-A, micro USB e Lightning; dados a 480 Mbps.",
-    "indicatedFor": "Clientes executivos, equipes comerciais, frotas e home office.",
-    "premiareApplication": "Item de kit tecnologia para quem trabalha em deslocamento.",
-    "kitCombination": "Combinar com powerbank e estojo tecnológico.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
@@ -259,9 +193,9 @@
     "differentiators": "Alta capacidade, carregamento rápido, USB-C e múltiplas saídas USB-A; mínimo de apenas uma unidade.",
     "indicatedFor": "Executivos, equipes comerciais, tecnologia, viagens e contas estratégicas.",
     "premiareApplication": "Presente de alto impacto para liderança, renovação de contrato ou programa de incentivo.",
-    "kitCombination": "Combinar com estojo tecnológico, cabo espiral e carteira RFID.",
+    "kitCombination": null,
     "technicalNotes": null,
-    "featured": true
+    "featured": false
   },
   {
     "sku": "BD18673",
@@ -292,7 +226,7 @@
     "differentiators": "Organização interna com cinco compartimentos, três elásticos independentes, bolso telado e alça de mão.",
     "indicatedFor": "Equipes móveis, TI, comercial e viajantes.",
     "premiareApplication": "Embalagem funcional para montar kit com powerbank, cabos e adaptadores.",
-    "kitCombination": "Combinar com powerbank, cabo espiral e tag NFC.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
@@ -301,14 +235,14 @@
     "slug": "kit-churrasco-em-caixa-presente-de-papel-kraft-reciclado-com-2-utensilios-em-aco",
     "name": "Kit churrasco em caixa presente de papel kraft reciclado com 2 utensílios em aço inox e bambu",
     "category": {
-      "name": "Sustentabilidade",
-      "slug": "sustentabilidade"
+      "name": "Casa e gastronomia",
+      "slug": "casa-e-gastronomia"
     },
     "image": {
       "src": "/catalog/products/bd94399/cover-800.webp",
       "srcSmall": "/catalog/products/bd94399/cover-480.webp",
       "srcLarge": "/catalog/products/bd94399/cover-1200.webp",
-      "alt": "Kit churrasco em caixa presente de papel kraft reciclado com 2 utensílios em aço inox e bambu — Sustentabilidade",
+      "alt": "Kit churrasco em caixa presente de papel kraft reciclado com 2 utensílios em aço inox e bambu — Casa e gastronomia",
       "width": 800,
       "height": 800
     },
@@ -325,106 +259,7 @@
     "differentiators": "Lançamento 2026/27; caixa presente; certificação EU Food Grade; combinação de apelo sustentável e alto valor percebido.",
     "indicatedFor": "Clientes estratégicos, lideranças, parceiros e campanhas de fim de ano.",
     "premiareApplication": "Presente de relacionamento para contas-chave com cinta ou cartão narrando a origem dos materiais.",
-    "kitCombination": "Combinar com copo Stanley, kit vinho ou caneca fosca em uma experiência gourmet.",
-    "technicalNotes": null,
-    "featured": true
-  },
-  {
-    "sku": "BD94397",
-    "slug": "squeeze-em-vidro-fosco-520-ml",
-    "name": "Squeeze em vidro fosco 520 mL",
-    "category": {
-      "name": "Sustentabilidade",
-      "slug": "sustentabilidade"
-    },
-    "image": {
-      "src": "/catalog/products/bd94397/cover-800.webp",
-      "srcSmall": "/catalog/products/bd94397/cover-480.webp",
-      "srcLarge": "/catalog/products/bd94397/cover-1200.webp",
-      "alt": "Squeeze em vidro fosco 520 mL — Sustentabilidade",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "Vidro fosco; tampa de bambu; caixa presente de papel kraft reciclado.",
-    "colors": "Materiais naturais.",
-    "dimensionsAndCapacity": "520 mL; Ø 65 × 200 mm; 251 g.",
-    "personalization": "Há alerta de variação de impressão no bambu.",
-    "minimumQuantity": {
-      "value": 25,
-      "unit": "unidades",
-      "originalText": "25 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Lançamento 2026/27; apresentação em kraft reciclado; certificação EU Food Grade.",
-    "indicatedFor": "Empresas com agenda ESG, eventos e programas de bem-estar.",
-    "premiareApplication": "Brinde sustentável para campanha de hidratação ou semana do meio ambiente.",
-    "kitCombination": "Combinar com caderno, drip coffee e cordão tecnológico reciclado.",
-    "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BDGA7950",
-    "slug": "garrafa-em-aluminio-reciclado",
-    "name": "Garrafa em Alumínio Reciclado",
-    "category": {
-      "name": "Sustentabilidade",
-      "slug": "sustentabilidade"
-    },
-    "image": {
-      "src": "/catalog/products/bdga7950/cover-800.webp",
-      "srcSmall": "/catalog/products/bdga7950/cover-480.webp",
-      "srcLarge": "/catalog/products/bdga7950/cover-1200.webp",
-      "alt": "Garrafa em Alumínio Reciclado — Sustentabilidade",
-      "width": 300,
-      "height": 300
-    },
-    "materials": "Alumínio reciclado; tampa de inox; embalagem em papelão kraft.",
-    "colors": "Pintura fosca.",
-    "dimensionsAndCapacity": "550 mL; 22 × Ø 6,5 cm; 85 g.",
-    "personalization": null,
-    "minimumQuantity": {
-      "value": 25,
-      "unit": "unidades",
-      "originalText": "25 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Símbolo de reciclável no verso e etiqueta kraft explicando o produto.",
-    "indicatedFor": "Empresas com agenda ESG, convenções, colaboradores e eventos.",
-    "premiareApplication": "Campanha de redução de descartáveis com mensagem de impacto ambiental.",
-    "kitCombination": "Combinar com lanyard reciclado, caderno e caixa Colorplus.",
-    "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BD-1000002",
-    "slug": "chapeu-produtor-fibra-de-bambu-cor-palha",
-    "name": "Chapéu Produtor — fibra de bambu cor palha",
-    "category": {
-      "name": "Sustentabilidade",
-      "slug": "sustentabilidade"
-    },
-    "image": {
-      "src": "/catalog/products/bd-1000002/cover-800.webp",
-      "srcSmall": "/catalog/products/bd-1000002/cover-480.webp",
-      "srcLarge": "/catalog/products/bd-1000002/cover-1200.webp",
-      "alt": "Chapéu Produtor — fibra de bambu cor palha — Sustentabilidade",
-      "width": 300,
-      "height": 300
-    },
-    "materials": "Fibras naturais de bambu; poliéster; fita de couro sintético.",
-    "colors": "Palha.",
-    "dimensionsAndCapacity": null,
-    "personalization": "Impressão UV colorida ou gravação a laser na fita de couro sintético.",
-    "minimumQuantity": {
-      "value": 30,
-      "unit": "unidades",
-      "originalText": "30 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Leve, confortável, pode molhar sem deformar e recupera o formato após amassar.",
-    "indicatedFor": "Agronegócio, feiras, eventos ao ar livre e campanhas regionais.",
-    "premiareApplication": "Brinde de presença para dias de campo, feiras agro e ativações externas.",
-    "kitCombination": "Combinar com garrafa reciclada, saco personalizado e protetor solar de outra fonte.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
@@ -433,14 +268,14 @@
     "slug": "kit-viagem-personalizado",
     "name": "Kit Viagem Personalizado",
     "category": {
-      "name": "Viagens e mobilidade",
-      "slug": "viagens-e-mobilidade"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
       "src": "/catalog/products/kit-vbe002/cover-800.webp",
       "srcSmall": "/catalog/products/kit-vbe002/cover-480.webp",
       "srcLarge": "/catalog/products/kit-vbe002/cover-1200.webp",
-      "alt": "Kit Viagem Personalizado — Viagens e mobilidade",
+      "alt": "Kit Viagem Personalizado — Kits e experiências",
       "width": 800,
       "height": 800
     },
@@ -457,56 +292,23 @@
     "differentiators": "Seis itens coordenados em caixa com berço: porta-passaporte, adaptador universal, tag, máscara, almofada e nécessaire.",
     "indicatedFor": "Executivos, equipes viajantes, clientes VIP e eventos com convidados de outras cidades.",
     "premiareApplication": "Welcome travel kit para convenção, incentivo, missão internacional ou viagem de premiação.",
-    "kitCombination": "Já é um kit completo; pode receber powerbank ou borrifador de perfume.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": true
-  },
-  {
-    "sku": "BD-BLCAPNOTSBL",
-    "slug": "capa-para-notebook-em-neoprene-personalizada",
-    "name": "Capa para notebook em neoprene personalizada",
-    "category": {
-      "name": "Viagens e mobilidade",
-      "slug": "viagens-e-mobilidade"
-    },
-    "image": {
-      "src": "/catalog/products/bd-blcapnotsbl/cover-800.webp",
-      "srcSmall": "/catalog/products/bd-blcapnotsbl/cover-480.webp",
-      "srcLarge": "/catalog/products/bd-blcapnotsbl/cover-1200.webp",
-      "alt": "Capa para notebook em neoprene personalizada — Viagens e mobilidade",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "Neoprene de 3 mm.",
-    "colors": "Impressão sem limite de cores.",
-    "dimensionsAndCapacity": "10”: 26,5 × 21 cm; 12”: 33,5 × 24 cm; 14”: 34 × 24 cm; 15”: 37 × 29 cm.",
-    "personalization": "Sublimação digital sem limite de cores.",
-    "minimumQuantity": {
-      "value": 50,
-      "unit": "unidades",
-      "originalText": "50 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Grande área visual, múltiplos tamanhos e personalização total por sublimação.",
-    "indicatedFor": "Home office, onboarding, eventos de tecnologia e equipes híbridas.",
-    "premiareApplication": "Capa com estampa de campanha, ilustração ou identidade de programa interno.",
-    "kitCombination": "Combinar com suporte de celular e powerbank.",
-    "technicalNotes": null,
-    "featured": false
   },
   {
     "sku": "BD-BLCAPNOTISO",
     "slug": "capa-para-notebook-neoplex-5-mm-personalizada",
     "name": "Capa para Notebook Neoplex 5 mm Personalizada",
     "category": {
-      "name": "Viagens e mobilidade",
-      "slug": "viagens-e-mobilidade"
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
     },
     "image": {
       "src": "/catalog/products/bd-blcapnotiso/cover-800.webp",
       "srcSmall": "/catalog/products/bd-blcapnotiso/cover-480.webp",
       "srcLarge": "/catalog/products/bd-blcapnotiso/cover-1200.webp",
-      "alt": "Capa para Notebook Neoplex 5 mm Personalizada — Viagens e mobilidade",
+      "alt": "Capa para Notebook Neoplex 5 mm Personalizada — Viagem e mobilidade",
       "width": 800,
       "height": 800
     },
@@ -523,106 +325,7 @@
     "differentiators": "Espessura de 5 mm, modelo slim, ampla grade de tamanhos e fechamento com zíper.",
     "indicatedFor": "Colaboradores, tecnologia, educação corporativa e trabalho remoto.",
     "premiareApplication": "Capa premium para notebook em kit de implantação de home office.",
-    "kitCombination": "Combinar com estojo tecnológico e suporte de celular.",
-    "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BD09274",
-    "slug": "suporte-celular-aluminio",
-    "name": "Suporte Celular Alumínio",
-    "category": {
-      "name": "Escritório e home office",
-      "slug": "escritorio-e-home-office"
-    },
-    "image": {
-      "src": "/catalog/products/bd09274/cover-800.webp",
-      "srcSmall": "/catalog/products/bd09274/cover-480.webp",
-      "srcLarge": "/catalog/products/bd09274/cover-1200.webp",
-      "alt": "Suporte Celular Alumínio — Escritório e home office",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "Alumínio; silicone antiderrapante.",
-    "colors": null,
-    "dimensionsAndCapacity": "13,2 × 6,7 × 14,2 cm; 120 g.",
-    "personalization": "Área de gravação publicada: 7 × 5 cm frontal, 5 × 0,5 cm em cada lateral e 2 × 5 cm traseira.",
-    "minimumQuantity": {
-      "value": 25,
-      "unit": "unidades",
-      "originalText": "25 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Sete níveis de ajuste e proteção antiderrapante.",
-    "indicatedFor": "Home office, lideranças, equipes híbridas e eventos de tecnologia.",
-    "premiareApplication": "Item central de kit para mesa de trabalho.",
-    "kitCombination": "Combinar com powerbank, cabo e drip coffee.",
-    "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BD-LUMINARIA",
-    "slug": "luminaria-para-leitura-de-livro-personalizada",
-    "name": "Luminária para Leitura de Livro Personalizada",
-    "category": {
-      "name": "Escritório e home office",
-      "slug": "escritorio-e-home-office"
-    },
-    "image": {
-      "src": "/catalog/products/bd-luminaria/cover-800.webp",
-      "srcSmall": "/catalog/products/bd-luminaria/cover-480.webp",
-      "srcLarge": "/catalog/products/bd-luminaria/cover-1200.webp",
-      "alt": "Luminária para Leitura de Livro Personalizada — Escritório e home office",
-      "width": 420,
-      "height": 420
-    },
-    "materials": "Clipe e haste flexível.",
-    "colors": null,
-    "dimensionsAndCapacity": null,
-    "personalization": null,
-    "minimumQuantity": {
-      "value": 30,
-      "unit": "unidades",
-      "originalText": "30 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Clipe firme, haste ajustável e luz direcionável para leitura.",
-    "indicatedFor": "Educação corporativa, leitores, home office e campanhas de incentivo ao estudo.",
-    "premiareApplication": "Brinde para programa de desenvolvimento, clube do livro ou trilha de aprendizagem.",
-    "kitCombination": "Combinar com caderno, caneta e caneca fosca.",
-    "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BD94398",
-    "slug": "caneca-em-vidro-com-efeito-fosco-530-ml",
-    "name": "Caneca em vidro com efeito fosco (530 mL)",
-    "category": {
-      "name": "Alimentação e bebidas",
-      "slug": "alimentacao-e-bebidas"
-    },
-    "image": {
-      "src": "/catalog/products/bd94398/cover-800.webp",
-      "srcSmall": "/catalog/products/bd94398/cover-480.webp",
-      "srcLarge": "/catalog/products/bd94398/cover-1200.webp",
-      "alt": "Caneca em vidro com efeito fosco (530 mL) — Alimentação e bebidas",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "Vidro fosco.",
-    "colors": null,
-    "dimensionsAndCapacity": "530 mL; Ø 90 × 127 mm; 484 g.",
-    "personalization": null,
-    "minimumQuantity": {
-      "value": 25,
-      "unit": "unidades",
-      "originalText": "25 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Lançamento 2026/27; efeito fosco; lavável em lava-louças; caixa presente; certificação EU Food Grade.",
-    "indicatedFor": "Clientes, colaboradores, cafeterias corporativas e eventos premium.",
-    "premiareApplication": "Caneca de boas-vindas em evento executivo ou presente de agradecimento.",
-    "kitCombination": "Combinar com drip coffee, kit coador ou cafeteira francesa.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
@@ -631,14 +334,14 @@
     "slug": "kit-para-caipirinha-com-5-pecas-em-bambu",
     "name": "Kit para caipirinha com 5 peças em bambu",
     "category": {
-      "name": "Alimentação e bebidas",
-      "slug": "alimentacao-e-bebidas"
+      "name": "Casa e gastronomia",
+      "slug": "casa-e-gastronomia"
     },
     "image": {
       "src": "/catalog/products/bd94435/cover-800.webp",
       "srcSmall": "/catalog/products/bd94435/cover-480.webp",
       "srcLarge": "/catalog/products/bd94435/cover-1200.webp",
-      "alt": "Kit para caipirinha com 5 peças em bambu — Alimentação e bebidas",
+      "alt": "Kit para caipirinha com 5 peças em bambu — Casa e gastronomia",
       "width": 800,
       "height": 800
     },
@@ -655,40 +358,7 @@
     "differentiators": "Lançamento 2026/27; cinco peças; caixa presente; certificação EU Food Grade.",
     "indicatedFor": "Clientes, convidados VIP, celebrações e datas comemorativas.",
     "premiareApplication": "Kit temático para confraternização ou ação de hospitalidade brasileira.",
-    "kitCombination": "Pode receber drink engarrafado, cartão de receita e biscoito da sorte.",
-    "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BDCO9310",
-    "slug": "copo-em-inox-com-canudo",
-    "name": "Copo em inox com canudo",
-    "category": {
-      "name": "Alimentação e bebidas",
-      "slug": "alimentacao-e-bebidas"
-    },
-    "image": {
-      "src": "/catalog/products/bdco9310/cover-800.webp",
-      "srcSmall": "/catalog/products/bdco9310/cover-480.webp",
-      "srcLarge": "/catalog/products/bdco9310/cover-1200.webp",
-      "alt": "Copo em inox com canudo — Alimentação e bebidas",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "Aço inox 304; tampa em poliestireno (PS); canudo em inox; pegador em fibra de noz.",
-    "colors": "Acabamento externo fosco.",
-    "dimensionsAndCapacity": "250 mL; 9 × Ø 7,5 cm; 100 g.",
-    "personalization": null,
-    "minimumQuantity": {
-      "value": 25,
-      "unit": "unidades",
-      "originalText": "25 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Duas formas de uso: canudo ou bico; pintura fosca; material 304.",
-    "indicatedFor": "Colaboradores, clientes, eventos internos e kits de rotina.",
-    "premiareApplication": "Copo para kit de verão, onboarding ou ação de hidratação.",
-    "kitCombination": "Combinar com drip coffee, squeeze ou sacola de evento.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
@@ -697,14 +367,14 @@
     "slug": "kit-coador-de-cafe-personalizado",
     "name": "Kit Coador de Café Personalizado",
     "category": {
-      "name": "Alimentação e bebidas",
-      "slug": "alimentacao-e-bebidas"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
       "src": "/catalog/products/kit-coa0032/cover-800.webp",
       "srcSmall": "/catalog/products/kit-coa0032/cover-480.webp",
       "srcLarge": "/catalog/products/kit-coa0032/cover-1200.webp",
-      "alt": "Kit Coador de Café Personalizado — Alimentação e bebidas",
+      "alt": "Kit Coador de Café Personalizado — Kits e experiências",
       "width": 800,
       "height": 800
     },
@@ -721,7 +391,7 @@
     "differentiators": "Experiência completa com moedor manual, bule, dois coadores, duas canecas e café Orfeu.",
     "indicatedFor": "Lideranças, clientes especiais, casais convidados e ações de hospitalidade.",
     "premiareApplication": "Presente premium de relacionamento ou final de ano.",
-    "kitCombination": "Já é um kit completo; pode receber drip coffee extra ou biscoito personalizado.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
@@ -730,14 +400,14 @@
     "slug": "kit-cafe-com-cafeteira-francesa-personalizado",
     "name": "Kit Café com Cafeteira Francesa Personalizado",
     "category": {
-      "name": "Alimentação e bebidas",
-      "slug": "alimentacao-e-bebidas"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
       "src": "/catalog/products/kit-fra3047/cover-800.webp",
       "srcSmall": "/catalog/products/kit-fra3047/cover-480.webp",
       "srcLarge": "/catalog/products/kit-fra3047/cover-1200.webp",
-      "alt": "Kit Café com Cafeteira Francesa Personalizado — Alimentação e bebidas",
+      "alt": "Kit Café com Cafeteira Francesa Personalizado — Kits e experiências",
       "width": 800,
       "height": 800
     },
@@ -754,7 +424,7 @@
     "differentiators": "Experiência pronta para presentear, com café de embalagem personalizada e alfajor Havanna.",
     "indicatedFor": "Clientes, lideranças, onboarding premium e trabalho híbrido.",
     "premiareApplication": "Coffee experience para agradecimento, celebração de contrato ou kit home office.",
-    "kitCombination": "Já é um kit completo; pode receber caneca fosca ou drip coffee adicional.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": true
   },
@@ -763,14 +433,14 @@
     "slug": "garrafa-termica-500-ml",
     "name": "Garrafa Térmica 500 mL",
     "category": {
-      "name": "Alimentação e bebidas",
-      "slug": "alimentacao-e-bebidas"
+      "name": "Casa e gastronomia",
+      "slug": "casa-e-gastronomia"
     },
     "image": {
       "src": "/catalog/products/bdga8400/cover-800.webp",
       "srcSmall": "/catalog/products/bdga8400/cover-480.webp",
       "srcLarge": "/catalog/products/bdga8400/cover-1200.webp",
-      "alt": "Garrafa Térmica 500 mL — Alimentação e bebidas",
+      "alt": "Garrafa Térmica 500 mL — Casa e gastronomia",
       "width": 800,
       "height": 800
     },
@@ -787,140 +457,8 @@
     "differentiators": "Isolamento a vácuo; conservação anunciada de 8 h para quente e 12 h para frio.",
     "indicatedFor": "Clientes, colaboradores, lideranças e kits de mobilidade.",
     "premiareApplication": "Brinde de uso diário para campanha de bem-estar ou reconhecimento.",
-    "kitCombination": "Combinar com drip coffee, capa de notebook ou kit viagem.",
+    "kitCombination": null,
     "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BD-DRIPCOFFEE10G",
-    "slug": "drip-coffee-sache-personalizado",
-    "name": "Drip Coffee Sachê Personalizado",
-    "category": {
-      "name": "Alimentação e bebidas",
-      "slug": "alimentacao-e-bebidas"
-    },
-    "image": {
-      "src": "/catalog/products/bd-dripcoffee10g/cover-800.webp",
-      "srcSmall": "/catalog/products/bd-dripcoffee10g/cover-480.webp",
-      "srcLarge": "/catalog/products/bd-dripcoffee10g/cover-1200.webp",
-      "alt": "Drip Coffee Sachê Personalizado — Alimentação e bebidas",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "Café especial 100% arábica, Catuaí amarelo; adesivo BOPP na embalagem.",
-    "colors": "Branco e preto.",
-    "dimensionsAndCapacity": "10 g de café moído por sachê.",
-    "personalization": "Adesivo BOPP personalizado na embalagem.",
-    "minimumQuantity": {
-      "value": 10,
-      "unit": "unidades",
-      "originalText": "10 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Baixo mínimo, café especial de Machado/MG e formato prático para kits.",
-    "indicatedFor": "Onboarding, eventos, clientes, reuniões e home office.",
-    "premiareApplication": "Componente de baixo volume para elevar a experiência de um kit corporativo.",
-    "kitCombination": "Combinar com caneca fosca, garrafa térmica ou cafeteira francesa.",
-    "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BD-CHAVEIROTAGNFC",
-    "slug": "chaveiro-tag-nfc-personalizado",
-    "name": "Chaveiro TAG NFC Personalizado",
-    "category": {
-      "name": "Eventos e ações promocionais",
-      "slug": "eventos-e-acoes-promocionais"
-    },
-    "image": {
-      "src": "/catalog/products/bd-chaveirotagnfc/cover-800.webp",
-      "srcSmall": "/catalog/products/bd-chaveirotagnfc/cover-480.webp",
-      "srcLarge": "/catalog/products/bd-chaveirotagnfc/cover-1200.webp",
-      "alt": "Chaveiro TAG NFC Personalizado — Eventos e ações promocionais",
-      "width": 800,
-      "height": 800
-    },
-    "materials": null,
-    "colors": null,
-    "dimensionsAndCapacity": "NFC 13,56 MHz, memória 1K.",
-    "personalization": "Adesivação frente e verso.",
-    "minimumQuantity": {
-      "value": 50,
-      "unit": "unidades",
-      "originalText": "50 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Conecta o brinde físico a conteúdo digital, landing page, credencial ou contato.",
-    "indicatedFor": "Eventos, lançamentos, networking, programas de fidelidade e visitação.",
-    "premiareApplication": "Tag com NFC direcionando para agenda do evento, certificado ou página da campanha.",
-    "kitCombination": "Combinar com lanyard tecnológico, eco copo ou kit de onboarding.",
-    "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BD-COPOCOMTIRANTE",
-    "slug": "eco-copo-personalizado-550-ml-in-mold-label",
-    "name": "Eco Copo Personalizado 550 mL — In Mold Label",
-    "category": {
-      "name": "Eventos e ações promocionais",
-      "slug": "eventos-e-acoes-promocionais"
-    },
-    "image": {
-      "src": "/catalog/products/bd-copocomtirante/cover-800.webp",
-      "srcSmall": "/catalog/products/bd-copocomtirante/cover-480.webp",
-      "srcLarge": "/catalog/products/bd-copocomtirante/cover-1200.webp",
-      "alt": "Eco Copo Personalizado 550 mL — In Mold Label — Eventos e ações promocionais",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "Matéria-prima plástica virgem.",
-    "colors": "12 cores disponíveis.",
-    "dimensionsAndCapacity": "550 mL; cordão: 85 × 2 cm.",
-    "personalization": "Silk em 1 cor; transfer localizado; cromia/In Mold Label em 360°.",
-    "minimumQuantity": {
-      "value": 100,
-      "unit": "unidades",
-      "originalText": "100 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Personalização 360°, cordão incluso, produto atóxico e referência à norma 105 da ANVISA.",
-    "indicatedFor": "Festivais, convenções, feiras, ações esportivas e eventos internos.",
-    "premiareApplication": "Copo oficial de evento com arte integral e tirante personalizado.",
-    "kitCombination": "Combinar com lanyard tecnológico, tag NFC e sacola.",
-    "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BD-CHAVEIROESMALTADO",
-    "slug": "chaveiro-metal-esmaltado-personalizado",
-    "name": "Chaveiro Metal Esmaltado Personalizado",
-    "category": {
-      "name": "Eventos e ações promocionais",
-      "slug": "eventos-e-acoes-promocionais"
-    },
-    "image": {
-      "src": "/catalog/products/bd-chaveiroesmaltado/cover-800.webp",
-      "srcSmall": "/catalog/products/bd-chaveiroesmaltado/cover-480.webp",
-      "srcLarge": "/catalog/products/bd-chaveiroesmaltado/cover-1200.webp",
-      "alt": "Chaveiro Metal Esmaltado Personalizado — Eventos e ações promocionais",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "Metal; esmalte; argola e argolinha.",
-    "colors": "Cores definidas por Pantone e sujeitas à análise da arte.",
-    "dimensionsAndCapacity": "Até 16 cm²; referência de 4 × 4 cm.",
-    "personalization": "Arte em relevo e esmaltada em um lado; Pantones informados pelo cliente.",
-    "minimumQuantity": {
-      "value": 100,
-      "unit": "unidades",
-      "originalText": "100 unidades"
-    },
-    "leadTime": "15 a 20 dias úteis",
-    "differentiators": "Formato sob medida e acabamento esmaltado com alta presença de marca.",
-    "indicatedFor": "Eventos, comunidades, programas de reconhecimento, colecionáveis e lançamentos.",
-    "premiareApplication": "Peça comemorativa de aniversário, conquista ou comunidade de marca.",
-    "kitCombination": "Combinar com embalagem personalizada, kit de evento ou cartão de reconhecimento.",
-    "technicalNotes": "Arte sujeita a análise.",
     "featured": false
   },
   {
@@ -928,14 +466,14 @@
     "slug": "kit-drink",
     "name": "Kit Drink",
     "category": {
-      "name": "Kits e presentes para colaboradores",
-      "slug": "kits-e-presentes-para-colaboradores"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
       "src": "/catalog/products/bdkws100/cover-800.webp",
       "srcSmall": "/catalog/products/bdkws100/cover-480.webp",
       "srcLarge": "/catalog/products/bdkws100/cover-1200.webp",
-      "alt": "Kit Drink — Kits e presentes para colaboradores",
+      "alt": "Kit Drink — Kits e experiências",
       "width": 800,
       "height": 800
     },
@@ -952,74 +490,8 @@
     "differentiators": "Pedras de granito reutilizáveis, copo, pinça e caixa de madeira elegante.",
     "indicatedFor": "Lideranças, reconhecimento, clientes e celebrações de resultados.",
     "premiareApplication": "Presente de meta atingida ou relacionamento com cliente premium.",
-    "kitCombination": "Combinar com kit vinho, biscoito personalizado ou caixa cartonada.",
+    "kitCombination": null,
     "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "KIT-BOAS0008",
-    "slug": "kit-boas-vindas-personalizado-squeeze-caderno-e-caneta",
-    "name": "Kit Boas-Vindas Personalizado — squeeze, caderno e caneta",
-    "category": {
-      "name": "Kits e presentes para colaboradores",
-      "slug": "kits-e-presentes-para-colaboradores"
-    },
-    "image": {
-      "src": "/catalog/products/kit-boas0008/cover-800.webp",
-      "srcSmall": "/catalog/products/kit-boas0008/cover-480.webp",
-      "srcLarge": "/catalog/products/kit-boas0008/cover-1200.webp",
-      "alt": "Kit Boas-Vindas Personalizado — squeeze, caderno e caneta — Kits e presentes para colaboradores",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "Squeeze de alumínio; caneta de metal.",
-    "colors": null,
-    "dimensionsAndCapacity": null,
-    "personalization": "Gravação no caderno, caneta, squeeze e tampa da caixa.",
-    "minimumQuantity": {
-      "value": 30,
-      "unit": "unidades",
-      "originalText": "30 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Composição enxuta e corporativa, pronta para integração e uso no dia a dia.",
-    "indicatedFor": "Novos colaboradores, estagiários, trainees e times remotos.",
-    "premiareApplication": "Onboarding padronizado com mensagem do líder e cronograma de integração.",
-    "kitCombination": "Já é um kit; pode receber drip coffee ou suporte de celular.",
-    "technicalNotes": null,
-    "featured": true
-  },
-  {
-    "sku": "KIT-BOAS0058",
-    "slug": "kit-boas-vindas-trofeu-porta-cracha-caneca-e-sacochila",
-    "name": "Kit Boas-Vindas — troféu, porta-crachá, caneca e sacochila",
-    "category": {
-      "name": "Kits e presentes para colaboradores",
-      "slug": "kits-e-presentes-para-colaboradores"
-    },
-    "image": {
-      "src": "/catalog/products/kit-boas0058/cover-800.webp",
-      "srcSmall": "/catalog/products/kit-boas0058/cover-480.webp",
-      "srcLarge": "/catalog/products/kit-boas0058/cover-1200.webp",
-      "alt": "Kit Boas-Vindas — troféu, porta-crachá, caneca e sacochila — Kits e presentes para colaboradores",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "Caixa de papel kraft; troféu de acrílico fornecido pelo cliente; caneca de cerâmica.",
-    "colors": null,
-    "dimensionsAndCapacity": "Caneca: 325 mL.",
-    "personalization": "Sublimação na caneca; silk prata ou dourado no porta-crachá e caixa; transfer colorido na sacochila.",
-    "minimumQuantity": {
-      "value": 10,
-      "unit": "unidades",
-      "originalText": "10 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Combina integração e reconhecimento; inclui sacochila externa e aceita troféu do cliente.",
-    "indicatedFor": "Integração de líderes, embaixadores, programas de reconhecimento e eventos internos.",
-    "premiareApplication": "Kit para homenagear multiplicadores de cultura ou participantes de programa de liderança.",
-    "kitCombination": "Já é um kit completo; pode receber cartão personalizado ou tag NFC.",
-    "technicalNotes": "O troféu é cedido pelo cliente.",
     "featured": false
   },
   {
@@ -1027,14 +499,14 @@
     "slug": "kit-boas-vindas-caderneta-camiseta-e-copo-termico",
     "name": "Kit Boas-Vindas — caderneta, camiseta e copo térmico",
     "category": {
-      "name": "Kits e presentes para colaboradores",
-      "slug": "kits-e-presentes-para-colaboradores"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
       "src": "/catalog/products/kit-boas0056/cover-800.webp",
       "srcSmall": "/catalog/products/kit-boas0056/cover-480.webp",
       "srcLarge": "/catalog/products/kit-boas0056/cover-1200.webp",
-      "alt": "Kit Boas-Vindas — caderneta, camiseta e copo térmico — Kits e presentes para colaboradores",
+      "alt": "Kit Boas-Vindas — caderneta, camiseta e copo térmico — Kits e experiências",
       "width": 800,
       "height": 800
     },
@@ -1051,7 +523,7 @@
     "differentiators": "Mistura identidade cultural, vestuário e item térmico em composição de onboarding.",
     "indicatedFor": "Novos colaboradores, trainees, convenções e mudança de marca.",
     "premiareApplication": "Kit de cultura para entrada no time ou lançamento de novo posicionamento interno.",
-    "kitCombination": "Já é um kit; pode receber tag NFC com conteúdo de integração.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
@@ -1060,14 +532,14 @@
     "slug": "caixa-cartonada-personalizada",
     "name": "Caixa Cartonada Personalizada",
     "category": {
-      "name": "Kits e presentes para colaboradores",
-      "slug": "kits-e-presentes-para-colaboradores"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
       "src": "/catalog/products/bd-caixacartonada02/cover-800.webp",
       "srcSmall": "/catalog/products/bd-caixacartonada02/cover-480.webp",
       "srcLarge": "/catalog/products/bd-caixacartonada02/cover-1200.webp",
-      "alt": "Caixa Cartonada Personalizada — Kits e presentes para colaboradores",
+      "alt": "Caixa Cartonada Personalizada — Kits e experiências",
       "width": 800,
       "height": 800
     },
@@ -1084,7 +556,7 @@
     "differentiators": "Formato grande, impressão total e mínimo unitário — útil para protótipo ou projeto exclusivo.",
     "indicatedFor": "Kits VIP, propostas especiais, mostruários e presentes para liderança.",
     "premiareApplication": null,
-    "kitCombination": "Pode acomodar produtos executivos, tecnologia ou gastronomia; berço precisa ser desenvolvido à parte.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
@@ -1093,14 +565,14 @@
     "slug": "caixa-retangular-pequim-tampa-e-fundo",
     "name": "Caixa Retangular Pequim Tampa e Fundo",
     "category": {
-      "name": "Kits e presentes para colaboradores",
-      "slug": "kits-e-presentes-para-colaboradores"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
       "src": "/catalog/products/bd-w8dwxu5qr/cover-800.webp",
       "srcSmall": "/catalog/products/bd-w8dwxu5qr/cover-480.webp",
       "srcLarge": "/catalog/products/bd-w8dwxu5qr/cover-1200.webp",
-      "alt": "Caixa Retangular Pequim Tampa e Fundo — Kits e presentes para colaboradores",
+      "alt": "Caixa Retangular Pequim Tampa e Fundo — Kits e experiências",
       "width": 800,
       "height": 800
     },
@@ -1126,14 +598,14 @@
     "slug": "roupao-personalizado",
     "name": "Roupão Personalizado",
     "category": {
-      "name": "Kits e presentes para colaboradores",
-      "slug": "kits-e-presentes-para-colaboradores"
+      "name": "Bem-estar e hospitalidade",
+      "slug": "bem-estar-e-hospitalidade"
     },
     "image": {
       "src": "/catalog/products/bd-roupao/cover-800.webp",
       "srcSmall": "/catalog/products/bd-roupao/cover-480.webp",
       "srcLarge": "/catalog/products/bd-roupao/cover-1200.webp",
-      "alt": "Roupão Personalizado — Kits e presentes para colaboradores",
+      "alt": "Roupão Personalizado — Bem-estar e hospitalidade",
       "width": 800,
       "height": 800
     },
@@ -1150,128 +622,161 @@
     "differentiators": "Baixo mínimo e forte apelo de bem-estar e hospitalidade.",
     "indicatedFor": "Lideranças, hotéis, spas, campanhas de autocuidado e reconhecimento individual.",
     "premiareApplication": "Presente de descanso e bem-estar em programa de reconhecimento.",
-    "kitCombination": "Combinar com espelho, borrifador de perfume e caixa personalizada.",
+    "kitCombination": null,
     "technicalNotes": "Pantufa não acompanha.",
     "featured": false
   },
   {
-    "sku": "BD98166",
-    "slug": "cartao-multifuncoes-em-aco-inox-com-20-funcoes",
-    "name": "Cartão multifunções em aço inox com 20 funções",
+    "sku": "KIT-BOAS0041",
+    "slug": "kit-onboarding-com-copo-termico-e-caixa-de-som-kit-boas0041",
+    "name": "Kit onboarding com copo térmico e caixa de som",
     "category": {
-      "name": "Produtos criativos ou diferenciados",
-      "slug": "produtos-criativos-ou-diferenciados"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
-      "src": "/catalog/products/bd98166/cover-800.webp",
-      "srcSmall": "/catalog/products/bd98166/cover-480.webp",
-      "srcLarge": "/catalog/products/bd98166/cover-1200.webp",
-      "alt": "Cartão multifunções em aço inox com 20 funções — Produtos criativos ou diferenciados",
+      "src": "/catalog/products/kit-boas0041/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-boas0041/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-boas0041/cover-1200.webp",
+      "alt": "Kit onboarding com copo térmico e caixa de som — Kits e experiências",
       "width": 800,
       "height": 800
     },
-    "materials": "Aço inox; bolsa em PU.",
+    "materials": null,
     "colors": null,
-    "dimensionsAndCapacity": "Cartão: 80 × 53 mm; bolsa: 93 × 65 mm; 31 g.",
-    "personalization": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação no copo (laser), na caixinha de som (tampografia 1 cor) e na tampa da caixa (silk prata ou dourado).",
     "minimumQuantity": {
-      "value": 25,
+      "value": 10,
       "unit": "unidades",
-      "originalText": "25 unidades"
+      "originalText": "10 unidades"
     },
     "leadTime": null,
-    "differentiators": "Vinte funções em formato compacto, incluindo abridores, chaves, cortador, faca e régua.",
-    "indicatedFor": "Lideranças, equipes de campo, público automotivo e ações de segurança.",
-    "premiareApplication": "Brinde funcional para convenções, campanhas de produtividade ou SIPAT.",
-    "kitCombination": "Combinar com powerbank, suporte de celular e estojo tecnológico.",
+    "differentiators": "Kit em caixa de papel kraft com Copo Térmico de inox 500ml contendo tampa com abridor, Caixa de Som Multimídia com Relógio e espaço para caderno.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
   {
-    "sku": "BD95114",
-    "slug": "borrifador-de-perfume-recarregavel-com-involucro-em-bambu-natural",
-    "name": "Borrifador de perfume recarregável com invólucro em bambu natural",
+    "sku": "KIT-BOAS0047",
+    "slug": "kit-onboarding-com-garrafa-termica-e-caixa-de-som-kit-boas0047",
+    "name": "Kit onboarding com garrafa térmica e caixa de som",
     "category": {
-      "name": "Produtos criativos ou diferenciados",
-      "slug": "produtos-criativos-ou-diferenciados"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
-      "src": "/catalog/products/bd95114/cover-800.webp",
-      "srcSmall": "/catalog/products/bd95114/cover-480.webp",
-      "srcLarge": "/catalog/products/bd95114/cover-1200.webp",
-      "alt": "Borrifador de perfume recarregável com invólucro em bambu natural — Produtos criativos ou diferenciados",
+      "src": "/catalog/products/kit-boas0047/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-boas0047/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-boas0047/cover-1200.webp",
+      "alt": "Kit onboarding com garrafa térmica e caixa de som — Kits e experiências",
       "width": 800,
       "height": 800
     },
-    "materials": "Bambu natural.",
-    "colors": "Bambu natural.",
-    "dimensionsAndCapacity": "10 mL; Ø 20 × 95 mm; caixa: 25 × 25 × 105 mm; 20 g.",
-    "personalization": null,
-    "minimumQuantity": {
-      "value": 25,
-      "unit": "unidades",
-      "originalText": "25 unidades"
-    },
-    "leadTime": null,
-    "differentiators": "Compacto, recarregável, adequado para viagens e fornecido em caixa presente.",
-    "indicatedFor": "Clientes premium, lideranças, hospitalidade e público de beleza/bem-estar.",
-    "premiareApplication": "Mimo de autocuidado em kit de viagem ou campanha para lideranças.",
-    "kitCombination": "Combinar com espelho PU, roupão e caixa personalizada.",
-    "technicalNotes": null,
-    "featured": false
-  },
-  {
-    "sku": "BD95112",
-    "slug": "espelho-redondo-de-dupla-face-com-exterior-em-pu-mate",
-    "name": "Espelho redondo de dupla face com exterior em PU mate",
-    "category": {
-      "name": "Produtos criativos ou diferenciados",
-      "slug": "produtos-criativos-ou-diferenciados"
-    },
-    "image": {
-      "src": "/catalog/products/bd95112/cover-800.webp",
-      "srcSmall": "/catalog/products/bd95112/cover-480.webp",
-      "srcLarge": "/catalog/products/bd95112/cover-1200.webp",
-      "alt": "Espelho redondo de dupla face com exterior em PU mate — Produtos criativos ou diferenciados",
-      "width": 800,
-      "height": 800
-    },
-    "materials": "PU mate; moldura metálica; espelhos normal e de aumento.",
+    "materials": null,
     "colors": null,
-    "dimensionsAndCapacity": "Ø 70 mm; caixa: 80 × 80 × 15 mm; 53 g.",
-    "personalization": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação na garrafa (laser), caderno (uv digital colorido), caneta (laser), caixinha (laser) e na tampa da caixa (silk dourado ou prata).",
     "minimumQuantity": {
-      "value": 25,
+      "value": 30,
       "unit": "unidades",
-      "originalText": "25 unidades"
+      "originalText": "30 unidades"
     },
     "leadTime": null,
-    "differentiators": "Dupla face, um lado com aumento, acabamento mate e caixa presente.",
-    "indicatedFor": "Bem-estar, eventos femininos, hotelaria e kits de autocuidado.",
-    "premiareApplication": "Presente de campanha de saúde ou cuidado pessoal.",
-    "kitCombination": "Combinar com borrifador de perfume e roupão.",
+    "differentiators": "Kit Boas Vindas Personalizado com garrafa térmica, caderno, caneta e caixinha de som.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
     "technicalNotes": null,
-    "featured": false
+    "featured": true
   },
   {
-    "sku": "BD95111",
-    "slug": "borrifador-de-perfume-recarregavel-em-aluminio",
-    "name": "Borrifador de perfume recarregável em alumínio",
+    "sku": "KIT-BOAS0053",
+    "slug": "kit-boas-vindas-com-caderno-e-garrafa-termica-kit-boas0053",
+    "name": "Kit boas-vindas com caderno e garrafa térmica",
     "category": {
-      "name": "Produtos criativos ou diferenciados",
-      "slug": "produtos-criativos-ou-diferenciados"
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
     },
     "image": {
-      "src": "/catalog/products/bd95111/cover-800.webp",
-      "srcSmall": "/catalog/products/bd95111/cover-480.webp",
-      "srcLarge": "/catalog/products/bd95111/cover-1200.webp",
-      "alt": "Borrifador de perfume recarregável em alumínio — Produtos criativos ou diferenciados",
+      "src": "/catalog/products/kit-boas0053/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-boas0053/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-boas0053/cover-1200.webp",
+      "alt": "Kit boas-vindas com caderno e garrafa térmica — Kits e experiências",
       "width": 800,
       "height": 800
     },
-    "materials": "Alumínio; reservatório interno e janela transparente sem composição detalhada.",
+    "materials": null,
     "colors": null,
-    "dimensionsAndCapacity": "5 mL; Ø 15 × 77 mm; caixa: 20 × 20 × 84 mm; 13 g.",
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação no moleskine (uv digital colorido), caneta (laser), copo (silk 1 cor), garrafa (laser) e tampa da caixa (silk prata ou dourado na tampa).",
+    "minimumQuantity": {
+      "value": 10,
+      "unit": "unidades",
+      "originalText": "10 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Boas Vindas Personalizado em caixa kraft 420g, com moleskine (capa emborrachada), caneta de metal com touch, copo de café com tampa (fibra de arroz 350ml) e garrafa térmica 400ml.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "KIT-BOAS0025",
+    "slug": "kit-boas-vindas-com-mochila-e-caderno-kit-boas0025",
+    "name": "Kit boas-vindas com mochila e caderno",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-boas0025/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-boas0025/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-boas0025/cover-1200.webp",
+      "alt": "Kit boas-vindas com mochila e caderno — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Kit Boas Vindas Personalização para Integração, Mochila, Caderno Tipo Moleskine para Anotações, Caneta Metal e Squeeze Alumínio. Gravação mochila, caderno, caneta e squeeze.",
+    "minimumQuantity": {
+      "value": 30,
+      "unit": "unidades",
+      "originalText": "30 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Boas Vindas Personalização para Integração, Mochila, Caderno Tipo Moleskine para Anotações, Caneta Metal e Squeeze Alumínio. Gravação mochila, caderno, caneta e squeeze.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD15581",
+    "slug": "kit-executivo-com-caderneta-caneta-e-garrafa-termica-bd15581",
+    "name": "Kit executivo com caderneta, caneta e garrafa térmica",
+    "category": {
+      "name": "Executivo e trabalho",
+      "slug": "executivo-e-trabalho"
+    },
+    "image": {
+      "src": "/catalog/products/bd15581/cover-800.webp",
+      "srcSmall": "/catalog/products/bd15581/cover-480.webp",
+      "srcLarge": "/catalog/products/bd15581/cover-1200.webp",
+      "alt": "Kit executivo com caderneta, caneta e garrafa térmica — Executivo e trabalho",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
     "personalization": null,
     "minimumQuantity": {
       "value": 25,
@@ -1279,43 +784,1363 @@
       "originalText": "25 unidades"
     },
     "leadTime": null,
-    "differentiators": "Reabastecimento pela válvula inferior, janela de nível, formato compacto e caixa de oferta.",
-    "indicatedFor": "Viagens, hospitalidade, lideranças e campanhas de bem-estar.",
-    "premiareApplication": "Mimo premium em kit de viagem ou presente para convidados VIP.",
-    "kitCombination": "Combinar com kit viagem, espelho PU ou nécessaire.",
+    "differentiators": "Kit executivo composto por três itens: caderneta, caneta e garrafa térmica. A caderneta, de tamanho A5, possui capa dura em rPET, aba com fecho magnético e placa metálica personalizável, marca-página em fita de cetim e aproximadamente 80 folhas marfim pautadas em papel de 70g/m².",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para lideranças, clientes estratégicos ou equipes, integrado a uma apresentação personalizada.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   },
   {
-    "sku": "BD-BISCOITOSORTE",
-    "slug": "biscoito-da-sorte-personalizado-com-frases",
-    "name": "Biscoito da sorte personalizado com frases",
+    "sku": "BDCJ305",
+    "slug": "kit-escritorio-em-rpet-com-garrafa-termica-bdcj305",
+    "name": "Kit escritório em RPET com garrafa térmica",
     "category": {
-      "name": "Produtos criativos ou diferenciados",
-      "slug": "produtos-criativos-ou-diferenciados"
+      "name": "Executivo e trabalho",
+      "slug": "executivo-e-trabalho"
     },
     "image": {
-      "src": "/catalog/products/bd-biscoitosorte/cover-800.webp",
-      "srcSmall": "/catalog/products/bd-biscoitosorte/cover-480.webp",
-      "srcLarge": "/catalog/products/bd-biscoitosorte/cover-1200.webp",
-      "alt": "Biscoito da sorte personalizado com frases — Produtos criativos ou diferenciados",
+      "src": "/catalog/products/bdcj305/cover-800.webp",
+      "srcSmall": "/catalog/products/bdcj305/cover-480.webp",
+      "srcLarge": "/catalog/products/bdcj305/cover-1200.webp",
+      "alt": "Kit escritório em RPET com garrafa térmica — Executivo e trabalho",
       "width": 800,
       "height": 800
     },
-    "materials": "Produto alimentício.",
-    "colors": "Embalagem personalizada.",
-    "dimensionsAndCapacity": "Até 30 frases na frente e uma no verso; até 100 caracteres por frase; caixas com 1.000 unidades; validade de 90 dias.",
-    "personalization": "Embalagem e mensagens internas personalizadas; frases padrão ou customizadas.",
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
     "minimumQuantity": {
-      "value": 1000,
+      "value": 25,
       "unit": "unidades",
-      "originalText": "1.000 unidades"
+      "originalText": "25 unidades"
     },
     "leadTime": null,
-    "differentiators": "Experiência surpresa, alta escala e personalização do conteúdo — não apenas da embalagem.",
-    "indicatedFor": "Feiras, eventos, campanhas internas, lançamento de marca e ações de engajamento.",
-    "premiareApplication": "Mensagens com valores da empresa, QR codes curtos ou chamadas para campanha.",
-    "kitCombination": "Combinar com caneca, kit café ou caixa de onboarding.",
+    "differentiators": "Kit escritório contendo caderno A5 com capa em RPET e detalhe em bambu, possui 80 folhas pautadas em papel 70g/m², garrafa térmica (exterior 201/interior 304) com capacidade de 600ml, acabamento preto fosco, tampa em plástica PP com detalhe em bambu e alça em silicone preta, caneta esferográfica de metal com detalhe em bambu, acompanha caixa presenteável.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para lideranças, clientes estratégicos ou equipes, integrado a uma apresentação personalizada.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD15173",
+    "slug": "kit-executivo-em-rpet-com-tres-pecas-bd15173",
+    "name": "Kit executivo em RPET com três peças",
+    "category": {
+      "name": "Executivo e trabalho",
+      "slug": "executivo-e-trabalho"
+    },
+    "image": {
+      "src": "/catalog/products/bd15173/cover-800.webp",
+      "srcSmall": "/catalog/products/bd15173/cover-480.webp",
+      "srcLarge": "/catalog/products/bd15173/cover-1200.webp",
+      "alt": "Kit executivo em RPET com três peças — Executivo e trabalho",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Produzido com metal e tecido em rPET reciclado, ele conta com um porta-cartão com chapa metálica para gravação e um interior revestido em veludo, garantindo sofisticação.",
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Nosso kit executivo traz praticidade e elegância para o dia a dia. A caneta esferográfica azul, com acionamento por rotação, é ideal para anotações rápidas, e o chaveiro é a solução perfeita para manter suas chaves sempre organizadas.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para lideranças, clientes estratégicos ou equipes, integrado a uma apresentação personalizada.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD91992",
+    "slug": "conjunto-premium-de-caneta-e-roller-em-estojo-bd91992",
+    "name": "Conjunto premium de caneta e roller em estojo",
+    "category": {
+      "name": "Executivo e trabalho",
+      "slug": "executivo-e-trabalho"
+    },
+    "image": {
+      "src": "/catalog/products/bd91992/cover-800.webp",
+      "srcSmall": "/catalog/products/bd91992/cover-480.webp",
+      "srcLarge": "/catalog/products/bd91992/cover-1200.webp",
+      "alt": "Conjunto premium de caneta e roller em estojo — Executivo e trabalho",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Set premium composto por 1 caneta esferográfica e 1 caneta roller em cobre e aço inox, com acabamento brilhante. A caneta esferográfica possui escrita Dokumental® em azul até 2 km e mecanismo de abertura twist.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para lideranças, clientes estratégicos ou equipes, integrado a uma apresentação personalizada.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD15585",
+    "slug": "kit-executivo-com-caderno-caneta-e-caneca-bd15585",
+    "name": "Kit executivo com caderno, caneta e caneca",
+    "category": {
+      "name": "Executivo e trabalho",
+      "slug": "executivo-e-trabalho"
+    },
+    "image": {
+      "src": "/catalog/products/bd15585/cover-800.webp",
+      "srcSmall": "/catalog/products/bd15585/cover-480.webp",
+      "srcLarge": "/catalog/products/bd15585/cover-1200.webp",
+      "alt": "Kit executivo com caderno, caneta e caneca — Executivo e trabalho",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit executivo composto por três itens: caderneta, caneta e caneca. A caderneta, de tamanho A5, possui capa dura com suporte lateral para caneta, elástico para fechamento, marca-página em fita de cetim e aproximadamente 80 folhas marfim pautadas em papel de 70g/m².",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para lideranças, clientes estratégicos ou equipes, integrado a uma apresentação personalizada.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "KIT-ITA6043",
+    "slug": "kit-cafe-com-cafeteira-italiana-illy-e-xicaras-kit-ita6043",
+    "name": "Kit café com cafeteira italiana, Illy e xícaras",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-ita6043/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-ita6043/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-ita6043/cover-1200.webp",
+      "alt": "Kit café com cafeteira italiana, Illy e xícaras — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação na cafeteira, xícaras e tampa da caixa.",
+    "minimumQuantity": {
+      "value": 10,
+      "unit": "unidades",
+      "originalText": "10 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Café personalizado em caixa de papel, Cafeteira Italiana 6 doses, Café Illy 125gr e 2 Xícaras de Porcelana para café.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": true
+  },
+  {
+    "sku": "KIT-ITA3092",
+    "slug": "kit-cafe-com-cafeteira-italiana-e-moedor-eletrico-kit-ita3092",
+    "name": "Kit café com cafeteira italiana e moedor elétrico",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-ita3092/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-ita3092/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-ita3092/cover-1200.webp",
+      "alt": "Kit café com cafeteira italiana e moedor elétrico — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação na cafeteira, no moedor e na tampa da caixa.",
+    "minimumQuantity": {
+      "value": 30,
+      "unit": "unidades",
+      "originalText": "30 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Café personalizado em caixa de papel, Cafeteira Italiana 3 doses com Café gourmet Santo Grão, Moedor de Café Elétrico e 2 copos de parede dupla.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "KIT-AZE0008",
+    "slug": "kit-gastronomico-com-azeite-moedores-e-temperos-kit-aze0008",
+    "name": "Kit gastronômico com azeite, moedores e temperos",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-aze0008/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-aze0008/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-aze0008/cover-1200.webp",
+      "alt": "Kit gastronômico com azeite, moedores e temperos — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação nos moedores, tampa da caixa e rótulo personalizado nos potes.",
+    "minimumQuantity": {
+      "value": 30,
+      "unit": "unidades",
+      "originalText": "30 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Azeite personalizado em caixa de papel, Azeite Colavita 250ml, 2 Moedores e 5 Potes com temperos e pimentas com etiquetas personalizadas.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "KIT-QUE0002",
+    "slug": "kit-queijos-com-tabua-utensilios-e-tacas-kit-que0002",
+    "name": "Kit queijos com tábua, utensílios e taças",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-que0002/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-que0002/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-que0002/cover-1200.webp",
+      "alt": "Kit queijos com tábua, utensílios e taças — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação na tábua e utensílios (laser), nas taças (decalque 1 cor) e na tampa da caixa (silk dourado ou prata).",
+    "minimumQuantity": {
+      "value": 30,
+      "unit": "unidades",
+      "originalText": "30 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit para Queijo Personalizado com tábua para Queijo/Petiscos, 2 facas, sendo, uma com ponta e outra reta, garfo e espátula em Bambu/Inox, 2 taças para Vinho em vidro e Abridor saca rolha em metal.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "KIT-GIN0006",
+    "slug": "kit-gin-bombay-com-taca-e-especiarias-kit-gin0006",
+    "name": "Kit gin Bombay com taça e especiarias",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-gin0006/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-gin0006/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-gin0006/cover-1200.webp",
+      "alt": "Kit gin Bombay com taça e especiarias — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação na taça, dosador, rótulo dos potes com especiarias e tampa da caixa.",
+    "minimumQuantity": {
+      "value": 10,
+      "unit": "unidades",
+      "originalText": "10 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Gin Personalizado em caixa de papel com 1 Gin Bombay 750ml, 1 taça de vidro para Gin 600ml, 1 dosador em inox, 1 colher canudo em inox e 3 potes com especiarias (a escolher).",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "KIT-VIN6028",
+    "slug": "kit-vinho-com-tacas-e-utensilios-para-queijo-kit-vin6028",
+    "name": "Kit vinho com taças e utensílios para queijo",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-vin6028/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-vin6028/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-vin6028/cover-1200.webp",
+      "alt": "Kit vinho com taças e utensílios para queijo — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação nas taças e tampa da caixa.",
+    "minimumQuantity": {
+      "value": 30,
+      "unit": "unidades",
+      "originalText": "30 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Vinho personalizado em caixa de papel, Vinho Pata Negra 750ml, 2 Taças, Faca, Espatula e Garfo.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": true
+  },
+  {
+    "sku": "KIT-CHU0026",
+    "slug": "kit-churrasco-completo-com-tabua-e-taca-kit-chu0026",
+    "name": "Kit churrasco completo com tábua e taça",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-chu0026/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-chu0026/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-chu0026/cover-1200.webp",
+      "alt": "Kit churrasco completo com tábua e taça — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação na tábua, garra, faca, taça, caixa de som e tampa da caixa.",
+    "minimumQuantity": {
+      "value": 10,
+      "unit": "unidades",
+      "originalText": "10 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Churrasco Personalizado em caixa de papel, Tábua para corte, Garra de Urso, Garfo Tridente Chifre, Faca, Garfo, Taça de Cerveja 400ml Dublin e Caixa de Som.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "KIT-CHU0002",
+    "slug": "kit-churrasco-com-tabua-utensilios-e-avental-kit-chu0002",
+    "name": "Kit churrasco com tábua, utensílios e avental",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-chu0002/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-chu0002/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-chu0002/cover-1200.webp",
+      "alt": "Kit churrasco com tábua, utensílios e avental — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação na tábua, faca, avental e tampa da caixa.",
+    "minimumQuantity": {
+      "value": 30,
+      "unit": "unidades",
+      "originalText": "30 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Churrasco Personalizao em caixa de papel, Tábua para corte, Garfo, Faca e Avental.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "KIT-CACHG004",
+    "slug": "kit-cachaca-extra-premium-com-dois-copos-kit-cachg004",
+    "name": "Kit cachaça extra premium com dois copos",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-cachg004/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-cachg004/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-cachg004/cover-1200.webp",
+      "alt": "Kit cachaça extra premium com dois copos — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação na tampa da caixa.",
+    "minimumQuantity": {
+      "value": 30,
+      "unit": "unidades",
+      "originalText": "30 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Cachaça personalizado em caixa de papel, Cachaça Weber Haus Extra Premium 750ml e 2 Copos.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "KIT-CHA0006",
+    "slug": "kit-cha-com-caneca-infusor-e-ervas-kit-cha0006",
+    "name": "Kit chá com caneca, infusor e ervas",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-cha0006/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-cha0006/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-cha0006/cover-1200.webp",
+      "alt": "Kit chá com caneca, infusor e ervas — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação na caneca (sublimação colorida), no pote (adesivo) e na tampa da caixa (silk prata ou dourado).",
+    "minimumQuantity": {
+      "value": 30,
+      "unit": "unidades",
+      "originalText": "30 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit Chá personalizado em caixa de papel, Caneca de Cerâmica 300ml, Infusor e pote de vidro com erva para chá (a definir).",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "KIT-TEMP016",
+    "slug": "kit-temperos-com-moedor-e-seis-potes-kit-temp016",
+    "name": "Kit temperos com moedor e seis potes",
+    "category": {
+      "name": "Kits e experiências",
+      "slug": "kits-e-experiencias"
+    },
+    "image": {
+      "src": "/catalog/products/kit-temp016/cover-800.webp",
+      "srcSmall": "/catalog/products/kit-temp016/cover-480.webp",
+      "srcLarge": "/catalog/products/kit-temp016/cover-1200.webp",
+      "alt": "Kit temperos com moedor e seis potes — Kits e experiências",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Kit em caixa de papel, moedor de temperos, 6 potes de vidro com temperos, gravação no moedor, tampa e rótulo nos potes.",
+    "minimumQuantity": {
+      "value": 30,
+      "unit": "unidades",
+      "originalText": "30 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit em caixa de papel, moedor de temperos, 6 potes de vidro com temperos, gravação no moedor, tampa e rótulo nos potes.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição para ações de relacionamento, celebração ou boas-vindas; apresentação e mensagem adaptadas à ocasião.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD94111",
+    "slug": "kit-churrasco-em-caixa-de-bambu-com-quatro-utensilios-bd94111",
+    "name": "Kit churrasco em caixa de bambu com quatro utensílios",
+    "category": {
+      "name": "Casa e gastronomia",
+      "slug": "casa-e-gastronomia"
+    },
+    "image": {
+      "src": "/catalog/products/bd94111/cover-800.webp",
+      "srcSmall": "/catalog/products/bd94111/cover-480.webp",
+      "srcLarge": "/catalog/products/bd94111/cover-1200.webp",
+      "alt": "Kit churrasco em caixa de bambu com quatro utensílios — Casa e gastronomia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "A cor e o resultado da impressão nos materiais naturais pode variar entre produtos.",
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit churrasco em caixa de bambu. Composto por 4 utensílios em aço inox e bambu: faca japonesa, faca chefe, faca boning e garfo.",
+    "indicatedFor": null,
+    "premiareApplication": "Experiência de uso para clientes e colaboradores em ações de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD94332",
+    "slug": "conjunto-de-saca-rolhas-eletrico-em-aluminio-bd94332",
+    "name": "Conjunto de saca-rolhas elétrico em alumínio",
+    "category": {
+      "name": "Casa e gastronomia",
+      "slug": "casa-e-gastronomia"
+    },
+    "image": {
+      "src": "/catalog/products/bd94332/cover-800.webp",
+      "srcSmall": "/catalog/products/bd94332/cover-480.webp",
+      "srcLarge": "/catalog/products/bd94332/cover-1200.webp",
+      "alt": "Conjunto de saca-rolhas elétrico em alumínio — Casa e gastronomia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Conjunto de saca-rolhas elétrico em alumínio e acessórios: corta-cápsulas, rolha de vácuo e salva-gotas (pilhas inclusas). Fornecido em caixa presente.",
+    "indicatedFor": null,
+    "premiareApplication": "Experiência de uso para clientes e colaboradores em ações de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD94104",
+    "slug": "kit-churrasco-com-tabua-e-sete-utensilios-bd94104",
+    "name": "Kit churrasco com tábua e sete utensílios",
+    "category": {
+      "name": "Casa e gastronomia",
+      "slug": "casa-e-gastronomia"
+    },
+    "image": {
+      "src": "/catalog/products/bd94104/cover-800.webp",
+      "srcSmall": "/catalog/products/bd94104/cover-480.webp",
+      "srcLarge": "/catalog/products/bd94104/cover-1200.webp",
+      "alt": "Kit churrasco com tábua e sete utensílios — Casa e gastronomia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "A cor e o resultado da impressão nos materiais naturais pode variar entre produtos.",
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Kit churrasco em estojo de PU e 210D. Composto por tábua em bambu e 7 utensílios em aço inox e madeira de Seringueira: faca japonesa, faca chefe, garfo, pinça, faca pequena, afiador e pincel.",
+    "indicatedFor": null,
+    "premiareApplication": "Experiência de uso para clientes e colaboradores em ações de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD09511",
+    "slug": "mochila-executiva-impermeavel-em-pu-20-l-bd09511",
+    "name": "Mochila executiva impermeável em PU 20 L",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bd09511/cover-800.webp",
+      "srcSmall": "/catalog/products/bd09511/cover-480.webp",
+      "srcLarge": "/catalog/products/bd09511/cover-1200.webp",
+      "alt": "Mochila executiva impermeável em PU 20 L — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Mochila com capacidade máxima de 20 litros. Confeccionada em poliuretano (PU) impermeável, contém estrutura interna em espuma, exceto no bolso localizado na parte superior frontal, além de forro interno em poliéster 210D.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD92589",
+    "slug": "mochila-de-viagem-para-notebook-com-organizador-de-roupas-bd92589",
+    "name": "Mochila de viagem para notebook com organizador de roupas",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bd92589/cover-800.webp",
+      "srcSmall": "/catalog/products/bd92589/cover-480.webp",
+      "srcLarge": "/catalog/products/bd92589/cover-1200.webp",
+      "alt": "Mochila de viagem para notebook com organizador de roupas — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Mochila para notebook com compartimento para organizar e transportar roupas em viagens. Os 2 compartimentos e os 3 bolsos frontais permitem uma maior organização para viajar com conforto e sem complicações, em qualquer situação.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": true
+  },
+  {
+    "sku": "BD92534",
+    "slug": "mochila-roll-top-em-pu-para-notebook-bd92534",
+    "name": "Mochila roll top em PU para notebook",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bd92534/cover-800.webp",
+      "srcSmall": "/catalog/products/bd92534/cover-480.webp",
+      "srcLarge": "/catalog/products/bd92534/cover-1200.webp",
+      "alt": "Mochila roll top em PU para notebook — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Mochila \"roll top\" que permite ajustar a capacidade de acordo com a sua necessidade, oferecendo maior flexibilidade no dia a dia. Material exterior: PU.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BDMC700",
+    "slug": "mochila-premium-com-compartimento-a-vacuo-bdmc700",
+    "name": "Mochila premium com compartimento a vácuo",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bdmc700/cover-800.webp",
+      "srcSmall": "/catalog/products/bdmc700/cover-480.webp",
+      "srcLarge": "/catalog/products/bdmc700/cover-1200.webp",
+      "alt": "Mochila premium com compartimento a vácuo — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Mochila em poliéster 900D com PU e interior em poliéster 210D. Possui divisória e zíper frontal, divisórias internas, compartimento a vácuo com bomba, zíper com expansor da mochila, espaço para tablet e notebook 15,6”, bolso lateral, cinco engates rápidos, alças acolchoadas, zíper nas costas, entrada USB e Tipo C e engate para mala.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": true
+  },
+  {
+    "sku": "BDPA150",
+    "slug": "pasta-para-notebook-em-tecido-canvas-bdpa150",
+    "name": "Pasta para notebook em tecido canvas",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bdpa150/cover-800.webp",
+      "srcSmall": "/catalog/products/bdpa150/cover-480.webp",
+      "srcLarge": "/catalog/products/bdpa150/cover-1200.webp",
+      "alt": "Pasta para notebook em tecido canvas — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Porta notebook confeccionado em material polyester-cotton com tecido tipo canvas, bolso frontal com interior acolchoado, compartimento interno compatível com notebooks de até 15,6\".",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BDE@09338",
+    "slug": "mala-de-viagem-em-policarbonato-60-l-bde-09338",
+    "name": "Mala de viagem em policarbonato 60 L",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bde-09338/cover-800.webp",
+      "srcSmall": "/catalog/products/bde-09338/cover-480.webp",
+      "srcLarge": "/catalog/products/bde-09338/cover-1200.webp",
+      "alt": "Mala de viagem em policarbonato 60 L — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Mala de viagem com capacidade máxima de 60 litros. Feita em Policarbonato (PC) e detalhes metálicos, possui dois compartimentos internos em tamanhos diferentes, um dele em tela de malha, além de cinta compressora no lado oposto e plaquinha personalizável em ferro com acabamento de spray na parte externa.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD08242",
+    "slug": "mala-de-bordo-37-l-bd08242",
+    "name": "Mala de bordo 37 L",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bd08242/cover-800.webp",
+      "srcSmall": "/catalog/products/bd08242/cover-480.webp",
+      "srcLarge": "/catalog/products/bd08242/cover-1200.webp",
+      "alt": "Mala de bordo 37 L — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Pensada para tornar as viagens mais práticas e confortáveis, esta mala de bordo feita em plástico ABS+ PC combina estrutura resistente com design exclusivo e espaço para personalização.",
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Leve e ideal para acompanhar suas viagens, ela conta com espaço interno com divisória, que contém bolso em tela e outro espaço com cinta compressora para manter tudo no lugar. Além disso, conta com 4 apoios laterais para descanso e 4 rodas com giro 360°, oferecendo facilidade de locomoção em qualquer direção.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD92535",
+    "slug": "bolsa-esportiva-em-algodao-e-poliester-reciclados-bd92535",
+    "name": "Bolsa esportiva em algodão e poliéster reciclados",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bd92535/cover-800.webp",
+      "srcSmall": "/catalog/products/bd92535/cover-480.webp",
+      "srcLarge": "/catalog/products/bd92535/cover-1200.webp",
+      "alt": "Bolsa esportiva em algodão e poliéster reciclados — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Bolsa esportiva espaçosa e prática, com bolso interior com zíper, ideal para manter os seus pertences seguros e sempre à mão. Material exterior: algodão reciclado e poliéster reciclado (380 g/m²).",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BDME585",
+    "slug": "mala-esportiva-em-pu-bdme585",
+    "name": "Mala esportiva em PU",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bdme585/cover-800.webp",
+      "srcSmall": "/catalog/products/bdme585/cover-480.webp",
+      "srcLarge": "/catalog/products/bdme585/cover-1200.webp",
+      "alt": "Mala esportiva em PU — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Mala esportiva em PU com revestimento interno em poliéster 210D. Possui faixa refletiva, bolso frontal com zíper, alça de mão e alça de ombro ajustável, além de dois compartimentos internos.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD92393",
+    "slug": "mochila-antirroubo-em-poliester-reciclado-bd92393",
+    "name": "Mochila antirroubo em poliéster reciclado",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bd92393/cover-800.webp",
+      "srcSmall": "/catalog/products/bd92393/cover-480.webp",
+      "srcLarge": "/catalog/products/bd92393/cover-1200.webp",
+      "alt": "Mochila antirroubo em poliéster reciclado — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Mochila antirroubo com design único pensado para garantir maior segurança aos seus dispositivos e documentos. Composta por poliéster reciclado (rPET) 600D twill, resistente à água, com detalhes em PU e interior em poliéster reciclado (rPET) 210D.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD06068",
+    "slug": "mala-de-viagem-66-l-com-cadeado-tsa-bd06068",
+    "name": "Mala de viagem 66 L com cadeado TSA",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bd06068/cover-800.webp",
+      "srcSmall": "/catalog/products/bd06068/cover-480.webp",
+      "srcLarge": "/catalog/products/bd06068/cover-1200.webp",
+      "alt": "Mala de viagem 66 L com cadeado TSA — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Acompanha placa para personalização.",
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Mala de viagem 66 litros em plástico PP (casca dura), contém cadeado numérico TSA. Compartimentos com bolso telado e cinta compressora para roupas.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD97216",
+    "slug": "powerbank-magnetico-reciclado-10-000-mah-bd97216",
+    "name": "Powerbank magnético reciclado 10.000 mAh",
+    "category": {
+      "name": "Tecnologia",
+      "slug": "tecnologia"
+    },
+    "image": {
+      "src": "/catalog/products/bd97216/cover-800.webp",
+      "srcSmall": "/catalog/products/bd97216/cover-480.webp",
+      "srcLarge": "/catalog/products/bd97216/cover-1200.webp",
+      "alt": "Powerbank magnético reciclado 10.000 mAh — Tecnologia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "A cor e o resultado da impressão nos materiais naturais pode variar entre produtos.",
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Bateria portátil magnética com carregamento super-rápido e 4 LEDs indicadores do nível de bateria. A localização do carregamento por indução (wireless) tem um relevo na área magnética para se adaptar à maioria dos celulares.",
+    "indicatedFor": null,
+    "premiareApplication": "Solução para equipes e clientes que valorizam utilidade no trabalho e na rotina móvel.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": true
+  },
+  {
+    "sku": "BD97128",
+    "slug": "carregador-magnetico-em-bambu-15-w-bd97128",
+    "name": "Carregador magnético em bambu 15 W",
+    "category": {
+      "name": "Tecnologia",
+      "slug": "tecnologia"
+    },
+    "image": {
+      "src": "/catalog/products/bd97128/cover-800.webp",
+      "srcSmall": "/catalog/products/bd97128/cover-480.webp",
+      "srcLarge": "/catalog/products/bd97128/cover-1200.webp",
+      "alt": "Carregador magnético em bambu 15 W — Tecnologia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "A cor e o resultado da impressão nos materiais naturais pode variar entre produtos.",
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Carregador magnético por indução (wireless) super-rápido em bambu. Potência de carregamento super-rápido de 15W.",
+    "indicatedFor": null,
+    "premiareApplication": "Solução para equipes e clientes que valorizam utilidade no trabalho e na rotina móvel.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BDE@09409",
+    "slug": "conjunto-de-fones-bluetooth-2-em-1-bde-09409",
+    "name": "Conjunto de fones Bluetooth 2 em 1",
+    "category": {
+      "name": "Tecnologia",
+      "slug": "tecnologia"
+    },
+    "image": {
+      "src": "/catalog/products/bde-09409/cover-800.webp",
+      "srcSmall": "/catalog/products/bde-09409/cover-480.webp",
+      "srcLarge": "/catalog/products/bde-09409/cover-1200.webp",
+      "alt": "Conjunto de fones Bluetooth 2 em 1 — Tecnologia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Conjunto com dois pares de fones de ouvido sem fio de formatos diferentes, um auricular e outro intra-auricular (in-ear). Os pares funcionam de forma independente e podem ser pareados simultaneamente em dois dispositivos distintos.",
+    "indicatedFor": null,
+    "premiareApplication": "Solução para equipes e clientes que valorizam utilidade no trabalho e na rotina móvel.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BDE@09413",
+    "slug": "fones-bluetooth-de-design-aberto-com-estojo-bde-09413",
+    "name": "Fones Bluetooth de design aberto com estojo",
+    "category": {
+      "name": "Tecnologia",
+      "slug": "tecnologia"
+    },
+    "image": {
+      "src": "/catalog/products/bde-09413/cover-800.webp",
+      "srcSmall": "/catalog/products/bde-09413/cover-480.webp",
+      "srcLarge": "/catalog/products/bde-09413/cover-1200.webp",
+      "alt": "Fones Bluetooth de design aberto com estojo — Tecnologia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Fones de ouvido sem fio em plástico ABS com hastes flexíveis. Possuem design aberto em formato semelhante ao de brincos (ear cuff), sem contato direto com o canal auditivo.",
+    "indicatedFor": null,
+    "premiareApplication": "Solução para equipes e clientes que valorizam utilidade no trabalho e na rotina móvel.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD97221",
+    "slug": "hub-multifuncional-em-aluminio-e-pet-reciclados-bd97221",
+    "name": "Hub multifuncional em alumínio e PET reciclados",
+    "category": {
+      "name": "Tecnologia",
+      "slug": "tecnologia"
+    },
+    "image": {
+      "src": "/catalog/products/bd97221/cover-800.webp",
+      "srcSmall": "/catalog/products/bd97221/cover-480.webp",
+      "srcLarge": "/catalog/products/bd97221/cover-1200.webp",
+      "alt": "Hub multifuncional em alumínio e PET reciclados — Tecnologia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Hub multifuncional que expande as conexões do seu dispositivo, permitindo conectar vários equipamentos de forma simples e eficiente. As entradas USB-A e USB-C garantem compatibilidade com diferentes modelos de notebooks.",
+    "indicatedFor": null,
+    "premiareApplication": "Solução para equipes e clientes que valorizam utilidade no trabalho e na rotina móvel.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD97217",
+    "slug": "caixa-de-som-em-aluminio-reciclado-e-bambu-bd97217",
+    "name": "Caixa de som em alumínio reciclado e bambu",
+    "category": {
+      "name": "Tecnologia",
+      "slug": "tecnologia"
+    },
+    "image": {
+      "src": "/catalog/products/bd97217/cover-800.webp",
+      "srcSmall": "/catalog/products/bd97217/cover-480.webp",
+      "srcLarge": "/catalog/products/bd97217/cover-1200.webp",
+      "alt": "Caixa de som em alumínio reciclado e bambu — Tecnologia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Caixa de som portátil com design minimalista e sofisticado, que resulta de uma fusão perfeita entre o bambu e o alumínio reciclado. Material: alumínio 100% reciclado e bambu.",
+    "indicatedFor": null,
+    "premiareApplication": "Solução para equipes e clientes que valorizam utilidade no trabalho e na rotina móvel.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD97138",
+    "slug": "fone-bluetooth-dobravel-com-cancelamento-de-ruido-bd97138",
+    "name": "Fone Bluetooth dobrável com cancelamento de ruído",
+    "category": {
+      "name": "Tecnologia",
+      "slug": "tecnologia"
+    },
+    "image": {
+      "src": "/catalog/products/bd97138/cover-800.webp",
+      "srcSmall": "/catalog/products/bd97138/cover-480.webp",
+      "srcLarge": "/catalog/products/bd97138/cover-1200.webp",
+      "alt": "Fone Bluetooth dobrável com cancelamento de ruído — Tecnologia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Fone de ouvido wireless dobráveis com cancelamento de ruído ativo (ANC), para que se concentre nas principais tarefas do seu dia ou relaxe a ouvir as suas músicas favoritas sem ruídos externos. Os fones de ouvido podem ser utilizados também através de cabo áudio.Material: ABS 100% reciclado | Tipo: over-ear | Transmissão sem fio: BT v5.3 | Capacidade: 400 mAh | Autonomia…",
+    "indicatedFor": null,
+    "premiareApplication": "Solução para equipes e clientes que valorizam utilidade no trabalho e na rotina móvel.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "TB-PLACAPREMIAÇÃO",
+    "slug": "placa-de-premiacao-em-caixa-aveludada-tb-placapremiacao",
+    "name": "Placa de premiação em caixa aveludada",
+    "category": {
+      "name": "Reconhecimento e premiação",
+      "slug": "reconhecimento-e-premiacao"
+    },
+    "image": {
+      "src": "/catalog/products/tb-placapremiacao/cover-800.webp",
+      "srcSmall": "/catalog/products/tb-placapremiacao/cover-480.webp",
+      "srcLarge": "/catalog/products/tb-placapremiacao/cover-1200.webp",
+      "alt": "Placa de premiação em caixa aveludada — Reconhecimento e premiação",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "Gravação na placa metálica prata: UV digital.",
+    "minimumQuantity": {
+      "value": 1,
+      "unit": "unidade",
+      "originalText": "1 unidade"
+    },
+    "leadTime": null,
+    "differentiators": "Cor da caixa aveludada: preta.",
+    "indicatedFor": null,
+    "premiareApplication": "Exemplo de gravação: ‘Em reconhecimento à dedicação e excelência — 2026’. A mensagem final é personalizada para cada homenagem.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": true
+  },
+  {
+    "sku": "BD-CAMPMUGSTANLEY",
+    "slug": "caneca-termica-stanley-camp-mug-350-ml-bd-campmugstanley",
+    "name": "Caneca térmica Stanley Camp Mug 350 mL",
+    "category": {
+      "name": "Casa e gastronomia",
+      "slug": "casa-e-gastronomia"
+    },
+    "image": {
+      "src": "/catalog/products/bd-campmugstanley/cover-800.webp",
+      "srcSmall": "/catalog/products/bd-campmugstanley/cover-480.webp",
+      "srcLarge": "/catalog/products/bd-campmugstanley/cover-1200.webp",
+      "alt": "Caneca térmica Stanley Camp Mug 350 mL — Casa e gastronomia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 1,
+      "unit": "unidade",
+      "originalText": "1 unidade"
+    },
+    "leadTime": null,
+    "differentiators": "Camp Mug Stanley Matte Black | 350ML.",
+    "indicatedFor": null,
+    "premiareApplication": "Experiência de uso para clientes e colaboradores em ações de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": true
+  },
+  {
+    "sku": "BD98138",
+    "slug": "tapete-de-yoga-em-cortica-e-tpe-bd98138",
+    "name": "Tapete de yoga em cortiça e TPE",
+    "category": {
+      "name": "Bem-estar e hospitalidade",
+      "slug": "bem-estar-e-hospitalidade"
+    },
+    "image": {
+      "src": "/catalog/products/bd98138/cover-800.webp",
+      "srcSmall": "/catalog/products/bd98138/cover-480.webp",
+      "srcLarge": "/catalog/products/bd98138/cover-1200.webp",
+      "alt": "Tapete de yoga em cortiça e TPE — Bem-estar e hospitalidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": "A cor e o resultado da impressão nos materiais naturais pode variar entre produtos.",
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Tapete de exercício para yoga em cortiça e TPE com espessura até 3,7 mm. Inclusa alça que pode ser usada para transporte ou para utilizar no exercício físico.",
+    "indicatedFor": null,
+    "premiareApplication": "Composição de cuidado e hospitalidade para públicos selecionados.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD92580",
+    "slug": "bolsa-termica-roll-top-em-pu-bd92580",
+    "name": "Bolsa térmica roll top em PU",
+    "category": {
+      "name": "Viagem e mobilidade",
+      "slug": "viagem-e-mobilidade"
+    },
+    "image": {
+      "src": "/catalog/products/bd92580/cover-800.webp",
+      "srcSmall": "/catalog/products/bd92580/cover-480.webp",
+      "srcLarge": "/catalog/products/bd92580/cover-1200.webp",
+      "alt": "Bolsa térmica roll top em PU — Viagem e mobilidade",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "Bolsa térmica \"roll top\" em PU, com isolamento em PEVA, ideal para preservar a conservação dos alimentos por mais tempo. Possui 1 compartimento principal acolchoado, com fecho ajustável e sistema de enrolamento, e 1 bolso frontal com zíper impermeável.",
+    "indicatedFor": null,
+    "premiareApplication": "Presente para viagens, eventos de negócios e programas de relacionamento.",
+    "kitCombination": null,
+    "technicalNotes": null,
+    "featured": false
+  },
+  {
+    "sku": "BD-JBLGO",
+    "slug": "caixa-de-som-jbl-go-essential-bd-jblgo",
+    "name": "Caixa de som JBL Go Essential",
+    "category": {
+      "name": "Tecnologia",
+      "slug": "tecnologia"
+    },
+    "image": {
+      "src": "/catalog/products/bd-jblgo/cover-800.webp",
+      "srcSmall": "/catalog/products/bd-jblgo/cover-480.webp",
+      "srcLarge": "/catalog/products/bd-jblgo/cover-1200.webp",
+      "alt": "Caixa de som JBL Go Essential — Tecnologia",
+      "width": 800,
+      "height": 800
+    },
+    "materials": null,
+    "colors": null,
+    "dimensionsAndCapacity": null,
+    "personalization": null,
+    "minimumQuantity": {
+      "value": 25,
+      "unit": "unidades",
+      "originalText": "25 unidades"
+    },
+    "leadTime": null,
+    "differentiators": "A JBL Go Essential é uma caixa de som portátil e ultracompacta com Bluetooth. Reproduza suas músicas através de Bluetooth por até cinco horas de som com a qualidade profissional JBL.",
+    "indicatedFor": null,
+    "premiareApplication": "Solução para equipes e clientes que valorizam utilidade no trabalho e na rotina móvel.",
+    "kitCombination": null,
     "technicalNotes": null,
     "featured": false
   }

@@ -5,14 +5,14 @@
  * para bater com a contagem esperada: se a planilha mudar, o certo e a
  * validacao apontar a mudanca, nao o site esconder.
  */
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = path.join(ROOT, "src", "data");
 
-const EXPECTED = { products: 40, categories: 9, featured: 10, kits: 5 };
+const EXPECTED = { products: 65, categories: 7, featured: 10, kits: 5 };
 
 const FORBIDDEN_KEYS = [
   "price", "salePrice", "promotionalPrice", "currency", "discount",
@@ -55,7 +55,7 @@ async function main() {
     if (counts[key] !== expected) {
       errors.push(
         `Contagem de ${key}: real ${counts[key]}, esperado ${expected}. ` +
-        "A planilha é a verdade — investigue a fonte, não ajuste o dado.",
+        "Confira a seleção editorial e as fontes antes de alterar a meta.",
       );
     }
   }
@@ -76,6 +76,12 @@ async function main() {
       for (const key of ["src", "srcSmall", "srcLarge"]) {
         if (!p.image[key]?.startsWith("/catalog/products/")) {
           errors.push(`Imagem fora do diretório local em ${p.sku}: ${p.image[key]}`);
+        } else {
+          try {
+            await access(path.join(ROOT, "public", p.image[key].replace(/^\//, "")));
+          } catch {
+            errors.push(`Imagem local ausente em ${p.sku}: ${p.image[key]}`);
+          }
         }
       }
       if (!p.image.alt || !p.image.alt.includes(p.name)) {

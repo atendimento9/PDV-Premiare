@@ -1,9 +1,11 @@
 # Handoff para o Wix Studio
 
+> **Documento arquivado em 02/10/2026:** o projeto passou a ser hospedado na
+> Vercel. Este handoff descreve uma alternativa antiga; consulte
+> `VERCEL_DEPLOYMENT.md` para o fluxo atual.
+
 Documento para quem for reconstruir ou manter este site dentro do editor visual
-do Wix Studio. O build estático já é publicável como está — leia primeiro
-`WIX_EXPORT.md`. Este aqui descreve a estrutura, caso a Premiare queira o site
-editável no editor.
+do Wix Studio. Este plano não descreve a hospedagem atual.
 
 > **Seja realista quanto ao esforço.** Não existe importação automática de um
 > site estático para o editor visual do Wix. Reconstruir no Studio é refazer o

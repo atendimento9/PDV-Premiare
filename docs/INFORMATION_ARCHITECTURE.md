@@ -33,14 +33,14 @@ A home reflete, nesta ordem, a estratégia registrada na aba Resumo da planilha:
 2. **Kits por ocasião** — as cinco soluções, como pontos de partida.
 3. **Componentes modulares** — peças avulsas para compor algo exclusivo.
 
-## Rotas (64 páginas)
+## Rotas (catálogo atual: 65 produtos e 7 categorias)
 
 | Rota | Quantidade | Origem |
 |---|---|---|
 | `/` | 1 | — |
-| `/catalogo` | 1 | 40 produtos |
-| `/categoria/{slug}` | 9 | aba Resumo |
-| `/produto/{slug}` | 40 | aba Produtos |
+| `/catalogo` | 1 | 65 produtos |
+| `/categoria/{slug}` | 7 | curadoria AA/AAA |
+| `/produto/{slug}` | 65 | planilha original + Astor |
 | `/solucoes` | 1 | — |
 | `/solucoes/{slug}` | 5 | aba Kits sugeridos |
 | `/projetos-personalizados` | 1 | — |

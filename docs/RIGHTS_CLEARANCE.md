@@ -12,17 +12,20 @@ interrompido por causa dele.
 | Escopo | Fotos, descrições e fichas técnicas dos 40 produtos presentes na planilha `relatorio_premiare_astor*.xlsx` |
 | Finalidade | Publicação no site próprio da Premiare Criativa |
 | Origem da declaração | Briefing do projeto (v2.1, §7.1): a Premiare confirmou possuir todas as autorizações de uso |
+| Data do registro Astor | 02/10/2026 |
+| Escopo Astor | O cliente informou parceria com a Astor e autorização para vender os produtos selecionados no site da Premiare Criativa |
 
-## Escopo original e atualização de 02/10/2026
+## Atualização Astor de 02/10/2026
 
-A autorização registrada em 31/08 cobre **exclusivamente** o material presente
-na planilha. Em 02/10, o cliente solicitou remover marcas das imagens de produto
-e pesquisar imagens para os três SKUs sem foto. As 13 imagens resultantes estão
-registradas em `IMAGE_UPDATES_2026-10-02.md`.
+Em 02/10, o cliente informou uma parceria com a Astor que autoriza a venda dos
+produtos selecionados no site da Premiare. Foram incluídos 46 produtos conforme
+`CURADORIA_2026-10-02.md`. As imagens são arquivos locais derivados das fichas
+oficiais, sem hotlink. Quatro imagens foram editadas para remover marcas de
+exemplos ou aplicar o texto genérico da placa; os arquivos e edições estão
+descritos no relatório de curadoria.
 
-As três novas referências encontradas no site do fornecedor não estavam na
-planilha original. A autorização de publicação dessas referências deve ser
-confirmada pela Premiare. Os arquivos publicados são locais e não fazem hotlink.
+O escopo anotado é a venda dos produtos Astor no site próprio. Ele não registra
+autorização para usos de marca ou materiais fora dessa finalidade.
 
 Permanecem fora do escopo:
 
@@ -40,6 +43,10 @@ Permanecem fora do escopo:
 | Foto oficial da planilha, editada para remover marcas ou texto de mockup | 10 |
 | Referência adicional do fornecedor, pesquisada por SKU e editada | 3 |
 | **Total de produtos** | **40** |
+
+Os 46 produtos Astor adicionais têm fotos locais em
+`public/catalog/products/`; os SKUs, fichas oficiais e edição de imagem estão
+registrados em `CURADORIA_2026-10-02.md` e no manifesto privado de seleção.
 
 As 37 fotos da planilha foram inicialmente aceitas após comparação perceptiva
 com a miniatura ancorada na linha do produto. As três referências adicionais

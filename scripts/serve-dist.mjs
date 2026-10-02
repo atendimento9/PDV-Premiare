@@ -2,7 +2,7 @@
  * Servidor estatico minimo para /dist.
  *
  * Serve exatamente os bytes do build, sem Vite, sem HMR e sem transformacao —
- * do jeito mais proximo possivel de como a Wix vai servir o site. E o alvo
+ * do jeito mais proximo possivel de como a Vercel serve os arquivos estaticos. E o alvo
  * correto para o QA: testar o dev server testaria outra coisa.
  *
  * Uso: node scripts/serve-dist.mjs [porta]

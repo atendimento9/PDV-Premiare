@@ -1,10 +1,11 @@
 # Esquema do catálogo
 
-Arquivos gerados por `scripts/import-catalog.py` e `scripts/optimize-images.mjs`.
+Arquivos gerados por `scripts/curate-catalog.mjs` a partir da planilha original
+e da seleção Astor.
 Todos em `src/data/`, UTF-8, com acentuação preservada. **Não edite à mão** —
 são regenerados a cada importação.
 
-## `catalog.generated.json` — 40 produtos
+## `catalog.generated.json` — 65 produtos
 
 ```ts
 type Product = {
@@ -44,7 +45,7 @@ internos. `validate-catalog` falha o build se qualquer um deles aparecer.
 `alt` é **derivado** do nome e da categoria, nunca uma descrição do que se supõe
 estar na foto.
 
-## `categories.generated.json` — 9 categorias
+## `categories.generated.json` — 7 categorias
 
 ```ts
 type Category = { slug: string; name: string; count: number; coverSlug: string };
@@ -55,8 +56,8 @@ sem produto não é publicada.
 
 ## `featured.generated.json` — 10 códigos
 
-Array de SKUs na ordem editorial da aba Top 10. Serve **apenas para ordenar**. A
-posição de cada item nunca é publicada, nem como texto, nem como atributo.
+Array de SKUs em ordem editorial. Serve **apenas para ordenar**; posição ou
+classe AA/AAA nunca são publicadas como texto ou atributo.
 
 ## `kits.generated.json` — 5 soluções
 
@@ -71,9 +72,9 @@ type Kit = {
 };
 ```
 
-`slug` e `sku` do componente ficam preenchidos quando ele foi casado com um
-produto do catálogo; nulos quando o item é definido no atendimento. Os 22
-componentes das cinco soluções casaram com produtos reais.
+`slug` e `sku` de cada componente apontam para um produto existente no catálogo.
+As cinco soluções são exemplos editoriais e a composição final é confirmada no
+orçamento.
 
 O casamento usa sobreposição de tokens significativos, com tolerância a plural e
 gênero mas **sem** tolerância a raiz diferente — "neoplex" e "neoprene"
@@ -99,10 +100,11 @@ fonte de terceiro, declara ausência ou é nota interna de curadoria. Ver
 ## Pipeline
 
 ```
-planilha .xlsx
-   └─ scripts/import-catalog.py     → JSONs + imagens brutas em .cache/
-        └─ scripts/optimize-images.mjs → webp 480/800/1200 em public/catalog/
-             └─ scripts/validate-catalog.mjs → falha o build se algo divergir
+planilha .xlsx → catalog.baseline.json (40 itens)
+seleção Astor → scripts/fetch-astor-selection.mjs → fontes e fichas internas
+imagens oficiais → scripts/prepare-astor-images.mjs → webp locais
+originais + Astor → scripts/curate-catalog.mjs → JSONs públicos (65 itens)
+JSONs e imagens → scripts/validate-catalog.mjs → falha se algo divergir
 ```
 
 Idempotente: rodar de novo com a mesma planilha produz o mesmo resultado.

@@ -1,56 +1,44 @@
 [
   {
-    "slug": "produtos-executivos-e-premium",
-    "name": "Produtos executivos e premium",
-    "count": 5,
+    "slug": "kits-e-experiencias",
+    "name": "Kits e experiências",
+    "count": 25,
+    "coverSlug": "kit-viagem-personalizado"
+  },
+  {
+    "slug": "executivo-e-trabalho",
+    "name": "Executivo e trabalho",
+    "count": 6,
     "coverSlug": "carteira-magnetica-em-pu-de-grande-capacidade-com-bloqueio-rfid"
   },
   {
     "slug": "tecnologia",
     "name": "Tecnologia",
-    "count": 4,
-    "coverSlug": "cordao-lanyard-com-suporte-para-celular-cabo-usb-c-e-adaptadores-reciclados"
+    "count": 10,
+    "coverSlug": "powerbank-magnetico-reciclado-10-000-mah-bd97216"
   },
   {
-    "slug": "sustentabilidade",
-    "name": "Sustentabilidade",
-    "count": 4,
-    "coverSlug": "kit-churrasco-em-caixa-presente-de-papel-kraft-reciclado-com-2-utensilios-em-aco"
+    "slug": "viagem-e-mobilidade",
+    "name": "Viagem e mobilidade",
+    "count": 13,
+    "coverSlug": "mochila-de-viagem-para-notebook-com-organizador-de-roupas-bd92589"
   },
   {
-    "slug": "viagens-e-mobilidade",
-    "name": "Viagens e mobilidade",
-    "count": 3,
-    "coverSlug": "kit-viagem-personalizado"
+    "slug": "casa-e-gastronomia",
+    "name": "Casa e gastronomia",
+    "count": 8,
+    "coverSlug": "caneca-termica-stanley-camp-mug-350-ml-bd-campmugstanley"
   },
   {
-    "slug": "escritorio-e-home-office",
-    "name": "Escritório e home office",
+    "slug": "bem-estar-e-hospitalidade",
+    "name": "Bem-estar e hospitalidade",
     "count": 2,
-    "coverSlug": "suporte-celular-aluminio"
+    "coverSlug": "roupao-personalizado"
   },
   {
-    "slug": "alimentacao-e-bebidas",
-    "name": "Alimentação e bebidas",
-    "count": 7,
-    "coverSlug": "kit-cafe-com-cafeteira-francesa-personalizado"
-  },
-  {
-    "slug": "eventos-e-acoes-promocionais",
-    "name": "Eventos e ações promocionais",
-    "count": 3,
-    "coverSlug": "chaveiro-tag-nfc-personalizado"
-  },
-  {
-    "slug": "kits-e-presentes-para-colaboradores",
-    "name": "Kits e presentes para colaboradores",
-    "count": 7,
-    "coverSlug": "kit-boas-vindas-personalizado-squeeze-caderno-e-caneta"
-  },
-  {
-    "slug": "produtos-criativos-ou-diferenciados",
-    "name": "Produtos criativos ou diferenciados",
-    "count": 5,
-    "coverSlug": "cartao-multifuncoes-em-aco-inox-com-20-funcoes"
+    "slug": "reconhecimento-e-premiacao",
+    "name": "Reconhecimento e premiação",
+    "count": 1,
+    "coverSlug": "placa-de-premiacao-em-caixa-aveludada-tb-placapremiacao"
   }
 ]

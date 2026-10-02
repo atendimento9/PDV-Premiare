@@ -1,4 +1,7 @@
-# Checklist de pré-lançamento
+# Checklist de publicação na Vercel
+
+O site está hospedado na Vercel. As instruções de build e deploy ficam em
+`VERCEL_DEPLOYMENT.md`.
 
 ## Bloqueia a publicação
 
@@ -11,7 +14,7 @@
       `dominio-a-definir.invalid`.
 - [x] **Nenhum bloco `PENDENTE-CLIENTE` restante.** Canais de atendimento, dados
       cadastrais e a página de privacidade estão completos.
-- [ ] **Conferir a privacidade depois de publicar na Wix.** A página afirma que
+- [ ] **Conferir a privacidade depois de publicar na Vercel.** A página afirma que
       o site não grava cookies nem carrega script de terceiro — verdade sobre os
       arquivos de `dist/`. Se a hospedagem injetar analytics ou cookie próprio,
       a afirmação deixa de ser verdadeira e a página precisa mudar junto
@@ -26,22 +29,18 @@
       de marca de cada cliente segue válida para este site. Lista em
       `../src/content/clients.ts`.
 
-- [ ] **Conferir as 13 imagens editadas do catálogo.** As dez fotos com marcas
-      visíveis foram substituídas por versões genéricas, e os três produtos antes
-      sem foto receberam imagens derivadas de referências dos SKUs exatos no site
-      do fornecedor. Ver `IMAGE_UPDATES_2026-10-02.md`.
-- [ ] **Confirmar autorização para as três referências adicionais do fornecedor.**
-      A autorização registrada em `RIGHTS_CLEARANCE.md` cobria apenas imagens da
-      planilha; a busca e a inclusão dessas três imagens foram solicitadas depois.
-- [ ] **Prazo de produção só existe para 1 dos 40 produtos.** Nenhuma parte do
-      site promete prazo. Se a Premiare tiver essa informação, ela cabe na
-      planilha e passa a aparecer nas fichas automaticamente.
-- [ ] **Limites de tamanho da Wix**: confirmar com o suporte os valores oficiais
-      para upload de site estático. Os gates usam 20 MB no total e 3 MB por
-      arquivo, valores de referência do briefing. O build atualizado tem
-      7,35 MB e maior arquivo de 1,33 MB (o vídeo do hero). Os limites ainda
-      não foram confirmados pela Wix. Ver `HERO_VIDEO.md` §9
-      para as alternativas caso um dia o vídeo cresça.
+- [x] **Curadoria dos 65 itens concluída.** Critérios, SKUs e fichas oficiais
+      estão registrados em `CURADORIA_2026-10-02.md`.
+- [x] **Parceria Astor registrada.** O cliente informou em 02/10/2026 que a
+      Premiare está autorizada a vender os produtos Astor no próprio site; o
+      escopo declarado está anotado em `RIGHTS_CLEARANCE.md`.
+- [ ] **Conferir as quatro imagens editadas para esta seleção.** Exemplos,
+      fontes e descrições das edições estão em `CURADORIA_2026-10-02.md`.
+- [ ] **Confirmar prazo de produção e personalização no orçamento.** As fichas
+      não prometem prazo de entrega.
+- [x] **Limites de tamanho:** 20 MB por build e 3 MB por arquivo são limites
+      internos de qualidade, conferidos pelo gate `check-budget`; não são limites
+      da Vercel.
 - [ ] **Vídeo do hero é upscale, não resolução nativa.** A fonte é 1280×720; o
       arquivo publicado (1920×720) foi ampliado por interpolação Lanczos a
       pedido, como medida provisória. Quando houver um vídeo de origem nativo
@@ -54,18 +53,18 @@
 
 - [ ] `npm run lint`
 - [ ] `npm run typecheck`
-- [ ] `SITE_URL=… npm run build`
+- [ ] Definir `SITE_URL` nas variáveis de ambiente da Vercel e gerar o build
 - [ ] `npm run gates` (validate-catalog · check-forbidden · check-budget · check-links)
 - [ ] `node scripts/audit-static.mjs`
 - [ ] `node scripts/serve-dist.mjs` e conferir home, um produto e o catálogo
-- [ ] Conferir o tamanho de `dist/` contra o limite confirmado da Wix
+- [ ] Conferir o tamanho de `dist/` com `npm run check-budget`
 
 ## Depois de subir
 
 - [ ] `/` abre; uma página de produto abre direto pela URL
 - [ ] `sitemap.xml` e `robots.txt` respondem, com o domínio certo
 - [ ] Enviar o sitemap ao Search Console
-- [ ] Página de erro do domínio apontando para `404.html`
+- [ ] Conferir a rota 404 no domínio Vercel
 - [ ] Testar um CTA de orçamento de ponta a ponta, com o número real
 - [ ] Conferir o site num celular de verdade
 
@@ -81,14 +80,14 @@
 - **Fichas técnicas têm tamanhos diferentes.** Campo ausente não vira linha; é o
   comportamento correto, não falta de padronização.
 
-## Quando a planilha mudar
+## Quando os dados de origem mudarem
 
 ```bash
-npm run import-catalog     # relê a planilha, regenera os JSONs
-npm run optimize-images    # baixa/otimiza as fotos novas
+npm run import-catalog      # importa planilha, prepara fotos e aplica curadoria
+npm run retire-unselected-images
 npm run build && npm run gates
 ```
 
-Se a contagem divergir de 40 / 9 / 10 / 5, `validate-catalog` **falha o build e
+Se a contagem divergir de 65 / 7 / 10 / 5, `validate-catalog` **falha o build e
 mostra os números reais**. O certo nesse caso é investigar a planilha — nunca
 ajustar o dado para o gate passar.

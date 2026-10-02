@@ -1,0 +1,157 @@
+[
+  {
+    "slug": "onboarding-hibrido-premium",
+    "name": "Onboarding híbrido premium",
+    "audience": "Novos colaboradores e líderes",
+    "concept": "Rotina produtiva, mobilidade e cuidado desde o primeiro dia.",
+    "presentation": "Impressão total na capa; personalização da garrafa; adesivo do café; caixa em cor da marca.",
+    "components": [
+      {
+        "label": "Capa Neoplex 5 mm",
+        "slug": "capa-para-notebook-neoplex-5-mm-personalizada",
+        "sku": "BD-BLCAPNOTISO"
+      },
+      {
+        "label": "suporte celular em alumínio",
+        "slug": "suporte-celular-aluminio",
+        "sku": "BD09274"
+      },
+      {
+        "label": "garrafa de alumínio reciclado",
+        "slug": "garrafa-em-aluminio-reciclado",
+        "sku": "BDGA7950"
+      },
+      {
+        "label": "drip coffee",
+        "slug": "drip-coffee-sache-personalizado",
+        "sku": "BD-DRIPCOFFEE10G"
+      },
+      {
+        "label": "Caixa Pequim",
+        "slug": "caixa-retangular-pequim-tampa-e-fundo",
+        "sku": "BD-W8DWXU5QR"
+      }
+    ]
+  },
+  {
+    "slug": "lideranca-conectada",
+    "name": "Liderança conectada",
+    "audience": "Diretores, gerentes e contas estratégicas",
+    "concept": "Tecnologia útil, segurança e organização com alto valor percebido.",
+    "presentation": "Aplicar marca de forma discreta; usar cartão nominal e embalagem escura premium.",
+    "components": [
+      {
+        "label": "Powerbank 20.000 mAh",
+        "slug": "powerbank-20000mah-personalizado",
+        "sku": "BD-POWERBANKPB198"
+      },
+      {
+        "label": "carteira magnética RFID",
+        "slug": "carteira-magnetica-em-pu-de-grande-capacidade-com-bloqueio-rfid",
+        "sku": "BD95127"
+      },
+      {
+        "label": "cabo espiral",
+        "slug": "conjunto-de-cabo-espiral-com-carregamento-super-rapido-e-adaptadores",
+        "sku": "BD97161"
+      },
+      {
+        "label": "estojo tecnológico",
+        "slug": "estojo-para-kit-tecnologico",
+        "sku": "BD18673"
+      }
+    ]
+  },
+  {
+    "slug": "evento-tech-esg",
+    "name": "Evento Tech & ESG",
+    "audience": "Congressos, feiras e comunidades",
+    "concept": "O credenciamento vira uma experiência funcional e sustentável.",
+    "presentation": "NFC com landing page; arte 360° no copo; mensagem ESG no cartão de entrega.",
+    "components": [
+      {
+        "label": "Lanyard reciclado com cabo",
+        "slug": "cordao-lanyard-com-suporte-para-celular-cabo-usb-c-e-adaptadores-reciclados",
+        "sku": "BD97194"
+      },
+      {
+        "label": "tag NFC",
+        "slug": "chaveiro-tag-nfc-personalizado",
+        "sku": "BD-CHAVEIROTAGNFC"
+      },
+      {
+        "label": "eco copo 550 mL",
+        "slug": "eco-copo-personalizado-550-ml-in-mold-label",
+        "sku": "BD-COPOCOMTIRANTE"
+      },
+      {
+        "label": "garrafa de alumínio reciclado",
+        "slug": "garrafa-em-aluminio-reciclado",
+        "sku": "BDGA7950"
+      }
+    ]
+  },
+  {
+    "slug": "coffee-experience",
+    "name": "Coffee experience",
+    "audience": "Clientes, home office e agradecimento",
+    "concept": "Momento de pausa com narrativa de marca e mensagem surpresa.",
+    "presentation": "Unificar identidade da embalagem do café, caneca, biscoito e caixa.",
+    "components": [
+      {
+        "label": "Kit cafeteira francesa",
+        "slug": "kit-cafe-com-cafeteira-francesa-personalizado",
+        "sku": "KIT-FRA3047"
+      },
+      {
+        "label": "caneca fosca",
+        "slug": "caneca-em-vidro-com-efeito-fosco-530-ml",
+        "sku": "BD94398"
+      },
+      {
+        "label": "drip coffee",
+        "slug": "drip-coffee-sache-personalizado",
+        "sku": "BD-DRIPCOFFEE10G"
+      },
+      {
+        "label": "biscoito da sorte personalizado",
+        "slug": "biscoito-da-sorte-personalizado-com-frases",
+        "sku": "BD-BISCOITOSORTE"
+      }
+    ]
+  },
+  {
+    "slug": "reconhecimento-de-resultados",
+    "name": "Reconhecimento de resultados",
+    "audience": "Lideranças, premiados e parceiros",
+    "concept": "Celebração duradoura com peça comemorativa colecionável.",
+    "presentation": "Chaveiro com símbolo da conquista; caixa com nome do premiado e mensagem do líder.",
+    "components": [
+      {
+        "label": "Copo Stanley",
+        "slug": "copo-stanley-pilsner-glass-happy-hour-azure-444-ml",
+        "sku": "BD-STANLEYPILSNER444ML"
+      },
+      {
+        "label": "kit espumante",
+        "slug": "kit-espumante-personalizado",
+        "sku": "KIT-ESPU025"
+      },
+      {
+        "label": "kit vinho",
+        "slug": "kit-vinho",
+        "sku": "BDKV0160"
+      },
+      {
+        "label": "chaveiro metal esmaltado",
+        "slug": "chaveiro-metal-esmaltado-personalizado",
+        "sku": "BD-CHAVEIROESMALTADO"
+      },
+      {
+        "label": "caixa cartonada",
+        "slug": "caixa-cartonada-personalizada",
+        "sku": "BD-CAIXACARTONADA02"
+      }
+    ]
+  }
+]

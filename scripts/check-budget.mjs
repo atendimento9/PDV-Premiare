@@ -1,5 +1,5 @@
 /**
- * Orcamento de peso por pagina e limites da plataforma.
+ * Orcamento interno de peso por pagina e limites de qualidade do projeto.
  *
  * Falha quando o build estoura, em vez de reduzir qualidade em silencio.
  * Reporta os maiores arquivos para que a decisao seja informada.
@@ -14,7 +14,7 @@ const DIST = path.join(ROOT, "dist");
 
 const JS_BUDGET = 150 * 1024;
 const CSS_BUDGET = 80 * 1024;
-/** Limites da Wix confirmados na Fase 0 — ver docs/DECISIONS.md. */
+/** Limites internos do projeto — ver docs/VERCEL_DEPLOYMENT.md. */
 const TOTAL_BUDGET = 20 * 1024 * 1024;
 const FILE_BUDGET = 3 * 1024 * 1024;
 

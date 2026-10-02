@@ -3,71 +3,51 @@
     "slug": "carteira-magnetica-em-pu-de-grande-capacidade-com-bloqueio-rfid",
     "name": "Carteira magnética em PU de grande capacidade com bloqueio RFID",
     "sku": "BD95127",
-    "category": "Produtos executivos e premium",
-    "categorySlug": "produtos-executivos-e-premium",
-    "featured": true,
+    "category": "Executivo e trabalho",
+    "categorySlug": "executivo-e-trabalho",
+    "featured": false,
     "minQty": 25,
-    "haystack": "carteira magnetica em pu de grande capacidade com bloqueio rfid bd95127 produtos executivos e premium pu; componentes magneticos. ate 12 cartoes; bloqueio rfid; fecho magnetico; anel extra para celulares sem magnetismo; caixa presente. liderancas, clientes financeiros, consultorias e empresas de tecnologia."
+    "haystack": "carteira magnetica em pu de grande capacidade com bloqueio rfid bd95127 executivo e trabalho pu; componentes magneticos. ate 12 cartoes; bloqueio rfid; fecho magnetico; anel extra para celulares sem magnetismo; caixa presente. liderancas, clientes financeiros, consultorias e empresas de tecnologia."
   },
   {
     "slug": "kit-vinho",
     "name": "Kit Vinho",
     "sku": "BDKV0160",
-    "category": "Produtos executivos e premium",
-    "categorySlug": "produtos-executivos-e-premium",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
     "featured": false,
     "minQty": 25,
-    "haystack": "kit vinho bdkv0160 produtos executivos e premium bambu; feltro; eva; aco inox 201; aco; silicone. bambu natural. estojo de bambu com saca-rolhas, anel corta-gotas e tampa de bico. clientes, liderancas, parceiros e campanhas de fim de ano."
+    "haystack": "kit vinho bdkv0160 kits e experiencias bambu; feltro; eva; aco inox 201; aco; silicone. estojo de bambu com saca-rolhas, anel corta-gotas e tampa de bico. clientes, liderancas, parceiros e campanhas de fim de ano."
   },
   {
     "slug": "kit-garrafa-termica-personalizada",
     "name": "Kit Garrafa Térmica Personalizada",
     "sku": "KIT-GA0008",
-    "category": "Produtos executivos e premium",
-    "categorySlug": "produtos-executivos-e-premium",
-    "featured": true,
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
     "minQty": 10,
-    "haystack": "kit garrafa termica personalizada kit-ga0008 produtos executivos e premium garrafa termica de inox; caneca de inox; caixa de papel. laser na garrafa e caneca; silk dourado ou prata na caixa. conjunto coordenado, caixa personalizada e minimo baixo para acoes segmentadas. liderancas, clientes vip, reconhecimento e trabalho hibrido."
+    "haystack": "kit garrafa termica personalizada kit-ga0008 kits e experiencias garrafa termica de inox; caneca de inox; caixa de papel. conjunto coordenado, caixa personalizada e minimo baixo para acoes segmentadas. liderancas, clientes vip, reconhecimento e trabalho hibrido."
   },
   {
     "slug": "copo-stanley-pilsner-glass-happy-hour-azure-444-ml",
     "name": "Copo Stanley Pilsner Glass Happy Hour Azure 444 mL",
     "sku": "BD-STANLEYPILSNER444ML",
-    "category": "Produtos executivos e premium",
-    "categorySlug": "produtos-executivos-e-premium",
-    "featured": true,
+    "category": "Casa e gastronomia",
+    "categorySlug": "casa-e-gastronomia",
+    "featured": false,
     "minQty": 5,
-    "haystack": "copo stanley pilsner glass happy hour azure 444 ml bd-stanleypilsner444ml produtos executivos e premium aco inox 18/8, livre de bpa; base emborrachada. modelo azure. marca reconhecida, parede dupla a vacuo, fundo prismatico, base emborrachada e minimo baixo. liderancas, clientes estrategicos, premiacoes e hospitalidade."
+    "haystack": "copo stanley pilsner glass happy hour azure 444 ml bd-stanleypilsner444ml casa e gastronomia aco inox 18/8, livre de bpa; base emborrachada. marca reconhecida, parede dupla a vacuo, fundo prismatico, base emborrachada e minimo baixo. liderancas, clientes estrategicos, premiacoes e hospitalidade."
   },
   {
     "slug": "kit-espumante-personalizado",
     "name": "Kit Espumante Personalizado",
     "sku": "KIT-ESPU025",
-    "category": "Produtos executivos e premium",
-    "categorySlug": "produtos-executivos-e-premium",
-    "featured": true,
-    "minQty": 30,
-    "haystack": "kit espumante personalizado kit-espu025 produtos executivos e premium caixa de papel; duas tacas de cristal; espumante chandon reserve brut. silk dourado ou prata na tampa da caixa. decalque em uma cor nas tacas; silk dourado ou prata na tampa da caixa. marca de espumante reconhecida, duas tacas de cristal e apresentacao pronta para celebrar. liderancas, clientes premium, celebracoes, premiacoes e fim de ano."
-  },
-  {
-    "slug": "cordao-lanyard-com-suporte-para-celular-cabo-usb-c-e-adaptadores-reciclados",
-    "name": "Cordão lanyard com suporte para celular, cabo USB-C e adaptadores reciclados",
-    "sku": "BD97194",
-    "category": "Tecnologia",
-    "categorySlug": "tecnologia",
-    "featured": true,
-    "minQty": 25,
-    "haystack": "cordao lanyard com suporte para celular, cabo usb-c e adaptadores reciclados bd97194 tecnologia abs 100% reciclado; tpe 100% reciclado; caixa presente de papel kraft reciclado. usb-c/usb-c de 60 w; adaptadores usb-a e lightning; dados a 480 mbps; suporte de celular e mosquetao. eventos, congressos, equipes moveis, tecnologia e esg."
-  },
-  {
-    "slug": "conjunto-de-cabo-espiral-com-carregamento-super-rapido-e-adaptadores",
-    "name": "Conjunto de cabo espiral com carregamento super-rápido e adaptadores",
-    "sku": "BD97161",
-    "category": "Tecnologia",
-    "categorySlug": "tecnologia",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
     "featured": false,
-    "minQty": 25,
-    "haystack": "conjunto de cabo espiral com carregamento super-rapido e adaptadores bd97161 tecnologia pc, pp, tpe e aluminio; caixa presente branca. cabo 6 em 1; usb-c de 60 w; adaptadores usb-a, micro usb e lightning; dados a 480 mbps. clientes executivos, equipes comerciais, frotas e home office."
+    "minQty": 30,
+    "haystack": "kit espumante personalizado kit-espu025 kits e experiencias caixa de papel; duas tacas de cristal; espumante chandon reserve brut. marca de espumante reconhecida, duas tacas de cristal e apresentacao pronta para celebrar. liderancas, clientes premium, celebracoes, premiacoes e fim de ano."
   },
   {
     "slug": "powerbank-20000mah-personalizado",
@@ -75,9 +55,9 @@
     "sku": "BD-POWERBANKPB198",
     "category": "Tecnologia",
     "categorySlug": "tecnologia",
-    "featured": true,
+    "featured": false,
     "minQty": 1,
-    "haystack": "powerbank 20000mah personalizado bd-powerbankpb198 tecnologia preto. alta capacidade, carregamento rapido, usb-c e multiplas saidas usb-a; minimo de apenas uma unidade. executivos, equipes comerciais, tecnologia, viagens e contas estrategicas."
+    "haystack": "powerbank 20000mah personalizado bd-powerbankpb198 tecnologia alta capacidade, carregamento rapido, usb-c e multiplas saidas usb-a; minimo de apenas uma unidade. executivos, equipes comerciais, tecnologia, viagens e contas estrategicas."
   },
   {
     "slug": "estojo-para-kit-tecnologico",
@@ -87,316 +67,586 @@
     "categorySlug": "tecnologia",
     "featured": false,
     "minQty": 25,
-    "haystack": "estojo para kit tecnologico bd18673 tecnologia poliester impermeavel; tela; elasticos; ziper. area aproximada para gravacao: 15 × 21,5 cm. organizacao interna com cinco compartimentos, tres elasticos independentes, bolso telado e alca de mao. equipes moveis, ti, comercial e viajantes."
+    "haystack": "estojo para kit tecnologico bd18673 tecnologia poliester impermeavel; tela; elasticos; ziper. organizacao interna com cinco compartimentos, tres elasticos independentes, bolso telado e alca de mao. equipes moveis, ti, comercial e viajantes."
   },
   {
     "slug": "kit-churrasco-em-caixa-presente-de-papel-kraft-reciclado-com-2-utensilios-em-aco",
     "name": "Kit churrasco em caixa presente de papel kraft reciclado com 2 utensílios em aço inox e bambu",
     "sku": "BD94399",
-    "category": "Sustentabilidade",
-    "categorySlug": "sustentabilidade",
-    "featured": true,
-    "minQty": 25,
-    "haystack": "kit churrasco em caixa presente de papel kraft reciclado com 2 utensilios em aco inox e bambu bd94399 sustentabilidade papel kraft reciclado; aco inox; bambu. materiais naturais. lancamento 2026/27; caixa presente; certificacao eu food grade; combinacao de apelo sustentavel e alto valor percebido. clientes estrategicos, liderancas, parceiros e campanhas de fim de ano."
-  },
-  {
-    "slug": "squeeze-em-vidro-fosco-520-ml",
-    "name": "Squeeze em vidro fosco 520 mL",
-    "sku": "BD94397",
-    "category": "Sustentabilidade",
-    "categorySlug": "sustentabilidade",
+    "category": "Casa e gastronomia",
+    "categorySlug": "casa-e-gastronomia",
     "featured": false,
     "minQty": 25,
-    "haystack": "squeeze em vidro fosco 520 ml bd94397 sustentabilidade vidro fosco; tampa de bambu; caixa presente de papel kraft reciclado. materiais naturais. ha alerta de variacao de impressao no bambu. lancamento 2026/27; apresentacao em kraft reciclado; certificacao eu food grade. empresas com agenda esg, eventos e programas de bem-estar."
-  },
-  {
-    "slug": "garrafa-em-aluminio-reciclado",
-    "name": "Garrafa em Alumínio Reciclado",
-    "sku": "BDGA7950",
-    "category": "Sustentabilidade",
-    "categorySlug": "sustentabilidade",
-    "featured": false,
-    "minQty": 25,
-    "haystack": "garrafa em aluminio reciclado bdga7950 sustentabilidade aluminio reciclado; tampa de inox; embalagem em papelao kraft. pintura fosca. simbolo de reciclavel no verso e etiqueta kraft explicando o produto. empresas com agenda esg, convencoes, colaboradores e eventos."
-  },
-  {
-    "slug": "chapeu-produtor-fibra-de-bambu-cor-palha",
-    "name": "Chapéu Produtor — fibra de bambu cor palha",
-    "sku": "BD-1000002",
-    "category": "Sustentabilidade",
-    "categorySlug": "sustentabilidade",
-    "featured": false,
-    "minQty": 30,
-    "haystack": "chapeu produtor — fibra de bambu cor palha bd-1000002 sustentabilidade fibras naturais de bambu; poliester; fita de couro sintetico. palha. impressao uv colorida ou gravacao a laser na fita de couro sintetico. leve, confortavel, pode molhar sem deformar e recupera o formato apos amassar. agronegocio, feiras, eventos ao ar livre e campanhas regionais."
+    "haystack": "kit churrasco em caixa presente de papel kraft reciclado com 2 utensilios em aco inox e bambu bd94399 casa e gastronomia papel kraft reciclado; aco inox; bambu. lancamento 2026/27; caixa presente; certificacao eu food grade; combinacao de apelo sustentavel e alto valor percebido. clientes estrategicos, liderancas, parceiros e campanhas de fim de ano."
   },
   {
     "slug": "kit-viagem-personalizado",
     "name": "Kit Viagem Personalizado",
     "sku": "KIT-VBE002",
-    "category": "Viagens e mobilidade",
-    "categorySlug": "viagens-e-mobilidade",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
     "featured": true,
     "minQty": 10,
-    "haystack": "kit viagem personalizado kit-vbe002 viagens e mobilidade caixa em papel kraft 420 g; porta-passaporte em couro sintetico. azul, branco e preto, conforme cada componente descrito. silk branco em porta-passaporte, tag, mascara, almofada e necessaire; tampografia azul no adaptador. seis itens coordenados em caixa com berco: porta-passaporte, adaptador universal, tag, mascara, almofada e necessaire. executivos, equipes viajantes, clientes vip e eventos com convidados de outras cidades."
-  },
-  {
-    "slug": "capa-para-notebook-em-neoprene-personalizada",
-    "name": "Capa para notebook em neoprene personalizada",
-    "sku": "BD-BLCAPNOTSBL",
-    "category": "Viagens e mobilidade",
-    "categorySlug": "viagens-e-mobilidade",
-    "featured": false,
-    "minQty": 50,
-    "haystack": "capa para notebook em neoprene personalizada bd-blcapnotsbl viagens e mobilidade neoprene de 3 mm. impressao sem limite de cores. sublimacao digital sem limite de cores. grande area visual, multiplos tamanhos e personalizacao total por sublimacao. home office, onboarding, eventos de tecnologia e equipes hibridas."
+    "haystack": "kit viagem personalizado kit-vbe002 kits e experiencias caixa em papel kraft 420 g; porta-passaporte em couro sintetico. seis itens coordenados em caixa com berco: porta-passaporte, adaptador universal, tag, mascara, almofada e necessaire. executivos, equipes viajantes, clientes vip e eventos com convidados de outras cidades."
   },
   {
     "slug": "capa-para-notebook-neoplex-5-mm-personalizada",
     "name": "Capa para Notebook Neoplex 5 mm Personalizada",
     "sku": "BD-BLCAPNOTISO",
-    "category": "Viagens e mobilidade",
-    "categorySlug": "viagens-e-mobilidade",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
     "featured": false,
     "minQty": 50,
-    "haystack": "capa para notebook neoplex 5 mm personalizada bd-blcapnotiso viagens e mobilidade tecido neoplex de 5 mm; ziper; cursor niquelado. impressao digital com cores ilimitadas. impressao digital de alta definicao com cores ilimitadas. espessura de 5 mm, modelo slim, ampla grade de tamanhos e fechamento com ziper. colaboradores, tecnologia, educacao corporativa e trabalho remoto."
-  },
-  {
-    "slug": "suporte-celular-aluminio",
-    "name": "Suporte Celular Alumínio",
-    "sku": "BD09274",
-    "category": "Escritório e home office",
-    "categorySlug": "escritorio-e-home-office",
-    "featured": false,
-    "minQty": 25,
-    "haystack": "suporte celular aluminio bd09274 escritorio e home office aluminio; silicone antiderrapante. area de gravacao publicada: 7 × 5 cm frontal, 5 × 0,5 cm em cada lateral e 2 × 5 cm traseira. sete niveis de ajuste e protecao antiderrapante. home office, liderancas, equipes hibridas e eventos de tecnologia."
-  },
-  {
-    "slug": "luminaria-para-leitura-de-livro-personalizada",
-    "name": "Luminária para Leitura de Livro Personalizada",
-    "sku": "BD-LUMINARIA",
-    "category": "Escritório e home office",
-    "categorySlug": "escritorio-e-home-office",
-    "featured": false,
-    "minQty": 30,
-    "haystack": "luminaria para leitura de livro personalizada bd-luminaria escritorio e home office clipe e haste flexivel. clipe firme, haste ajustavel e luz direcionavel para leitura. educacao corporativa, leitores, home office e campanhas de incentivo ao estudo."
-  },
-  {
-    "slug": "caneca-em-vidro-com-efeito-fosco-530-ml",
-    "name": "Caneca em vidro com efeito fosco (530 mL)",
-    "sku": "BD94398",
-    "category": "Alimentação e bebidas",
-    "categorySlug": "alimentacao-e-bebidas",
-    "featured": false,
-    "minQty": 25,
-    "haystack": "caneca em vidro com efeito fosco (530 ml) bd94398 alimentacao e bebidas vidro fosco. lancamento 2026/27; efeito fosco; lavavel em lava-loucas; caixa presente; certificacao eu food grade. clientes, colaboradores, cafeterias corporativas e eventos premium."
+    "haystack": "capa para notebook neoplex 5 mm personalizada bd-blcapnotiso viagem e mobilidade tecido neoplex de 5 mm; ziper; cursor niquelado. espessura de 5 mm, modelo slim, ampla grade de tamanhos e fechamento com ziper. colaboradores, tecnologia, educacao corporativa e trabalho remoto."
   },
   {
     "slug": "kit-para-caipirinha-com-5-pecas-em-bambu",
     "name": "Kit para caipirinha com 5 peças em bambu",
     "sku": "BD94435",
-    "category": "Alimentação e bebidas",
-    "categorySlug": "alimentacao-e-bebidas",
+    "category": "Casa e gastronomia",
+    "categorySlug": "casa-e-gastronomia",
     "featured": false,
     "minQty": 25,
-    "haystack": "kit para caipirinha com 5 pecas em bambu bd94435 alimentacao e bebidas bambu; faca em aco inox com cabo de bambu; copo de vidro; caixa de papel kraft reciclado. bambu natural. lancamento 2026/27; cinco pecas; caixa presente; certificacao eu food grade. clientes, convidados vip, celebracoes e datas comemorativas."
-  },
-  {
-    "slug": "copo-em-inox-com-canudo",
-    "name": "Copo em inox com canudo",
-    "sku": "BDCO9310",
-    "category": "Alimentação e bebidas",
-    "categorySlug": "alimentacao-e-bebidas",
-    "featured": false,
-    "minQty": 25,
-    "haystack": "copo em inox com canudo bdco9310 alimentacao e bebidas aco inox 304; tampa em poliestireno (ps); canudo em inox; pegador em fibra de noz. acabamento externo fosco. duas formas de uso: canudo ou bico; pintura fosca; material 304. colaboradores, clientes, eventos internos e kits de rotina."
+    "haystack": "kit para caipirinha com 5 pecas em bambu bd94435 casa e gastronomia bambu; faca em aco inox com cabo de bambu; copo de vidro; caixa de papel kraft reciclado. lancamento 2026/27; cinco pecas; caixa presente; certificacao eu food grade. clientes, convidados vip, celebracoes e datas comemorativas."
   },
   {
     "slug": "kit-coador-de-cafe-personalizado",
     "name": "Kit Coador de Café Personalizado",
     "sku": "KIT-COA0032",
-    "category": "Alimentação e bebidas",
-    "categorySlug": "alimentacao-e-bebidas",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
     "featured": false,
     "minQty": 10,
-    "haystack": "kit coador de cafe personalizado kit-coa0032 alimentacao e bebidas caixa kraft 420 g; aco inox; pano; porcelana; cafe. decalque nas canecas; laser no moedor e bule; silk prata ou dourado na tampa da caixa. experiencia completa com moedor manual, bule, dois coadores, duas canecas e cafe orfeu. liderancas, clientes especiais, casais convidados e acoes de hospitalidade."
+    "haystack": "kit coador de cafe personalizado kit-coa0032 kits e experiencias caixa kraft 420 g; aco inox; pano; porcelana; cafe. experiencia completa com moedor manual, bule, dois coadores, duas canecas e cafe orfeu. liderancas, clientes especiais, casais convidados e acoes de hospitalidade."
   },
   {
     "slug": "kit-cafe-com-cafeteira-francesa-personalizado",
     "name": "Kit Café com Cafeteira Francesa Personalizado",
     "sku": "KIT-FRA3047",
-    "category": "Alimentação e bebidas",
-    "categorySlug": "alimentacao-e-bebidas",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
     "featured": true,
     "minQty": 10,
-    "haystack": "kit cafe com cafeteira francesa personalizado kit-fra3047 alimentacao e bebidas caixa kraft; vidro; cafe; alfajor. gravacao na cafeteira, copo, embalagem do cafe e tampa da caixa. experiencia pronta para presentear, com cafe de embalagem personalizada e alfajor havanna. clientes, liderancas, onboarding premium e trabalho hibrido."
+    "haystack": "kit cafe com cafeteira francesa personalizado kit-fra3047 kits e experiencias caixa kraft; vidro; cafe; alfajor. experiencia pronta para presentear, com cafe de embalagem personalizada e alfajor havanna. clientes, liderancas, onboarding premium e trabalho hibrido."
   },
   {
     "slug": "garrafa-termica-500-ml",
     "name": "Garrafa Térmica 500 mL",
     "sku": "BDGA8400",
-    "category": "Alimentação e bebidas",
-    "categorySlug": "alimentacao-e-bebidas",
+    "category": "Casa e gastronomia",
+    "categorySlug": "casa-e-gastronomia",
     "featured": false,
     "minQty": 25,
-    "haystack": "garrafa termica 500 ml bdga8400 alimentacao e bebidas aco inox de parede dupla; tampa plastica; alca de aco inox. isolamento a vacuo; conservacao anunciada de 8 h para quente e 12 h para frio. clientes, colaboradores, liderancas e kits de mobilidade."
-  },
-  {
-    "slug": "drip-coffee-sache-personalizado",
-    "name": "Drip Coffee Sachê Personalizado",
-    "sku": "BD-DRIPCOFFEE10G",
-    "category": "Alimentação e bebidas",
-    "categorySlug": "alimentacao-e-bebidas",
-    "featured": false,
-    "minQty": 10,
-    "haystack": "drip coffee sache personalizado bd-dripcoffee10g alimentacao e bebidas cafe especial 100% arabica, catuai amarelo; adesivo bopp na embalagem. branco e preto. adesivo bopp personalizado na embalagem. baixo minimo, cafe especial de machado/mg e formato pratico para kits. onboarding, eventos, clientes, reunioes e home office."
-  },
-  {
-    "slug": "chaveiro-tag-nfc-personalizado",
-    "name": "Chaveiro TAG NFC Personalizado",
-    "sku": "BD-CHAVEIROTAGNFC",
-    "category": "Eventos e ações promocionais",
-    "categorySlug": "eventos-e-acoes-promocionais",
-    "featured": false,
-    "minQty": 50,
-    "haystack": "chaveiro tag nfc personalizado bd-chaveirotagnfc eventos e acoes promocionais adesivacao frente e verso. conecta o brinde fisico a conteudo digital, landing page, credencial ou contato. eventos, lancamentos, networking, programas de fidelidade e visitacao."
-  },
-  {
-    "slug": "eco-copo-personalizado-550-ml-in-mold-label",
-    "name": "Eco Copo Personalizado 550 mL — In Mold Label",
-    "sku": "BD-COPOCOMTIRANTE",
-    "category": "Eventos e ações promocionais",
-    "categorySlug": "eventos-e-acoes-promocionais",
-    "featured": false,
-    "minQty": 100,
-    "haystack": "eco copo personalizado 550 ml — in mold label bd-copocomtirante eventos e acoes promocionais materia-prima plastica virgem. 12 cores disponiveis. silk em 1 cor; transfer localizado; cromia/in mold label em 360°. personalizacao 360°, cordao incluso, produto atoxico e referencia a norma 105 da anvisa. festivais, convencoes, feiras, acoes esportivas e eventos internos."
-  },
-  {
-    "slug": "chaveiro-metal-esmaltado-personalizado",
-    "name": "Chaveiro Metal Esmaltado Personalizado",
-    "sku": "BD-CHAVEIROESMALTADO",
-    "category": "Eventos e ações promocionais",
-    "categorySlug": "eventos-e-acoes-promocionais",
-    "featured": false,
-    "minQty": 100,
-    "haystack": "chaveiro metal esmaltado personalizado bd-chaveiroesmaltado eventos e acoes promocionais metal; esmalte; argola e argolinha. cores definidas por pantone e sujeitas a analise da arte. arte em relevo e esmaltada em um lado; pantones informados pelo cliente. formato sob medida e acabamento esmaltado com alta presenca de marca. eventos, comunidades, programas de reconhecimento, colecionaveis e lancamentos."
+    "haystack": "garrafa termica 500 ml bdga8400 casa e gastronomia aco inox de parede dupla; tampa plastica; alca de aco inox. isolamento a vacuo; conservacao anunciada de 8 h para quente e 12 h para frio. clientes, colaboradores, liderancas e kits de mobilidade."
   },
   {
     "slug": "kit-drink",
     "name": "Kit Drink",
     "sku": "BDKWS100",
-    "category": "Kits e presentes para colaboradores",
-    "categorySlug": "kits-e-presentes-para-colaboradores",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
     "featured": false,
     "minQty": 25,
-    "haystack": "kit drink bdkws100 kits e presentes para colaboradores vidro; aco inox; granito; veludo; madeira. pedras de granito reutilizaveis, copo, pinca e caixa de madeira elegante. liderancas, reconhecimento, clientes e celebracoes de resultados."
-  },
-  {
-    "slug": "kit-boas-vindas-personalizado-squeeze-caderno-e-caneta",
-    "name": "Kit Boas-Vindas Personalizado — squeeze, caderno e caneta",
-    "sku": "KIT-BOAS0008",
-    "category": "Kits e presentes para colaboradores",
-    "categorySlug": "kits-e-presentes-para-colaboradores",
-    "featured": true,
-    "minQty": 30,
-    "haystack": "kit boas-vindas personalizado — squeeze, caderno e caneta kit-boas0008 kits e presentes para colaboradores squeeze de aluminio; caneta de metal. gravacao no caderno, caneta, squeeze e tampa da caixa. composicao enxuta e corporativa, pronta para integracao e uso no dia a dia. novos colaboradores, estagiarios, trainees e times remotos."
-  },
-  {
-    "slug": "kit-boas-vindas-trofeu-porta-cracha-caneca-e-sacochila",
-    "name": "Kit Boas-Vindas — troféu, porta-crachá, caneca e sacochila",
-    "sku": "KIT-BOAS0058",
-    "category": "Kits e presentes para colaboradores",
-    "categorySlug": "kits-e-presentes-para-colaboradores",
-    "featured": false,
-    "minQty": 10,
-    "haystack": "kit boas-vindas — trofeu, porta-cracha, caneca e sacochila kit-boas0058 kits e presentes para colaboradores caixa de papel kraft; trofeu de acrilico fornecido pelo cliente; caneca de ceramica. sublimacao na caneca; silk prata ou dourado no porta-cracha e caixa; transfer colorido na sacochila. combina integracao e reconhecimento; inclui sacochila externa e aceita trofeu do cliente. integracao de lideres, embaixadores, programas de reconhecimento e eventos internos."
+    "haystack": "kit drink bdkws100 kits e experiencias vidro; aco inox; granito; veludo; madeira. pedras de granito reutilizaveis, copo, pinca e caixa de madeira elegante. liderancas, reconhecimento, clientes e celebracoes de resultados."
   },
   {
     "slug": "kit-boas-vindas-caderneta-camiseta-e-copo-termico",
     "name": "Kit Boas-Vindas — caderneta, camiseta e copo térmico",
     "sku": "KIT-BOAS0056",
-    "category": "Kits e presentes para colaboradores",
-    "categorySlug": "kits-e-presentes-para-colaboradores",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
     "featured": false,
     "minQty": 30,
-    "haystack": "kit boas-vindas — caderneta, camiseta e copo termico kit-boas0056 kits e presentes para colaboradores caixa kraft 420 g; caneta plastica. todos os itens personalizados; tampa da caixa em silk prata ou dourado. mistura identidade cultural, vestuario e item termico em composicao de onboarding. novos colaboradores, trainees, convencoes e mudanca de marca."
+    "haystack": "kit boas-vindas — caderneta, camiseta e copo termico kit-boas0056 kits e experiencias caixa kraft 420 g; caneta plastica. mistura identidade cultural, vestuario e item termico em composicao de onboarding. novos colaboradores, trainees, convencoes e mudanca de marca."
   },
   {
     "slug": "caixa-cartonada-personalizada",
     "name": "Caixa Cartonada Personalizada",
     "sku": "BD-CAIXACARTONADA02",
-    "category": "Kits e presentes para colaboradores",
-    "categorySlug": "kits-e-presentes-para-colaboradores",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
     "featured": false,
     "minQty": 1,
-    "haystack": "caixa cartonada personalizada bd-caixacartonada02 kits e presentes para colaboradores papel couche; papel color plus; laminacao fosca. impressao 4×0 na tampa e no arco; forro em color plus. revestimento em papel couche impresso 4×0 com laminacao fosca. formato grande, impressao total e minimo unitario — util para prototipo ou projeto exclusivo. kits vip, propostas especiais, mostruarios e presentes para lideranca."
+    "haystack": "caixa cartonada personalizada bd-caixacartonada02 kits e experiencias papel couche; papel color plus; laminacao fosca. formato grande, impressao total e minimo unitario — util para prototipo ou projeto exclusivo. kits vip, propostas especiais, mostruarios e presentes para lideranca."
   },
   {
     "slug": "caixa-retangular-pequim-tampa-e-fundo",
     "name": "Caixa Retangular Pequim Tampa e Fundo",
     "sku": "BD-W8DWXU5QR",
-    "category": "Kits e presentes para colaboradores",
-    "categorySlug": "kits-e-presentes-para-colaboradores",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
     "featured": false,
     "minQty": 25,
-    "haystack": "caixa retangular pequim tampa e fundo bd-w8dwxu5qr kits e presentes para colaboradores papelao rigido de 2 mm; papel couche branco fosco; papel color plus. revestimento externo em color plus conforme a cor escolhida. cor externa escolhida. nove formatos e construcao rigida, adequada a diversos tamanhos de kit. onboarding, presentes de clientes, kits de reconhecimento e final de ano."
+    "haystack": "caixa retangular pequim tampa e fundo bd-w8dwxu5qr kits e experiencias papelao rigido de 2 mm; papel couche branco fosco; papel color plus. nove formatos e construcao rigida, adequada a diversos tamanhos de kit. onboarding, presentes de clientes, kits de reconhecimento e final de ano."
   },
   {
     "slug": "roupao-personalizado",
     "name": "Roupão Personalizado",
     "sku": "BD-ROUPAO",
-    "category": "Kits e presentes para colaboradores",
-    "categorySlug": "kits-e-presentes-para-colaboradores",
+    "category": "Bem-estar e hospitalidade",
+    "categorySlug": "bem-estar-e-hospitalidade",
     "featured": false,
     "minQty": 1,
-    "haystack": "roupao personalizado bd-roupao kits e presentes para colaboradores 56% algodao; 44% poliester. logo bordado em uma cor. baixo minimo e forte apelo de bem-estar e hospitalidade. liderancas, hoteis, spas, campanhas de autocuidado e reconhecimento individual."
+    "haystack": "roupao personalizado bd-roupao bem-estar e hospitalidade 56% algodao; 44% poliester. baixo minimo e forte apelo de bem-estar e hospitalidade. liderancas, hoteis, spas, campanhas de autocuidado e reconhecimento individual."
   },
   {
-    "slug": "cartao-multifuncoes-em-aco-inox-com-20-funcoes",
-    "name": "Cartão multifunções em aço inox com 20 funções",
-    "sku": "BD98166",
-    "category": "Produtos criativos ou diferenciados",
-    "categorySlug": "produtos-criativos-ou-diferenciados",
+    "slug": "kit-onboarding-com-copo-termico-e-caixa-de-som-kit-boas0041",
+    "name": "Kit onboarding com copo térmico e caixa de som",
+    "sku": "KIT-BOAS0041",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 10,
+    "haystack": "kit onboarding com copo termico e caixa de som kit-boas0041 kits e experiencias kit em caixa de papel kraft com copo termico de inox 500ml contendo tampa com abridor, caixa de som multimidia com relogio e espaco para caderno."
+  },
+  {
+    "slug": "kit-onboarding-com-garrafa-termica-e-caixa-de-som-kit-boas0047",
+    "name": "Kit onboarding com garrafa térmica e caixa de som",
+    "sku": "KIT-BOAS0047",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": true,
+    "minQty": 30,
+    "haystack": "kit onboarding com garrafa termica e caixa de som kit-boas0047 kits e experiencias kit boas vindas personalizado com garrafa termica, caderno, caneta e caixinha de som."
+  },
+  {
+    "slug": "kit-boas-vindas-com-caderno-e-garrafa-termica-kit-boas0053",
+    "name": "Kit boas-vindas com caderno e garrafa térmica",
+    "sku": "KIT-BOAS0053",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 10,
+    "haystack": "kit boas-vindas com caderno e garrafa termica kit-boas0053 kits e experiencias kit boas vindas personalizado em caixa kraft 420g, com moleskine (capa emborrachada), caneta de metal com touch, copo de cafe com tampa (fibra de arroz 350ml) e garrafa termica 400ml."
+  },
+  {
+    "slug": "kit-boas-vindas-com-mochila-e-caderno-kit-boas0025",
+    "name": "Kit boas-vindas com mochila e caderno",
+    "sku": "KIT-BOAS0025",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 30,
+    "haystack": "kit boas-vindas com mochila e caderno kit-boas0025 kits e experiencias kit boas vindas personalizacao para integracao, mochila, caderno tipo moleskine para anotacoes, caneta metal e squeeze aluminio. gravacao mochila, caderno, caneta e squeeze."
+  },
+  {
+    "slug": "kit-executivo-com-caderneta-caneta-e-garrafa-termica-bd15581",
+    "name": "Kit executivo com caderneta, caneta e garrafa térmica",
+    "sku": "BD15581",
+    "category": "Executivo e trabalho",
+    "categorySlug": "executivo-e-trabalho",
     "featured": false,
     "minQty": 25,
-    "haystack": "cartao multifuncoes em aco inox com 20 funcoes bd98166 produtos criativos ou diferenciados aco inox; bolsa em pu. vinte funcoes em formato compacto, incluindo abridores, chaves, cortador, faca e regua. liderancas, equipes de campo, publico automotivo e acoes de seguranca."
+    "haystack": "kit executivo com caderneta, caneta e garrafa termica bd15581 executivo e trabalho kit executivo composto por tres itens: caderneta, caneta e garrafa termica. a caderneta, de tamanho a5, possui capa dura em rpet, aba com fecho magnetico e placa metalica personalizavel, marca-pagina em fita de cetim e aproximadamente 80 folhas marfim pautadas em papel de 70g/m²."
   },
   {
-    "slug": "borrifador-de-perfume-recarregavel-com-involucro-em-bambu-natural",
-    "name": "Borrifador de perfume recarregável com invólucro em bambu natural",
-    "sku": "BD95114",
-    "category": "Produtos criativos ou diferenciados",
-    "categorySlug": "produtos-criativos-ou-diferenciados",
+    "slug": "kit-escritorio-em-rpet-com-garrafa-termica-bdcj305",
+    "name": "Kit escritório em RPET com garrafa térmica",
+    "sku": "BDCJ305",
+    "category": "Executivo e trabalho",
+    "categorySlug": "executivo-e-trabalho",
     "featured": false,
     "minQty": 25,
-    "haystack": "borrifador de perfume recarregavel com involucro em bambu natural bd95114 produtos criativos ou diferenciados bambu natural. bambu natural. compacto, recarregavel, adequado para viagens e fornecido em caixa presente. clientes premium, liderancas, hospitalidade e publico de beleza/bem-estar."
+    "haystack": "kit escritorio em rpet com garrafa termica bdcj305 executivo e trabalho kit escritorio contendo caderno a5 com capa em rpet e detalhe em bambu, possui 80 folhas pautadas em papel 70g/m², garrafa termica (exterior 201/interior 304) com capacidade de 600ml, acabamento preto fosco, tampa em plastica pp com detalhe em bambu e alca em silicone preta, caneta esferografica de metal com detalhe em bambu, acompanha caixa presenteavel."
   },
   {
-    "slug": "espelho-redondo-de-dupla-face-com-exterior-em-pu-mate",
-    "name": "Espelho redondo de dupla face com exterior em PU mate",
-    "sku": "BD95112",
-    "category": "Produtos criativos ou diferenciados",
-    "categorySlug": "produtos-criativos-ou-diferenciados",
+    "slug": "kit-executivo-em-rpet-com-tres-pecas-bd15173",
+    "name": "Kit executivo em RPET com três peças",
+    "sku": "BD15173",
+    "category": "Executivo e trabalho",
+    "categorySlug": "executivo-e-trabalho",
     "featured": false,
     "minQty": 25,
-    "haystack": "espelho redondo de dupla face com exterior em pu mate bd95112 produtos criativos ou diferenciados pu mate; moldura metalica; espelhos normal e de aumento. dupla face, um lado com aumento, acabamento mate e caixa presente. bem-estar, eventos femininos, hotelaria e kits de autocuidado."
+    "haystack": "kit executivo em rpet com tres pecas bd15173 executivo e trabalho nosso kit executivo traz praticidade e elegancia para o dia a dia. a caneta esferografica azul, com acionamento por rotacao, e ideal para anotacoes rapidas, e o chaveiro e a solucao perfeita para manter suas chaves sempre organizadas."
   },
   {
-    "slug": "borrifador-de-perfume-recarregavel-em-aluminio",
-    "name": "Borrifador de perfume recarregável em alumínio",
-    "sku": "BD95111",
-    "category": "Produtos criativos ou diferenciados",
-    "categorySlug": "produtos-criativos-ou-diferenciados",
+    "slug": "conjunto-premium-de-caneta-e-roller-em-estojo-bd91992",
+    "name": "Conjunto premium de caneta e roller em estojo",
+    "sku": "BD91992",
+    "category": "Executivo e trabalho",
+    "categorySlug": "executivo-e-trabalho",
     "featured": false,
     "minQty": 25,
-    "haystack": "borrifador de perfume recarregavel em aluminio bd95111 produtos criativos ou diferenciados aluminio; reservatorio interno e janela transparente sem composicao detalhada. reabastecimento pela valvula inferior, janela de nivel, formato compacto e caixa de oferta. viagens, hospitalidade, liderancas e campanhas de bem-estar."
+    "haystack": "conjunto premium de caneta e roller em estojo bd91992 executivo e trabalho set premium composto por 1 caneta esferografica e 1 caneta roller em cobre e aco inox, com acabamento brilhante. a caneta esferografica possui escrita dokumental® em azul ate 2 km e mecanismo de abertura twist."
   },
   {
-    "slug": "biscoito-da-sorte-personalizado-com-frases",
-    "name": "Biscoito da sorte personalizado com frases",
-    "sku": "BD-BISCOITOSORTE",
-    "category": "Produtos criativos ou diferenciados",
-    "categorySlug": "produtos-criativos-ou-diferenciados",
+    "slug": "kit-executivo-com-caderno-caneta-e-caneca-bd15585",
+    "name": "Kit executivo com caderno, caneta e caneca",
+    "sku": "BD15585",
+    "category": "Executivo e trabalho",
+    "categorySlug": "executivo-e-trabalho",
     "featured": false,
-    "minQty": 1000,
-    "haystack": "biscoito da sorte personalizado com frases bd-biscoitosorte produtos criativos ou diferenciados produto alimenticio. embalagem personalizada. embalagem e mensagens internas personalizadas; frases padrao ou customizadas. experiencia surpresa, alta escala e personalizacao do conteudo — nao apenas da embalagem. feiras, eventos, campanhas internas, lancamento de marca e acoes de engajamento."
+    "minQty": 25,
+    "haystack": "kit executivo com caderno, caneta e caneca bd15585 executivo e trabalho kit executivo composto por tres itens: caderneta, caneta e caneca. a caderneta, de tamanho a5, possui capa dura com suporte lateral para caneta, elastico para fechamento, marca-pagina em fita de cetim e aproximadamente 80 folhas marfim pautadas em papel de 70g/m²."
+  },
+  {
+    "slug": "kit-cafe-com-cafeteira-italiana-illy-e-xicaras-kit-ita6043",
+    "name": "Kit café com cafeteira italiana, Illy e xícaras",
+    "sku": "KIT-ITA6043",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": true,
+    "minQty": 10,
+    "haystack": "kit cafe com cafeteira italiana, illy e xicaras kit-ita6043 kits e experiencias kit cafe personalizado em caixa de papel, cafeteira italiana 6 doses, cafe illy 125gr e 2 xicaras de porcelana para cafe."
+  },
+  {
+    "slug": "kit-cafe-com-cafeteira-italiana-e-moedor-eletrico-kit-ita3092",
+    "name": "Kit café com cafeteira italiana e moedor elétrico",
+    "sku": "KIT-ITA3092",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 30,
+    "haystack": "kit cafe com cafeteira italiana e moedor eletrico kit-ita3092 kits e experiencias kit cafe personalizado em caixa de papel, cafeteira italiana 3 doses com cafe gourmet santo grao, moedor de cafe eletrico e 2 copos de parede dupla."
+  },
+  {
+    "slug": "kit-gastronomico-com-azeite-moedores-e-temperos-kit-aze0008",
+    "name": "Kit gastronômico com azeite, moedores e temperos",
+    "sku": "KIT-AZE0008",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 30,
+    "haystack": "kit gastronomico com azeite, moedores e temperos kit-aze0008 kits e experiencias kit azeite personalizado em caixa de papel, azeite colavita 250ml, 2 moedores e 5 potes com temperos e pimentas com etiquetas personalizadas."
+  },
+  {
+    "slug": "kit-queijos-com-tabua-utensilios-e-tacas-kit-que0002",
+    "name": "Kit queijos com tábua, utensílios e taças",
+    "sku": "KIT-QUE0002",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 30,
+    "haystack": "kit queijos com tabua, utensilios e tacas kit-que0002 kits e experiencias kit para queijo personalizado com tabua para queijo/petiscos, 2 facas, sendo, uma com ponta e outra reta, garfo e espatula em bambu/inox, 2 tacas para vinho em vidro e abridor saca rolha em metal."
+  },
+  {
+    "slug": "kit-gin-bombay-com-taca-e-especiarias-kit-gin0006",
+    "name": "Kit gin Bombay com taça e especiarias",
+    "sku": "KIT-GIN0006",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 10,
+    "haystack": "kit gin bombay com taca e especiarias kit-gin0006 kits e experiencias kit gin personalizado em caixa de papel com 1 gin bombay 750ml, 1 taca de vidro para gin 600ml, 1 dosador em inox, 1 colher canudo em inox e 3 potes com especiarias (a escolher)."
+  },
+  {
+    "slug": "kit-vinho-com-tacas-e-utensilios-para-queijo-kit-vin6028",
+    "name": "Kit vinho com taças e utensílios para queijo",
+    "sku": "KIT-VIN6028",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": true,
+    "minQty": 30,
+    "haystack": "kit vinho com tacas e utensilios para queijo kit-vin6028 kits e experiencias kit vinho personalizado em caixa de papel, vinho pata negra 750ml, 2 tacas, faca, espatula e garfo."
+  },
+  {
+    "slug": "kit-churrasco-completo-com-tabua-e-taca-kit-chu0026",
+    "name": "Kit churrasco completo com tábua e taça",
+    "sku": "KIT-CHU0026",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 10,
+    "haystack": "kit churrasco completo com tabua e taca kit-chu0026 kits e experiencias kit churrasco personalizado em caixa de papel, tabua para corte, garra de urso, garfo tridente chifre, faca, garfo, taca de cerveja 400ml dublin e caixa de som."
+  },
+  {
+    "slug": "kit-churrasco-com-tabua-utensilios-e-avental-kit-chu0002",
+    "name": "Kit churrasco com tábua, utensílios e avental",
+    "sku": "KIT-CHU0002",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 30,
+    "haystack": "kit churrasco com tabua, utensilios e avental kit-chu0002 kits e experiencias kit churrasco personalizao em caixa de papel, tabua para corte, garfo, faca e avental."
+  },
+  {
+    "slug": "kit-cachaca-extra-premium-com-dois-copos-kit-cachg004",
+    "name": "Kit cachaça extra premium com dois copos",
+    "sku": "KIT-CACHG004",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 30,
+    "haystack": "kit cachaca extra premium com dois copos kit-cachg004 kits e experiencias kit cachaca personalizado em caixa de papel, cachaca weber haus extra premium 750ml e 2 copos."
+  },
+  {
+    "slug": "kit-cha-com-caneca-infusor-e-ervas-kit-cha0006",
+    "name": "Kit chá com caneca, infusor e ervas",
+    "sku": "KIT-CHA0006",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 30,
+    "haystack": "kit cha com caneca, infusor e ervas kit-cha0006 kits e experiencias kit cha personalizado em caixa de papel, caneca de ceramica 300ml, infusor e pote de vidro com erva para cha (a definir)."
+  },
+  {
+    "slug": "kit-temperos-com-moedor-e-seis-potes-kit-temp016",
+    "name": "Kit temperos com moedor e seis potes",
+    "sku": "KIT-TEMP016",
+    "category": "Kits e experiências",
+    "categorySlug": "kits-e-experiencias",
+    "featured": false,
+    "minQty": 30,
+    "haystack": "kit temperos com moedor e seis potes kit-temp016 kits e experiencias kit em caixa de papel, moedor de temperos, 6 potes de vidro com temperos, gravacao no moedor, tampa e rotulo nos potes."
+  },
+  {
+    "slug": "kit-churrasco-em-caixa-de-bambu-com-quatro-utensilios-bd94111",
+    "name": "Kit churrasco em caixa de bambu com quatro utensílios",
+    "sku": "BD94111",
+    "category": "Casa e gastronomia",
+    "categorySlug": "casa-e-gastronomia",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "kit churrasco em caixa de bambu com quatro utensilios bd94111 casa e gastronomia kit churrasco em caixa de bambu. composto por 4 utensilios em aco inox e bambu: faca japonesa, faca chefe, faca boning e garfo."
+  },
+  {
+    "slug": "conjunto-de-saca-rolhas-eletrico-em-aluminio-bd94332",
+    "name": "Conjunto de saca-rolhas elétrico em alumínio",
+    "sku": "BD94332",
+    "category": "Casa e gastronomia",
+    "categorySlug": "casa-e-gastronomia",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "conjunto de saca-rolhas eletrico em aluminio bd94332 casa e gastronomia conjunto de saca-rolhas eletrico em aluminio e acessorios: corta-capsulas, rolha de vacuo e salva-gotas (pilhas inclusas). fornecido em caixa presente."
+  },
+  {
+    "slug": "kit-churrasco-com-tabua-e-sete-utensilios-bd94104",
+    "name": "Kit churrasco com tábua e sete utensílios",
+    "sku": "BD94104",
+    "category": "Casa e gastronomia",
+    "categorySlug": "casa-e-gastronomia",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "kit churrasco com tabua e sete utensilios bd94104 casa e gastronomia kit churrasco em estojo de pu e 210d. composto por tabua em bambu e 7 utensilios em aco inox e madeira de seringueira: faca japonesa, faca chefe, garfo, pinca, faca pequena, afiador e pincel."
+  },
+  {
+    "slug": "mochila-executiva-impermeavel-em-pu-20-l-bd09511",
+    "name": "Mochila executiva impermeável em PU 20 L",
+    "sku": "BD09511",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "mochila executiva impermeavel em pu 20 l bd09511 viagem e mobilidade mochila com capacidade maxima de 20 litros. confeccionada em poliuretano (pu) impermeavel, contem estrutura interna em espuma, exceto no bolso localizado na parte superior frontal, alem de forro interno em poliester 210d."
+  },
+  {
+    "slug": "mochila-de-viagem-para-notebook-com-organizador-de-roupas-bd92589",
+    "name": "Mochila de viagem para notebook com organizador de roupas",
+    "sku": "BD92589",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": true,
+    "minQty": 25,
+    "haystack": "mochila de viagem para notebook com organizador de roupas bd92589 viagem e mobilidade mochila para notebook com compartimento para organizar e transportar roupas em viagens. os 2 compartimentos e os 3 bolsos frontais permitem uma maior organizacao para viajar com conforto e sem complicacoes, em qualquer situacao."
+  },
+  {
+    "slug": "mochila-roll-top-em-pu-para-notebook-bd92534",
+    "name": "Mochila roll top em PU para notebook",
+    "sku": "BD92534",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "mochila roll top em pu para notebook bd92534 viagem e mobilidade mochila \"roll top\" que permite ajustar a capacidade de acordo com a sua necessidade, oferecendo maior flexibilidade no dia a dia. material exterior: pu."
+  },
+  {
+    "slug": "mochila-premium-com-compartimento-a-vacuo-bdmc700",
+    "name": "Mochila premium com compartimento a vácuo",
+    "sku": "BDMC700",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": true,
+    "minQty": 25,
+    "haystack": "mochila premium com compartimento a vacuo bdmc700 viagem e mobilidade mochila em poliester 900d com pu e interior em poliester 210d. possui divisoria e ziper frontal, divisorias internas, compartimento a vacuo com bomba, ziper com expansor da mochila, espaco para tablet e notebook 15,6”, bolso lateral, cinco engates rapidos, alcas acolchoadas, ziper nas costas, entrada usb e tipo c e engate para mala."
+  },
+  {
+    "slug": "pasta-para-notebook-em-tecido-canvas-bdpa150",
+    "name": "Pasta para notebook em tecido canvas",
+    "sku": "BDPA150",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "pasta para notebook em tecido canvas bdpa150 viagem e mobilidade porta notebook confeccionado em material polyester-cotton com tecido tipo canvas, bolso frontal com interior acolchoado, compartimento interno compativel com notebooks de ate 15,6\"."
+  },
+  {
+    "slug": "mala-de-viagem-em-policarbonato-60-l-bde-09338",
+    "name": "Mala de viagem em policarbonato 60 L",
+    "sku": "BDE@09338",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "mala de viagem em policarbonato 60 l bde@09338 viagem e mobilidade mala de viagem com capacidade maxima de 60 litros. feita em policarbonato (pc) e detalhes metalicos, possui dois compartimentos internos em tamanhos diferentes, um dele em tela de malha, alem de cinta compressora no lado oposto e plaquinha personalizavel em ferro com acabamento de spray na parte externa."
+  },
+  {
+    "slug": "mala-de-bordo-37-l-bd08242",
+    "name": "Mala de bordo 37 L",
+    "sku": "BD08242",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "mala de bordo 37 l bd08242 viagem e mobilidade leve e ideal para acompanhar suas viagens, ela conta com espaco interno com divisoria, que contem bolso em tela e outro espaco com cinta compressora para manter tudo no lugar. alem disso, conta com 4 apoios laterais para descanso e 4 rodas com giro 360°, oferecendo facilidade de locomocao em qualquer direcao."
+  },
+  {
+    "slug": "bolsa-esportiva-em-algodao-e-poliester-reciclados-bd92535",
+    "name": "Bolsa esportiva em algodão e poliéster reciclados",
+    "sku": "BD92535",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "bolsa esportiva em algodao e poliester reciclados bd92535 viagem e mobilidade bolsa esportiva espacosa e pratica, com bolso interior com ziper, ideal para manter os seus pertences seguros e sempre a mao. material exterior: algodao reciclado e poliester reciclado (380 g/m²)."
+  },
+  {
+    "slug": "mala-esportiva-em-pu-bdme585",
+    "name": "Mala esportiva em PU",
+    "sku": "BDME585",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "mala esportiva em pu bdme585 viagem e mobilidade mala esportiva em pu com revestimento interno em poliester 210d. possui faixa refletiva, bolso frontal com ziper, alca de mao e alca de ombro ajustavel, alem de dois compartimentos internos."
+  },
+  {
+    "slug": "mochila-antirroubo-em-poliester-reciclado-bd92393",
+    "name": "Mochila antirroubo em poliéster reciclado",
+    "sku": "BD92393",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "mochila antirroubo em poliester reciclado bd92393 viagem e mobilidade mochila antirroubo com design unico pensado para garantir maior seguranca aos seus dispositivos e documentos. composta por poliester reciclado (rpet) 600d twill, resistente a agua, com detalhes em pu e interior em poliester reciclado (rpet) 210d."
+  },
+  {
+    "slug": "mala-de-viagem-66-l-com-cadeado-tsa-bd06068",
+    "name": "Mala de viagem 66 L com cadeado TSA",
+    "sku": "BD06068",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "mala de viagem 66 l com cadeado tsa bd06068 viagem e mobilidade mala de viagem 66 litros em plastico pp (casca dura), contem cadeado numerico tsa. compartimentos com bolso telado e cinta compressora para roupas."
+  },
+  {
+    "slug": "powerbank-magnetico-reciclado-10-000-mah-bd97216",
+    "name": "Powerbank magnético reciclado 10.000 mAh",
+    "sku": "BD97216",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "featured": true,
+    "minQty": 25,
+    "haystack": "powerbank magnetico reciclado 10.000 mah bd97216 tecnologia bateria portatil magnetica com carregamento super-rapido e 4 leds indicadores do nivel de bateria. a localizacao do carregamento por inducao (wireless) tem um relevo na area magnetica para se adaptar a maioria dos celulares."
+  },
+  {
+    "slug": "carregador-magnetico-em-bambu-15-w-bd97128",
+    "name": "Carregador magnético em bambu 15 W",
+    "sku": "BD97128",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "carregador magnetico em bambu 15 w bd97128 tecnologia carregador magnetico por inducao (wireless) super-rapido em bambu. potencia de carregamento super-rapido de 15w."
+  },
+  {
+    "slug": "conjunto-de-fones-bluetooth-2-em-1-bde-09409",
+    "name": "Conjunto de fones Bluetooth 2 em 1",
+    "sku": "BDE@09409",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "conjunto de fones bluetooth 2 em 1 bde@09409 tecnologia conjunto com dois pares de fones de ouvido sem fio de formatos diferentes, um auricular e outro intra-auricular (in-ear). os pares funcionam de forma independente e podem ser pareados simultaneamente em dois dispositivos distintos."
+  },
+  {
+    "slug": "fones-bluetooth-de-design-aberto-com-estojo-bde-09413",
+    "name": "Fones Bluetooth de design aberto com estojo",
+    "sku": "BDE@09413",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "fones bluetooth de design aberto com estojo bde@09413 tecnologia fones de ouvido sem fio em plastico abs com hastes flexiveis. possuem design aberto em formato semelhante ao de brincos (ear cuff), sem contato direto com o canal auditivo."
+  },
+  {
+    "slug": "hub-multifuncional-em-aluminio-e-pet-reciclados-bd97221",
+    "name": "Hub multifuncional em alumínio e PET reciclados",
+    "sku": "BD97221",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "hub multifuncional em aluminio e pet reciclados bd97221 tecnologia hub multifuncional que expande as conexoes do seu dispositivo, permitindo conectar varios equipamentos de forma simples e eficiente. as entradas usb-a e usb-c garantem compatibilidade com diferentes modelos de notebooks."
+  },
+  {
+    "slug": "caixa-de-som-em-aluminio-reciclado-e-bambu-bd97217",
+    "name": "Caixa de som em alumínio reciclado e bambu",
+    "sku": "BD97217",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "caixa de som em aluminio reciclado e bambu bd97217 tecnologia caixa de som portatil com design minimalista e sofisticado, que resulta de uma fusao perfeita entre o bambu e o aluminio reciclado. material: aluminio 100% reciclado e bambu."
+  },
+  {
+    "slug": "fone-bluetooth-dobravel-com-cancelamento-de-ruido-bd97138",
+    "name": "Fone Bluetooth dobrável com cancelamento de ruído",
+    "sku": "BD97138",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "fone bluetooth dobravel com cancelamento de ruido bd97138 tecnologia fone de ouvido wireless dobraveis com cancelamento de ruido ativo (anc), para que se concentre nas principais tarefas do seu dia ou relaxe a ouvir as suas musicas favoritas sem ruidos externos. os fones de ouvido podem ser utilizados tambem atraves de cabo audio.material: abs 100% reciclado | tipo: over-ear | transmissao sem fio: bt v5.3 | capacidade: 400 mah | autonomia…"
+  },
+  {
+    "slug": "placa-de-premiacao-em-caixa-aveludada-tb-placapremiacao",
+    "name": "Placa de premiação em caixa aveludada",
+    "sku": "TB-PLACAPREMIAÇÃO",
+    "category": "Reconhecimento e premiação",
+    "categorySlug": "reconhecimento-e-premiacao",
+    "featured": true,
+    "minQty": 1,
+    "haystack": "placa de premiacao em caixa aveludada tb-placapremiacao reconhecimento e premiacao cor da caixa aveludada: preta."
+  },
+  {
+    "slug": "caneca-termica-stanley-camp-mug-350-ml-bd-campmugstanley",
+    "name": "Caneca térmica Stanley Camp Mug 350 mL",
+    "sku": "BD-CAMPMUGSTANLEY",
+    "category": "Casa e gastronomia",
+    "categorySlug": "casa-e-gastronomia",
+    "featured": true,
+    "minQty": 1,
+    "haystack": "caneca termica stanley camp mug 350 ml bd-campmugstanley casa e gastronomia camp mug stanley matte black | 350ml."
+  },
+  {
+    "slug": "tapete-de-yoga-em-cortica-e-tpe-bd98138",
+    "name": "Tapete de yoga em cortiça e TPE",
+    "sku": "BD98138",
+    "category": "Bem-estar e hospitalidade",
+    "categorySlug": "bem-estar-e-hospitalidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "tapete de yoga em cortica e tpe bd98138 bem-estar e hospitalidade tapete de exercicio para yoga em cortica e tpe com espessura ate 3,7 mm. inclusa alca que pode ser usada para transporte ou para utilizar no exercicio fisico."
+  },
+  {
+    "slug": "bolsa-termica-roll-top-em-pu-bd92580",
+    "name": "Bolsa térmica roll top em PU",
+    "sku": "BD92580",
+    "category": "Viagem e mobilidade",
+    "categorySlug": "viagem-e-mobilidade",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "bolsa termica roll top em pu bd92580 viagem e mobilidade bolsa termica \"roll top\" em pu, com isolamento em peva, ideal para preservar a conservacao dos alimentos por mais tempo. possui 1 compartimento principal acolchoado, com fecho ajustavel e sistema de enrolamento, e 1 bolso frontal com ziper impermeavel."
+  },
+  {
+    "slug": "caixa-de-som-jbl-go-essential-bd-jblgo",
+    "name": "Caixa de som JBL Go Essential",
+    "sku": "BD-JBLGO",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "featured": false,
+    "minQty": 25,
+    "haystack": "caixa de som jbl go essential bd-jblgo tecnologia a jbl go essential e uma caixa de som portatil e ultracompacta com bluetooth. reproduza suas musicas atraves de bluetooth por ate cinco horas de som com a qualidade profissional jbl."
   }
 ]
